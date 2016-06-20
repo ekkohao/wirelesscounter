@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{030206B9-13C8-4089-BE91-9E65926AA612}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wirelesssacler</RootNamespace>
+    <AssemblyName>wirelesssacler</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\bin\x86\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\bin\x86\wirelesssacler.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>123.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>wirelesssacler.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\..\避雷器在线监测平台\避雷器在线监测平台\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="CSkin">
+      <HintPath>D:\Personal\桌面\CSkin 15.3.10.1\CSkin 2.0\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DMSkin">
+      <HintPath>..\..\..\Downloads\DMSkin-B306\DMSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddDevfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDevfrm.Designer.cs">
+      <DependentUpon>AddDevfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CallCurrentFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallCurrentFrom.Designer.cs">
+      <DependentUpon>CallCurrentFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CallGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallGroupForm.Designer.cs">
+      <DependentUpon>CallGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CallMutinData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallMutinData.Designer.cs">
+      <DependentUpon>CallMutinData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComSelectfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComSelectfrm.Designer.cs">
+      <DependentUpon>ComSelectfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConClosefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConClosefrm.Designer.cs">
+      <DependentUpon>ConClosefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connectfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connectfrm.Designer.cs">
+      <DependentUpon>Connectfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCenterfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCenterfrm.Designer.cs">
+      <DependentUpon>DataCenterfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStruct.cs" />
+    <Compile Include="DayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayForm.Designer.cs">
+      <DependentUpon>DayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbHelper.cs" />
+    <Compile Include="Delay.cs" />
+    <Compile Include="DeviceStruct.cs" />
+    <Compile Include="ExportExclefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportExclefrm.Designer.cs">
+      <DependentUpon>ExportExclefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportDevfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportDevfrm.Designer.cs">
+      <DependentUpon>ImportDevfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Initdevfrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Initdevfrom.Designer.cs">
+      <DependentUpon>Initdevfrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LastCheckGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LastCheckGroup.Designer.cs">
+      <DependentUpon>LastCheckGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LastOneHistroyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LastOneHistroyForm.Designer.cs">
+      <DependentUpon>LastOneHistroyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LightCountfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LightCountfrm.Designer.cs">
+      <DependentUpon>LightCountfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LightGroupfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LightGroupfrm.Designer.cs">
+      <DependentUpon>LightGroupfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewSort.cs" />
+    <Compile Include="Mainfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainfrm.Designer.cs">
+      <DependentUpon>Mainfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MangerDevfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MangerDevfrm.Designer.cs">
+      <DependentUpon>MangerDevfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messagefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagefrm.Designer.cs">
+      <DependentUpon>Messagefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotyTimefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotyTimefrm.Designer.cs">
+      <DependentUpon>NotyTimefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Protocolfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Protocolfrm.Designer.cs">
+      <DependentUpon>Protocolfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryGroupForm.Designer.cs">
+      <DependentUpon>QueryGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryCurrentfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryCurrentfrm.Designer.cs">
+      <DependentUpon>QueryCurrentfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryTimeForm.Designer.cs">
+      <DependentUpon>QueryTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlHelp.cs" />
+    <Compile Include="SysManges.cs" />
+    <Compile Include="Trans.cs" />
+    <Compile Include="UsewireCom.cs" />
+    <EmbeddedResource Include="AddDevfrm.resx">
+      <DependentUpon>AddDevfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CallCurrentFrom.resx">
+      <DependentUpon>CallCurrentFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CallGroupForm.resx">
+      <DependentUpon>CallGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CallMutinData.resx">
+      <DependentUpon>CallMutinData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComSelectfrm.resx">
+      <DependentUpon>ComSelectfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConClosefrm.resx">
+      <DependentUpon>ConClosefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connectfrm.resx">
+      <DependentUpon>Connectfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCenterfrm.resx">
+      <DependentUpon>DataCenterfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayForm.resx">
+      <DependentUpon>DayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportExclefrm.resx">
+      <DependentUpon>ExportExclefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportDevfrm.resx">
+      <DependentUpon>ImportDevfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Initdevfrom.resx">
+      <DependentUpon>Initdevfrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LastCheckGroup.resx">
+      <DependentUpon>LastCheckGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LastOneHistroyForm.resx">
+      <DependentUpon>LastOneHistroyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightCountfrm.resx">
+      <DependentUpon>LightCountfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightGroupfrm.resx">
+      <DependentUpon>LightGroupfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainfrm.resx">
+      <DependentUpon>Mainfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainfrm.zh-CN.resx">
+      <DependentUpon>Mainfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MangerDevfrm.resx">
+      <DependentUpon>MangerDevfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagefrm.resx">
+      <DependentUpon>Messagefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotyTimefrm.resx">
+      <DependentUpon>NotyTimefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Protocolfrm.resx">
+      <DependentUpon>Protocolfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryGroupForm.resx">
+      <DependentUpon>QueryGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryCurrentfrm.resx">
+      <DependentUpon>QueryCurrentfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryTimeForm.resx">
+      <DependentUpon>QueryTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="123.ico" />
+    <Content Include="data\data.mdb" />
+    <Content Include="dll\Aspose.Cells.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dll\CSkin.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\offline.png" />
+    <Content Include="Resources\online.png" />
+    <None Include="Resources\dev.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CommunicationProtocol\CommunicationProtocol.csproj">
+      <Project>{6c5daffc-90e1-4ea5-9101-04b929842455}</Project>
+      <Name>CommunicationProtocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConnectCom\ConnectCom.csproj">
+      <Project>{73b29f30-e71c-4fe0-9343-c13aea90bfa7}</Project>
+      <Name>ConnectCom</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

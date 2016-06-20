@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wirelesssacler", "wirelesssacler\wirelesssacler.csproj", "{030206B9-13C8-4089-BE91-9E65926AA612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectCom", "ConnectCom\ConnectCom.csproj", "{73B29F30-E71C-4FE0-9343-C13AEA90BFA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationProtocol", "CommunicationProtocol\CommunicationProtocol.csproj", "{6C5DAFFC-90E1-4EA5-9101-04B929842455}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{030206B9-13C8-4089-BE91-9E65926AA612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030206B9-13C8-4089-BE91-9E65926AA612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030206B9-13C8-4089-BE91-9E65926AA612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030206B9-13C8-4089-BE91-9E65926AA612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B29F30-E71C-4FE0-9343-C13AEA90BFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B29F30-E71C-4FE0-9343-C13AEA90BFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B29F30-E71C-4FE0-9343-C13AEA90BFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B29F30-E71C-4FE0-9343-C13AEA90BFA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5DAFFC-90E1-4EA5-9101-04B929842455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5DAFFC-90E1-4EA5-9101-04B929842455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5DAFFC-90E1-4EA5-9101-04B929842455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5DAFFC-90E1-4EA5-9101-04B929842455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5DAFFC-90E1-4EA5-9101-04B929842455}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -144,7 +144,7 @@ namespace wirelesssacler
 
         private void deletedev_Click(object sender, EventArgs e)
         {
-            if(btn_checkEdit.Checked==false)
+            if(btn_d_zd.Checked==true)
             {
                 MessageBox.Show("请切换到编辑模式");
                 return;
@@ -176,6 +176,11 @@ namespace wirelesssacler
 
         private void AddDev_Click(object sender, EventArgs e)
         {
+            if (btn_d_zd.Checked == true)
+            {
+                MessageBox.Show("请切换到编辑模式");
+                return;
+            }
             AddDevfrm addfrm = new AddDevfrm();
             if(addfrm.ShowDialog()==DialogResult.Yes)
             {
@@ -217,22 +222,28 @@ namespace wirelesssacler
                 MessageBox.Show("刷新失败，无设备数据!");
             }
         }
-
-        private void btn_checkEdit_CheckedChanged(object sender, EventArgs e)
+        private void btn_d_zd_CheckedChanged(object sender, EventArgs e)
         {
-            if (btn_checkEdit.Checked)
+            if (btn_d_zd.Checked)
             {
-                btn_checkEdit.Text = "编辑模式";
+                btn_d_bj.Checked = false;
+                DG_List.ReadOnly = true;
+                DG_List.RowHeadersVisible = false;
+                DG_List.AllowUserToAddRows = false;
+            }
+            else
+            {
                 DG_List.ReadOnly = false;
                 DG_List.RowHeadersVisible = true;
                 DG_List.AllowUserToAddRows = true;
             }
-            else
+        }
+
+        private void btn_d_bj_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btn_d_bj.Checked)
             {
-                DG_List.ReadOnly = true;
-                DG_List.RowHeadersVisible = false;
-                btn_checkEdit.Text = "只读模式";
-                DG_List.AllowUserToAddRows = false;
+                btn_d_zd.Checked = false;
             }
         }
 
@@ -313,5 +324,6 @@ namespace wirelesssacler
             MessageBox.Show("已导出设备清单:"+filepath);
 
         }
+
         }
 }

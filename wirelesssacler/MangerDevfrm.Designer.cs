@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MangerDevfrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_d_zd = new System.Windows.Forms.RadioButton();
+            this.btn_d_bj = new System.Windows.Forms.RadioButton();
             this.btn_import = new CCWin.SkinControl.SkinButton();
             this.btn_reload = new CCWin.SkinControl.SkinButton();
             this.btn_plus = new CCWin.SkinControl.SkinButton();
@@ -46,8 +48,10 @@
             this.btn_falsh = new CCWin.SkinControl.SkinButton();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
-            this.btn_d_zd = new System.Windows.Forms.RadioButton();
-            this.btn_d_bj = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.skinPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,6 +93,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btn_d_zd);
             this.panel2.Controls.Add(this.btn_d_bj);
             this.panel2.Controls.Add(this.btn_import);
@@ -101,6 +109,33 @@
             this.panel2.Size = new System.Drawing.Size(504, 69);
             this.panel2.TabIndex = 4;
             // 
+            // btn_d_zd
+            // 
+            this.btn_d_zd.AutoSize = true;
+            this.btn_d_zd.Checked = true;
+            this.btn_d_zd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_d_zd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_d_zd.Location = new System.Drawing.Point(6, 8);
+            this.btn_d_zd.Name = "btn_d_zd";
+            this.btn_d_zd.Size = new System.Drawing.Size(92, 25);
+            this.btn_d_zd.TabIndex = 13;
+            this.btn_d_zd.TabStop = true;
+            this.btn_d_zd.Text = "只读模式";
+            this.btn_d_zd.UseVisualStyleBackColor = true;
+            this.btn_d_zd.CheckedChanged += new System.EventHandler(this.btn_d_bj_CheckedChanged);
+            // 
+            // btn_d_bj
+            // 
+            this.btn_d_bj.AutoSize = true;
+            this.btn_d_bj.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_d_bj.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_d_bj.Location = new System.Drawing.Point(6, 33);
+            this.btn_d_bj.Name = "btn_d_bj";
+            this.btn_d_bj.Size = new System.Drawing.Size(92, 25);
+            this.btn_d_bj.TabIndex = 14;
+            this.btn_d_bj.Text = "编辑模式";
+            this.btn_d_bj.UseVisualStyleBackColor = true;
+            // 
             // btn_import
             // 
             this.btn_import.BackColor = System.Drawing.Color.Transparent;
@@ -111,14 +146,14 @@
             this.btn_import.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btn_import.ForeColor = System.Drawing.Color.Green;
             this.btn_import.IsDrawGlass = false;
-            this.btn_import.Location = new System.Drawing.Point(375, 18);
+            this.btn_import.Location = new System.Drawing.Point(379, 10);
             this.btn_import.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_import.MouseBack")));
             this.btn_import.Name = "btn_import";
             this.btn_import.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_import.NormlBack")));
             this.btn_import.Size = new System.Drawing.Size(35, 36);
             this.btn_import.TabIndex = 7;
             this.btn_import.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.skinToolTip1.SetToolTip(this.btn_import, "刷新列表");
+            this.skinToolTip1.SetToolTip(this.btn_import, "导出全部设备");
             this.btn_import.UseVisualStyleBackColor = false;
             this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
@@ -132,7 +167,7 @@
             this.btn_reload.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btn_reload.ForeColor = System.Drawing.Color.Green;
             this.btn_reload.IsDrawGlass = false;
-            this.btn_reload.Location = new System.Drawing.Point(293, 18);
+            this.btn_reload.Location = new System.Drawing.Point(297, 10);
             this.btn_reload.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_reload.MouseBack")));
             this.btn_reload.Name = "btn_reload";
             this.btn_reload.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_reload.NormlBack")));
@@ -153,7 +188,7 @@
             this.btn_plus.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btn_plus.ForeColor = System.Drawing.Color.Green;
             this.btn_plus.IsDrawGlass = false;
-            this.btn_plus.Location = new System.Drawing.Point(223, 18);
+            this.btn_plus.Location = new System.Drawing.Point(223, 11);
             this.btn_plus.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_plus.MouseBack")));
             this.btn_plus.Name = "btn_plus";
             this.btn_plus.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_plus.NormlBack")));
@@ -174,7 +209,7 @@
             this.btn_add.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btn_add.ForeColor = System.Drawing.Color.Green;
             this.btn_add.IsDrawGlass = false;
-            this.btn_add.Location = new System.Drawing.Point(143, 18);
+            this.btn_add.Location = new System.Drawing.Point(143, 9);
             this.btn_add.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_add.MouseBack")));
             this.btn_add.Name = "btn_add";
             this.btn_add.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_add.NormlBack")));
@@ -187,33 +222,33 @@
             // 
             // DG_List
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.DG_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.DG_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DG_List.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DG_List.BackgroundColor = System.Drawing.SystemColors.Window;
             this.DG_List.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DG_List.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.DG_List.ColumnFont = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DG_List.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DG_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG_List.ColumnSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
             this.DG_List.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_List.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_List.DefaultCellStyle = dataGridViewCellStyle3;
             this.DG_List.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DG_List.EnableHeadersVisualStyles = false;
             this.DG_List.GridColor = System.Drawing.Color.White;
@@ -226,12 +261,12 @@
             this.DG_List.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DG_List.RowHeadersVisible = false;
             this.DG_List.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.DG_List.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.DG_List.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DG_List.RowTemplate.Height = 23;
             this.DG_List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_List.Size = new System.Drawing.Size(504, 609);
@@ -299,33 +334,49 @@
             this.skinToolTip1.TipFore = System.Drawing.Color.Yellow;
             this.skinToolTip1.TitleFore = System.Drawing.Color.Yellow;
             // 
-            // btn_d_zd
+            // label1
             // 
-            this.btn_d_zd.AutoSize = true;
-            this.btn_d_zd.Checked = true;
-            this.btn_d_zd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_d_zd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_d_zd.Location = new System.Drawing.Point(6, 8);
-            this.btn_d_zd.Name = "btn_d_zd";
-            this.btn_d_zd.Size = new System.Drawing.Size(92, 25);
-            this.btn_d_zd.TabIndex = 13;
-            this.btn_d_zd.TabStop = true;
-            this.btn_d_zd.Text = "只读模式";
-            this.btn_d_zd.UseVisualStyleBackColor = true;
-            this.btn_d_zd.CheckedChanged += new System.EventHandler(this.btn_d_zd_CheckedChanged);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(142, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "添加";
             // 
-            // btn_d_bj
+            // label2
             // 
-            this.btn_d_bj.AutoSize = true;
-            this.btn_d_bj.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_d_bj.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_d_bj.Location = new System.Drawing.Point(6, 33);
-            this.btn_d_bj.Name = "btn_d_bj";
-            this.btn_d_bj.Size = new System.Drawing.Size(92, 25);
-            this.btn_d_bj.TabIndex = 14;
-            this.btn_d_bj.Text = "编辑模式";
-            this.btn_d_bj.UseVisualStyleBackColor = true;
-            this.btn_d_zd.CheckedChanged += new System.EventHandler(this.btn_d_bj_CheckedChanged);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(220, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "删除";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(296, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "刷新";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(353, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "导出全部设备";
             // 
             // MangerDevfrm
             // 
@@ -375,5 +426,9 @@
         private CCWin.SkinControl.SkinButton btn_import;
         private System.Windows.Forms.RadioButton btn_d_zd;
         private System.Windows.Forms.RadioButton btn_d_bj;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_import = new CCWin.SkinControl.SkinButton();
             this.btn_reload = new CCWin.SkinControl.SkinButton();
             this.btn_plus = new CCWin.SkinControl.SkinButton();
@@ -44,13 +44,13 @@
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_d_zd = new System.Windows.Forms.RadioButton();
+            this.btn_d_bj = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_d_zd = new System.Windows.Forms.RadioButton();
-            this.btn_d_bj = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.DG_List)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             this.btn_import.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btn_import.ForeColor = System.Drawing.Color.Green;
             this.btn_import.IsDrawGlass = false;
-            this.btn_import.Location = new System.Drawing.Point(360, 24);
+            this.btn_import.Location = new System.Drawing.Point(363, 24);
             this.btn_import.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_import.MouseBack")));
             this.btn_import.Name = "btn_import";
             this.btn_import.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_import.NormlBack")));
@@ -147,33 +147,33 @@
             // 
             // DG_List
             // 
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.DG_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.DG_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DG_List.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DG_List.BackgroundColor = System.Drawing.SystemColors.Window;
             this.DG_List.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DG_List.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.DG_List.ColumnFont = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DG_List.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DG_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG_List.ColumnSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
             this.DG_List.ColumnSelectForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG_List.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG_List.DefaultCellStyle = dataGridViewCellStyle3;
             this.DG_List.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DG_List.EnableHeadersVisualStyles = false;
             this.DG_List.GridColor = System.Drawing.Color.White;
@@ -186,12 +186,12 @@
             this.DG_List.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DG_List.RowHeadersVisible = false;
             this.DG_List.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.Control;
-            this.DG_List.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Control;
+            this.DG_List.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DG_List.RowTemplate.Height = 23;
             this.DG_List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_List.Size = new System.Drawing.Size(480, 350);
@@ -284,17 +284,45 @@
             this.panel1.Size = new System.Drawing.Size(480, 64);
             this.panel1.TabIndex = 0;
             // 
+            // btn_d_zd
+            // 
+            this.btn_d_zd.AutoSize = true;
+            this.btn_d_zd.Checked = true;
+            this.btn_d_zd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_d_zd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_d_zd.Location = new System.Drawing.Point(6, 3);
+            this.btn_d_zd.Name = "btn_d_zd";
+            this.btn_d_zd.Size = new System.Drawing.Size(92, 25);
+            this.btn_d_zd.TabIndex = 12;
+            this.btn_d_zd.TabStop = true;
+            this.btn_d_zd.Text = "只读模式";
+            this.btn_d_zd.UseVisualStyleBackColor = true;
+            this.btn_d_zd.CheckedChanged += new System.EventHandler(this.btn_d_zd_CheckedChanged);
+            // 
+            // btn_d_bj
+            // 
+            this.btn_d_bj.AutoSize = true;
+            this.btn_d_bj.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_d_bj.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_d_bj.Location = new System.Drawing.Point(6, 28);
+            this.btn_d_bj.Name = "btn_d_bj";
+            this.btn_d_bj.Size = new System.Drawing.Size(92, 25);
+            this.btn_d_bj.TabIndex = 12;
+            this.btn_d_bj.Text = "编辑模式";
+            this.btn_d_bj.UseVisualStyleBackColor = true;
+            this.btn_d_bj.CheckedChanged += new System.EventHandler(this.btn_d_bj_CheckedChanged);
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(351, 7);
+            this.label4.Location = new System.Drawing.Point(336, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 14);
+            this.label4.Size = new System.Drawing.Size(91, 14);
             this.label4.TabIndex = 11;
-            this.label4.Text = "导出列表";
+            this.label4.Text = "导出全部设备";
             // 
             // label3
             // 
@@ -341,34 +369,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(480, 54);
             this.panel2.TabIndex = 2;
-            // 
-            // btn_d_zd
-            // 
-            this.btn_d_zd.AutoSize = true;
-            this.btn_d_zd.Checked = true;
-            this.btn_d_zd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_d_zd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_d_zd.Location = new System.Drawing.Point(6, 3);
-            this.btn_d_zd.Name = "btn_d_zd";
-            this.btn_d_zd.Size = new System.Drawing.Size(92, 25);
-            this.btn_d_zd.TabIndex = 12;
-            this.btn_d_zd.TabStop = true;
-            this.btn_d_zd.Text = "只读模式";
-            this.btn_d_zd.UseVisualStyleBackColor = true;
-            this.btn_d_zd.CheckedChanged += new System.EventHandler(this.btn_d_zd_CheckedChanged);
-            // 
-            // btn_d_bj
-            // 
-            this.btn_d_bj.AutoSize = true;
-            this.btn_d_bj.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_d_bj.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_d_bj.Location = new System.Drawing.Point(6, 28);
-            this.btn_d_bj.Name = "btn_d_bj";
-            this.btn_d_bj.Size = new System.Drawing.Size(92, 25);
-            this.btn_d_bj.TabIndex = 12;
-            this.btn_d_bj.Text = "编辑模式";
-            this.btn_d_bj.UseVisualStyleBackColor = true;
-            this.btn_d_bj.CheckedChanged += new System.EventHandler(this.btn_d_bj_CheckedChanged);
             // 
             // Form2
             // 

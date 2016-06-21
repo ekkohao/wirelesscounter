@@ -58,6 +58,8 @@
             this.tsmItemDatacenter = new System.Windows.Forms.ToolStripMenuItem();
             this.tlPanel = new System.Windows.Forms.TableLayoutPanel();
             this.skinPanel2 = new CCWin.SkinControl.SkinPanel();
+            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
+            this.btn_init_all = new CCWin.SkinControl.SkinButton();
             this.skinLabel7 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel6 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
@@ -69,6 +71,7 @@
             this.btn_downRealData = new CCWin.SkinControl.SkinButton();
             this.pic_Com = new CCWin.SkinControl.SkinButton();
             this.skinPanel3 = new CCWin.SkinControl.SkinPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -79,6 +82,7 @@
             this.tsb_SysSet = new System.Windows.Forms.ToolStripButton();
             this.tsb_openfile = new System.Windows.Forms.ToolStripButton();
             this.toolButtonExcle = new System.Windows.Forms.ToolStripButton();
+            this.btn_exportDev = new System.Windows.Forms.ToolStripButton();
             this.importdevlist = new System.Windows.Forms.ToolStripButton();
             this.skinPanel = new CCWin.SkinControl.SkinPanel();
             this.tlp_2 = new System.Windows.Forms.TableLayoutPanel();
@@ -120,6 +124,7 @@
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer_start = new System.Windows.Forms.Timer(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             this.UserMenu.SuspendLayout();
             this.ChatAllDevItemMenu.SuspendLayout();
             this.tlPanel.SuspendLayout();
@@ -380,6 +385,8 @@
             // skinPanel2
             // 
             this.skinPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
+            this.skinPanel2.Controls.Add(this.skinLabel8);
+            this.skinPanel2.Controls.Add(this.btn_init_all);
             this.skinPanel2.Controls.Add(this.skinLabel7);
             this.skinPanel2.Controls.Add(this.skinLabel6);
             this.skinPanel2.Controls.Add(this.skinLabel5);
@@ -397,6 +404,30 @@
             this.skinPanel2.Name = "skinPanel2";
             this.skinPanel2.NormlBack = null;
             this.skinToolTip1.SetToolTip(this.skinPanel2, resources.GetString("skinPanel2.ToolTip"));
+            // 
+            // skinLabel8
+            // 
+            this.skinLabel8.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
+            resources.ApplyResources(this.skinLabel8, "skinLabel8");
+            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel8.BorderColor = System.Drawing.Color.White;
+            this.skinLabel8.ForeColor = System.Drawing.Color.White;
+            this.skinLabel8.Name = "skinLabel8";
+            // 
+            // btn_init_all
+            // 
+            resources.ApplyResources(this.btn_init_all, "btn_init_all");
+            this.btn_init_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
+            this.btn_init_all.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_init_all.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btn_init_all.DownBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.DownBack")));
+            this.btn_init_all.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btn_init_all.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.MouseBack")));
+            this.btn_init_all.Name = "btn_init_all";
+            this.btn_init_all.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.NormlBack")));
+            this.skinToolTip1.SetToolTip(this.btn_init_all, resources.GetString("btn_init_all.ToolTip"));
+            this.btn_init_all.UseVisualStyleBackColor = false;
+            this.btn_init_all.Click += new System.EventHandler(this.btn_init_all_Click);
             // 
             // skinLabel7
             // 
@@ -523,6 +554,7 @@
             // skinPanel3
             // 
             this.skinPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.skinPanel3.Controls.Add(this.label1);
             this.skinPanel3.Controls.Add(this.label5);
             this.skinPanel3.Controls.Add(this.label4);
             this.skinPanel3.Controls.Add(this.label3);
@@ -536,6 +568,12 @@
             this.skinPanel3.MouseBack = null;
             this.skinPanel3.Name = "skinPanel3";
             this.skinPanel3.NormlBack = null;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
             // 
             // label5
             // 
@@ -625,6 +663,7 @@
             this.tsb_SysSet,
             this.tsb_openfile,
             this.toolButtonExcle,
+            this.btn_exportDev,
             this.importdevlist});
             this.SkToolCdTwo.Name = "SkToolCdTwo";
             this.SkToolCdTwo.RadiusStyle = CCWin.SkinClass.RoundStyle.All;
@@ -647,7 +686,7 @@
             // 
             resources.ApplyResources(this.tsb_openfile, "tsb_openfile");
             this.tsb_openfile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_openfile.Margin = new System.Windows.Forms.Padding(30, 1, 0, 2);
+            this.tsb_openfile.Margin = new System.Windows.Forms.Padding(40, 1, 0, 2);
             this.tsb_openfile.Name = "tsb_openfile";
             this.tsb_openfile.Click += new System.EventHandler(this.tsb_openfile_Click);
             // 
@@ -659,6 +698,15 @@
             this.toolButtonExcle.Margin = new System.Windows.Forms.Padding(40, 1, 0, 2);
             this.toolButtonExcle.Name = "toolButtonExcle";
             this.toolButtonExcle.Click += new System.EventHandler(this.toolButtonExcle_Click);
+            // 
+            // btn_exportDev
+            // 
+            resources.ApplyResources(this.btn_exportDev, "btn_exportDev");
+            this.btn_exportDev.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_exportDev.ForeColor = System.Drawing.Color.White;
+            this.btn_exportDev.Margin = new System.Windows.Forms.Padding(40, 1, 0, 2);
+            this.btn_exportDev.Name = "btn_exportDev";
+            this.btn_exportDev.Click += new System.EventHandler(this.btn_exportDev_Click);
             // 
             // importdevlist
             // 
@@ -1073,6 +1121,12 @@
             this.timer_start.Interval = 1000;
             this.timer_start.Tick += new System.EventHandler(this.timer_start_Tick);
             // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.ForeColor = System.Drawing.Color.Honeydew;
+            this.label6.Name = "label6";
+            // 
             // Mainfrm
             // 
             resources.ApplyResources(this, "$this");
@@ -1087,6 +1141,7 @@
             this.CloseDownBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseDownBack")));
             this.CloseMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseMouseBack")));
             this.CloseNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseNormlBack")));
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.tlPanel);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::wirelesssacler.Properties.Settings.Default, "main_name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DataBindings.Add(new System.Windows.Forms.Binding("WindowState", global::wirelesssacler.Properties.Settings.Default, "Startstate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -1138,6 +1193,7 @@
             this.MangerMenu.ResumeLayout(false);
             this.SystemSetMenu.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1150,7 +1206,6 @@
         private CCWin.SkinControl.SkinToolStrip SkToolCdTwo;
         private System.Windows.Forms.ToolStripButton tsb_SysSet;
         private System.Windows.Forms.ToolStripButton tsb_openfile;
-        private System.Windows.Forms.ToolStripButton importdevlist;
         private CCWin.SkinControl.SkinPanel skinPanel4;
         private CCWin.SkinControl.SkinButton btnSearch;
         private CCWin.SkinControl.SkinAlphaWaterTextBox txtSearch;
@@ -1232,6 +1287,12 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer_start;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripButton importdevlist;
+        private System.Windows.Forms.ToolStripButton btn_exportDev;
+        private System.Windows.Forms.Label label1;
+        private CCWin.SkinControl.SkinLabel skinLabel8;
+        private CCWin.SkinControl.SkinButton btn_init_all;
+        private System.Windows.Forms.Label label6;
 
     }
 }

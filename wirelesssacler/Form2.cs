@@ -251,6 +251,8 @@ namespace wirelesssacler
 
         private void btn_import_Click(object sender, EventArgs e)
         {
+            //ExportDevExclefrm f = new ExportDevExclefrm();
+            //f.Show();
             SqlHelp outsql = new SqlHelp();
             DataTable ot = outsql.ReturnTable("select * from `Dev_List`");
             string filename = "导出设备清单-" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xls";

@@ -76,8 +76,9 @@
     <Reference Include="CSkin">
       <HintPath>D:\Personal\桌面\CSkin 15.3.10.1\CSkin 2.0\CSkin.dll</HintPath>
     </Reference>
-    <Reference Include="DMSkin">
-      <HintPath>..\..\..\Downloads\DMSkin-B306\DMSkin.dll</HintPath>
+    <Reference Include="DMSkin, Version=0.3.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DMSkin.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -101,6 +102,12 @@
     </Compile>
     <Compile Include="AddDevfrm.Designer.cs">
       <DependentUpon>AddDevfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitAllDevInfofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitAllDevInfofrm.Designer.cs">
+      <DependentUpon>InitAllDevInfofrm.cs</DependentUpon>
     </Compile>
     <Compile Include="CallCurrentFrom.cs">
       <SubType>Form</SubType>
@@ -154,6 +161,18 @@
     <Compile Include="DbHelper.cs" />
     <Compile Include="Delay.cs" />
     <Compile Include="DeviceStruct.cs" />
+    <Compile Include="ExportDevExclefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportDevExclefrm.Designer.cs">
+      <DependentUpon>ExportDevExclefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitAllDevfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitAllDevfrm.Designer.cs">
+      <DependentUpon>InitAllDevfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExportExclefrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +290,9 @@
     <EmbeddedResource Include="AddDevfrm.resx">
       <DependentUpon>AddDevfrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InitAllDevInfofrm.resx">
+      <DependentUpon>InitAllDevInfofrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CallCurrentFrom.resx">
       <DependentUpon>CallCurrentFrom.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DayForm.resx">
       <DependentUpon>DayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportDevExclefrm.resx">
+      <DependentUpon>ExportDevExclefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitAllDevfrm.resx">
+      <DependentUpon>InitAllDevfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExportExclefrm.resx">
       <DependentUpon>ExportExclefrm.cs</DependentUpon>

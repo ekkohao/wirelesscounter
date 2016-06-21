@@ -44,7 +44,7 @@ namespace wirelesssacler
                             string name = dt.Rows[i]["Dev_ID"].ToString();
                             string add = dt.Rows[i]["Dev_Addr"].ToString();
                             string ph = dt.Rows[i]["Dev_Phase"].ToString();
-                            string names = "杆塔地址："+add + " 序列号 <" + name + ">" + " 监测相位为：" + ph;
+                            string names = "设备序列号[" + name + "] 杆塔地址[" + add + "] 监测相位[" + ph + "]";
                             
                             ListBox_dev.Items.Add(names);
                         }
@@ -83,8 +83,8 @@ namespace wirelesssacler
                 {
                   
                     string onum = ListBox_dev.Items[j].ToString();///);
-                    int i = onum.IndexOf("<") + 1;
-                    int k = onum.IndexOf(">");
+                    int i = onum.IndexOf("[") + 1;
+                    int k = onum.IndexOf("]");
                     string nnum = onum.Substring(i, k - i);
                     mylist.AddLast(nnum);
 
@@ -338,7 +338,7 @@ namespace wirelesssacler
                     cellSheet.Cells[0, 1].PutValue("设备序列号");
                     cellSheet.Cells[0, 2].PutValue("设备安装地址");
                     cellSheet.Cells[0, 3].PutValue("监测相位(A/B/C)");
-                    cellSheet.Cells[0, 4].PutValue("动作次数");
+                    cellSheet.Cells[0, 4].PutValue("当前记录条数");
                     cellSheet.Cells[0, 5].PutValue("全电流(uA)");
                     cellSheet.Cells[0, 6].PutValue("存储时间");
                     cellSheet.Cells[0, 7].PutValue("历史记录总条数");

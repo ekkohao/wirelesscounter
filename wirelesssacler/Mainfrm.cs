@@ -1005,7 +1005,7 @@ namespace wirelesssacler
        //1个初始化，2个召测数据，实时数据和历史数据(分组和单个和多个)，7个,外加动作记录数据查询
 
         //设备初始化函数，若收到数据，请置Initdevfrom.Isback=true;
-        private BackState InitDev()
+        public BackState InitDev()
         {
             BackState init = BackState.No;
             init= WireCom.InitDev(CurrentNumber);
@@ -1618,9 +1618,23 @@ namespace wirelesssacler
             this.ShowInTaskbar = true;
         }
 
+        private void btn_exportDev_Click(object sender, EventArgs e)
+        {
+            ExportDevExclefrm f = new ExportDevExclefrm();
+            f.Show();
+        }
 
+        private void btn_init_all_Click(object sender, EventArgs e)
+        {
+            if (WireCom == null || WireCom.getIsOpen() == false)
+            {
+                MessageBox.Show("通信端口没有打开，请打开通信端口!");
+                return;
+            }
+            InitAllDevfrm f = new InitAllDevfrm();
 
-    
-      
+            f.Show();
+        }
+
     }
 }

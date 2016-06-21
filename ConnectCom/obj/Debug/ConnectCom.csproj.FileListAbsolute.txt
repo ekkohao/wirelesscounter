@@ -1,0 +1,5 @@
+E:\Project\wirelesscounter\ConnectCom\bin\Debug\ConnectCom.dll
+E:\Project\wirelesscounter\ConnectCom\bin\Debug\ConnectCom.pdb
+E:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.csprojResolveAssemblyReference.cache
+E:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.dll
+E:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.pdb

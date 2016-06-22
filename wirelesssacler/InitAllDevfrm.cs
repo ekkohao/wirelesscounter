@@ -15,16 +15,32 @@ namespace wirelesssacler
 {
     public partial class InitAllDevfrm : Skin_DevExpress
     {
-        public InitAllDevfrm()
+        private UsewireCom WireCom;
+        private string findSql;
+        private string findGroup;
+        public InitAllDevfrm(UsewireCom WireCom)
         {
             InitializeComponent();
+            this.WireCom = WireCom;
+            findGroup="";
+        }
+        public InitAllDevfrm(UsewireCom WireCom,string iGroup)
+        {
+            InitializeComponent();
+            this.WireCom = WireCom;
+            findGroup=iGroup;
         }
         private SqlHelp sql = new SqlHelp();
         private LinkedList<string> mylist;
 
         private void InitAllDevfrm_Load(object sender, EventArgs e)
         {
-            DataTable dt = sql.ReturnTable("select * from Dev_List");
+            findSql="select * from Dev_List";
+            if (findGroup != "")
+            {
+                findSql = findSql + " where Dev_Addr = '"+findGroup+"'";
+            }
+            DataTable dt = sql.ReturnTable(findSql);
             if (dt.Rows.Count == 0)
             {               
                 MessageBox.Show("暂无设备，请导入设备清单！");
@@ -90,7 +106,7 @@ namespace wirelesssacler
                 MessageBox.Show("请选择至少一个设备");
                 return;
             }
-            InitAllDevInfofrm f = new InitAllDevInfofrm(mylist);
+            InitAllDevInfofrm f = new InitAllDevInfofrm(mylist,WireCom);
             f.Show();
 
         }

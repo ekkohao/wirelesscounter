@@ -101,6 +101,7 @@
             this.DownRecentHistroy = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.QueryRecordMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.initGroupDev = new System.Windows.Forms.ToolStripMenuItem();
             this.datacenter = new System.Windows.Forms.TabPage();
             this.devmanger = new System.Windows.Forms.TabPage();
             this.skinPanel4 = new CCWin.SkinControl.SkinPanel();
@@ -850,7 +851,8 @@
             this.toolStripSeparator9,
             this.DownRecentHistroy,
             this.toolStripSeparator7,
-            this.QueryRecordMenu});
+            this.QueryRecordMenu,
+            this.initGroupDev});
             this.ChatGropuMenu.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.ChatGropuMenu.Name = "MenuState";
             this.ChatGropuMenu.RadiusStyle = CCWin.SkinClass.RoundStyle.None;
@@ -899,6 +901,12 @@
             this.QueryRecordMenu.Name = "QueryRecordMenu";
             resources.ApplyResources(this.QueryRecordMenu, "QueryRecordMenu");
             this.QueryRecordMenu.Click += new System.EventHandler(this.QueryRecordMenu_Click);
+            // 
+            // initGroupDev
+            // 
+            this.initGroupDev.Name = "initGroupDev";
+            resources.ApplyResources(this.initGroupDev, "initGroupDev");
+            this.initGroupDev.Click += new System.EventHandler(this.initGroupDev_Click);
             // 
             // datacenter
             // 
@@ -1293,6 +1301,7 @@
         private CCWin.SkinControl.SkinLabel skinLabel8;
         private CCWin.SkinControl.SkinButton btn_init_all;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripMenuItem initGroupDev;
 
     }
 }

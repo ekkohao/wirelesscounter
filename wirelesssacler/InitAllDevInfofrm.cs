@@ -15,17 +15,17 @@ namespace wirelesssacler
 {
     public partial class InitAllDevInfofrm : Skin_DevExpress
     {
+        private UsewireCom WireCom;
         public static BackState Isback=BackState.No;
-        public delegate BackState InitDevice();
-        public event InitDevice InitDev;
         public static Thread CheckIsback ;
         private static string dev_id;
         private static SqlHelp sql = new SqlHelp();
         LinkedList<string> plist;
-        public InitAllDevInfofrm(LinkedList<string> mylist)
+        public InitAllDevInfofrm(LinkedList<string> mylist,UsewireCom WireCom)
         {
             InitializeComponent();
             plist = mylist;
+            this.WireCom=WireCom;
             RichTextBox.Text="";
            
         }
@@ -35,7 +35,7 @@ namespace wirelesssacler
         }
         private void InitAllDev(LinkedList<string> mylist)
         {
-            Isback = BackState.Yes;
+            Isback = BackState.No;
             Indicator.AutoStart = true;
             int i;
             LinkedListNode<string> _p=mylist.First;
@@ -43,17 +43,13 @@ namespace wirelesssacler
             {
                 dev_id = _p.Value;
                 RichTextBox.Text += "---------------------------------------------\r\n";
-                RichTextBox.Text += "设备[" + _p.Value + "]开始初始化...\r\n";         
+                RichTextBox.Text += "设备[" + dev_id + "]开始初始化...\r\n";         
                 //调用回调函数发送初始化信息，并返回数据
                 CheckIsback = new Thread(CheckBack);
                 CheckIsback.IsBackground = true;
                 CheckIsback.Start();
                 Delaytime.Delay(500);
-                if (InitDev != null)
-                {
-                    Isback = InitDev(); 
-                }
-               
+                Isback=WireCom.InitDev(dev_id);        
             }
             Indicator.AutoStart = false;
             
@@ -100,12 +96,12 @@ namespace wirelesssacler
                    
                     if(Isback==BackState.No)
                     {
-                        //this.Invoke((EventHandler)delegate
-                        //{
+                        this.Invoke((EventHandler)delegate
+                        {
                             //  this.btn_Init.Text = "重试"+"("+ Cout.ToString()+")";
-                        //    RichTextBox.Text += "初始化过程中...";
-                       // }); 
-                        Delaytime.Delay(1000);
+                            RichTextBox.Text += "初始化过程中,请稍后...\r\n";
+                            Delaytime.Delay(2000);
+                        });
                     }
                     else
                     {

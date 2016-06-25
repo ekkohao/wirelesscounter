@@ -73,7 +73,7 @@ namespace wirelesssacler
         /// 间隔毫秒级别
         /// </summary>
         public int interval_T = 6000;
-        public int InterReal = 5000;
+        public int InterReal = 7000;
 
         #region 返回的报文
         private byte[] Protocol_real;
@@ -1208,7 +1208,79 @@ namespace wirelesssacler
 
             return isok;
         }
+        public bool Mywrite(string add, out string msg,DateTime mt)
+        {
+            msg = string.Empty;
+            byte[] addr = Sequence.SeqStrToByte(add, ref msg);
+            if (addr == null) return false;
+            bool isok = false;
+            byte[] sendmt;
+            int[] sendd = new int[6];
+            sendd[0] = mt.Year - 2000;
+            sendd[1] = mt.Month;
+            sendd[2] = mt.Day;
+            sendd[3] = mt.Hour;
+            sendd[4] = mt.Minute;
+            sendd[5] = mt.Second;
+            //依次写入时间
+            for (int i = 0; i < 6; i++)//循环写入时间的6个值
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    if (Iswriteok == false)
+                    {
+                        if (j >= 1)
+                        {
+                            isok = false;
 
+                        }
+                        else
+                        {
+                            sendmt = wireProtocol.WriteMsg(addr, i, sendd[i]);
+                            SendData(sendmt, 0, sendmt.Length);
+                            Delaytime.Delay(interval_T);
+                        }
+                    }
+                    else
+                    {
+                        Iswriteok = false;
+                        isok = true;
+                        break;
+                    }
+                }
+                if (isok == false)
+                {
+                    if (i == 0)
+                    {
+                        msg = "写入设备（年份）时间错误";
+                    }
+                    else if (i == 1)
+                    {
+                        msg = "写入设备（月份）时间错误";
+                    }
+                    else if (i == 2)
+                    {
+                        msg = "写入设备（日份）时间错误";
+                    }
+                    else if (i == 3)
+                    {
+                        msg = "写入设备（小时）时间错误";
+                    }
+                    else if (i == 4)
+                    {
+                        msg = "写入设备（分钟）时间错误";
+                    }
+                    else if (i == 5)
+                    {
+                        msg = "写入设备（秒）时间错误";
+                    }
+
+                    break;
+                }
+            }
+
+            return isok;
+        }
         internal BackState InitDev(string CurrentNumber)
         {
             BackState ok = BackState.No;

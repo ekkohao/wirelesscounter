@@ -20,6 +20,8 @@ namespace wirelesssacler
         public static Thread CheckIsback ;
         private static string dev_id;
         private static SqlHelp sql = new SqlHelp();
+        public bool flag = true;
+        private bool isnotend = true;
         LinkedList<string> plist;
         public InitAllDevInfofrm(LinkedList<string> mylist,UsewireCom WireCom)
         {
@@ -37,11 +39,14 @@ namespace wirelesssacler
         {
             Isback = BackState.No;
             Indicator.AutoStart = true;
+            l_msg.Text = "共初始化" + mylist.Count.ToString() + "个设备";
             int i;
             LinkedListNode<string> _p=mylist.First;
-            for(i=0;i<mylist.Count;i++,_p=_p.Next)
+            for(i=0;i<mylist.Count&&flag;i++,_p=_p.Next)
             {
+                isnotend = true;
                 dev_id = _p.Value;
+                l_msg.Text = "共初始化" + mylist.Count + "个设备,当前第"+(i+1).ToString()+"个";
                 RichTextBox.Text += "---------------------------------------------\r\n";
                 RichTextBox.Text += "设备[" + dev_id + "]开始初始化...\r\n";         
                 //调用回调函数发送初始化信息，并返回数据
@@ -49,15 +54,18 @@ namespace wirelesssacler
                 CheckIsback.IsBackground = true;
                 CheckIsback.Start();
                 Delaytime.Delay(500);
-                Isback=WireCom.InitDev(dev_id);        
+                Isback=WireCom.InitDev(dev_id);
+                while (isnotend)
+                    Delaytime.Delay(1000);
             }
+            l_msg.Text = mylist.Count.ToString() + "个设备已完成初始化";
             Indicator.AutoStart = false;
             
         }
         private  void CheckBack(object obj)
         {
             //int Cout = 0;
-            while(true)
+            while(flag)
             {
               
                 
@@ -85,6 +93,7 @@ namespace wirelesssacler
                                  RichTextBox.Text += "###初始化失败###\r\n"; 
                              }
                              RichTextBox.Text += "初始化成功！\r\n";
+                             Isback = BackState.No;
                              RichTextBox.Focus();
                              RichTextBox.Select(RichTextBox.TextLength, 0);
                              RichTextBox.ScrollToCaret(); 
@@ -92,15 +101,16 @@ namespace wirelesssacler
                     break;
                 }
                 else
-                {
-                   
+                {                  
                     if(Isback==BackState.No)
                     {
                         this.Invoke((EventHandler)delegate
                         {
                             //  this.btn_Init.Text = "重试"+"("+ Cout.ToString()+")";
-                            RichTextBox.Text += "初始化过程中,请稍后...\r\n";
-                            Delaytime.Delay(2000);
+                            RichTextBox.Text = RichTextBox.Text.Substring(0, RichTextBox.Text.Length - 1) + "初始化过程中,请稍后...\n";
+                            Delaytime.Delay(1000);
+                            RichTextBox.Text = RichTextBox.Text.Substring(0, RichTextBox.Text.Length - "初始化过程中,请稍后...\n".Length) + "\n"; 
+                            Delaytime.Delay(1000);
                         });
                     }
                     else
@@ -128,18 +138,27 @@ namespace wirelesssacler
                 SqlHelp sql = new SqlHelp();
                 sql.Insert(de);
                 Thread.Sleep(100);
-                this.DialogResult = DialogResult.OK;
             }
+            isnotend = false;
         }
 
         private void InitAllDevInfofrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (btn_Init.Text.Length > 2)
-            //{
-            //    e.Cancel = true;
-            //    MessageBox.Show("正在通信中，无法关闭......");
-            //}
+            if (Indicator.AutoStart)
+            {
+                MessageBox.Show("正在通信中，无法关闭", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                e.Cancel = true;
+                return;
+            }
+            isnotend = false;
             this.DialogResult = DialogResult.Yes;
+        }
+
+        private void RichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            RichTextBox.Focus();
+            RichTextBox.Select(RichTextBox.TextLength, 0);
+            RichTextBox.ScrollToCaret();
         }
 
     }

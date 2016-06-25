@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>wirelesssacler</RootNamespace>
     <AssemblyName>wirelesssacler</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -102,6 +102,12 @@
     </Compile>
     <Compile Include="AddDevfrm.Designer.cs">
       <DependentUpon>AddDevfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitAllDevTimefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitAllDevTimefrm.Designer.cs">
+      <DependentUpon>InitAllDevTimefrm.cs</DependentUpon>
     </Compile>
     <Compile Include="InitAllDevInfofrm.cs">
       <SubType>Form</SubType>
@@ -289,6 +295,9 @@
     <Compile Include="UsewireCom.cs" />
     <EmbeddedResource Include="AddDevfrm.resx">
       <DependentUpon>AddDevfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitAllDevTimefrm.resx">
+      <DependentUpon>InitAllDevTimefrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitAllDevInfofrm.resx">
       <DependentUpon>InitAllDevInfofrm.cs</DependentUpon>

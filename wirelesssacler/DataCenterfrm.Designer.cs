@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            CCWin.SkinControl.Animation animation2 = new CCWin.SkinControl.Animation();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,22 +46,18 @@
             this.TabRealAndHistroy = new CCWin.SkinControl.SkinTabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.RealDataGridView = new CCWin.SkinControl.SkinDataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.TabHistroy = new CCWin.SkinControl.SkinTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.MaDataGridView = new CCWin.SkinControl.SkinDataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.LightDataGridView = new CCWin.SkinControl.SkinDataGridView();
+            this.historyshow = new System.Windows.Forms.TabPage();
+            this.historyPage = new CCWin.SkinControl.SkinDataGridView();
+            this.actionshow = new System.Windows.Forms.TabPage();
+            this.actionPage = new CCWin.SkinControl.SkinDataGridView();
             this.skinPanel.SuspendLayout();
             this.TabRealAndHistroy.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RealDataGridView)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            this.TabHistroy.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaDataGridView)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LightDataGridView)).BeginInit();
+            this.historyshow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.historyPage)).BeginInit();
+            this.actionshow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.actionPage)).BeginInit();
             this.SuspendLayout();
             // 
             // skinPanel
@@ -100,7 +95,8 @@
             this.TabRealAndHistroy.AnimatorType = CCWin.SkinControl.AnimationType.Custom;
             this.TabRealAndHistroy.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.TabRealAndHistroy.Controls.Add(this.tabPage3);
-            this.TabRealAndHistroy.Controls.Add(this.tabPage4);
+            this.TabRealAndHistroy.Controls.Add(this.historyshow);
+            this.TabRealAndHistroy.Controls.Add(this.actionshow);
             this.TabRealAndHistroy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabRealAndHistroy.HeadBack = null;
             this.TabRealAndHistroy.ImgTxtOffset = new System.Drawing.Point(0, 0);
@@ -187,98 +183,42 @@
             this.RealDataGridView.TitleBackColorBegin = System.Drawing.Color.White;
             this.RealDataGridView.TitleBackColorEnd = System.Drawing.Color.White;
             // 
-            // tabPage4
+            // historyshow
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(100)))));
-            this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage4.Controls.Add(this.TabHistroy);
-            this.tabPage4.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage4.ForeColor = System.Drawing.Color.White;
-            this.tabPage4.Location = new System.Drawing.Point(0, 40);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(510, 700);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "历史数据记录";
+            this.historyshow.BackColor = System.Drawing.Color.Transparent;
+            this.historyshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.historyshow.Controls.Add(this.historyPage);
+            this.historyshow.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.historyshow.ForeColor = System.Drawing.Color.White;
+            this.historyshow.Location = new System.Drawing.Point(0, 40);
+            this.historyshow.Name = "historyshow";
+            this.historyshow.Padding = new System.Windows.Forms.Padding(3);
+            this.historyshow.Size = new System.Drawing.Size(510, 700);
+            this.historyshow.TabIndex = 1;
+            this.historyshow.Text = "历史数据记录";
+            this.historyshow.UseVisualStyleBackColor = true;
             // 
-            // TabHistroy
-            // 
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.TabHistroy.Animation = animation2;
-            this.TabHistroy.AnimatorType = CCWin.SkinControl.AnimationType.Custom;
-            this.TabHistroy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
-            this.TabHistroy.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
-            this.TabHistroy.Controls.Add(this.tabPage1);
-            this.TabHistroy.Controls.Add(this.tabPage2);
-            this.TabHistroy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabHistroy.HeadBack = null;
-            this.TabHistroy.ImgTxtOffset = new System.Drawing.Point(0, 0);
-            this.TabHistroy.ItemSize = new System.Drawing.Size(80, 30);
-            this.TabHistroy.Location = new System.Drawing.Point(3, 3);
-            this.TabHistroy.Multiline = true;
-            this.TabHistroy.Name = "TabHistroy";
-            this.TabHistroy.PageArrowDown = ((System.Drawing.Image)(resources.GetObject("TabHistroy.PageArrowDown")));
-            this.TabHistroy.PageArrowHover = ((System.Drawing.Image)(resources.GetObject("TabHistroy.PageArrowHover")));
-            this.TabHistroy.PageCloseHover = ((System.Drawing.Image)(resources.GetObject("TabHistroy.PageCloseHover")));
-            this.TabHistroy.PageCloseNormal = ((System.Drawing.Image)(resources.GetObject("TabHistroy.PageCloseNormal")));
-            this.TabHistroy.PageDown = ((System.Drawing.Image)(resources.GetObject("TabHistroy.PageDown")));
-            this.TabHistroy.PageHover = ((System.Drawing.Image)(resources.GetObject("TabHistroy.PageHover")));
-            this.TabHistroy.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
-            this.TabHistroy.PageNorml = null;
-            this.TabHistroy.SelectedIndex = 0;
-            this.TabHistroy.Size = new System.Drawing.Size(504, 694);
-            this.TabHistroy.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.TabHistroy.TabIndex = 0;
-            this.TabHistroy.SelectedIndexChanged += new System.EventHandler(this.TabHistroy_SelectedIndexChanged);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.Controls.Add(this.MaDataGridView);
-            this.tabPage1.ForeColor = System.Drawing.Color.White;
-            this.tabPage1.Location = new System.Drawing.Point(0, 30);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(504, 664);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "历史记录";
-            // 
-            // MaDataGridView
+            // historyPage
             // 
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.MaDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.MaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.MaDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.MaDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.MaDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.MaDataGridView.ColumnFont = null;
-            this.MaDataGridView.ColumnForeColor = System.Drawing.Color.Black;
-            this.MaDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.historyPage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.historyPage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.historyPage.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.historyPage.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.historyPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.historyPage.ColumnFont = null;
+            this.historyPage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.MaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MaDataGridView.ColumnSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
-            this.MaDataGridView.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.historyPage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.historyPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.historyPage.ColumnSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
+            this.historyPage.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -286,93 +226,96 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MaDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
-            this.MaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MaDataGridView.EnableHeadersVisualStyles = false;
-            this.MaDataGridView.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.MaDataGridView.HeadFont = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MaDataGridView.HeadForeColor = System.Drawing.Color.Black;
-            this.MaDataGridView.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.MaDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.MaDataGridView.Name = "MaDataGridView";
-            this.MaDataGridView.ReadOnly = true;
-            this.MaDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.MaDataGridView.RowHeadersVisible = false;
-            this.MaDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.historyPage.DefaultCellStyle = dataGridViewCellStyle7;
+            this.historyPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.historyPage.EnableHeadersVisualStyles = false;
+            this.historyPage.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.historyPage.HeadFont = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.historyPage.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.historyPage.Location = new System.Drawing.Point(3, 3);
+            this.historyPage.Name = "historyPage";
+            this.historyPage.ReadOnly = true;
+            this.historyPage.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.historyPage.RowHeadersVisible = false;
+            this.historyPage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.MaDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.MaDataGridView.RowTemplate.Height = 23;
-            this.MaDataGridView.Size = new System.Drawing.Size(498, 658);
-            this.MaDataGridView.TabIndex = 0;
-            this.MaDataGridView.TitleBack = null;
-            this.MaDataGridView.TitleBackColorBegin = System.Drawing.Color.White;
-            this.MaDataGridView.TitleBackColorEnd = System.Drawing.Color.White;
+            this.historyPage.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.historyPage.RowTemplate.Height = 23;
+            this.historyPage.Size = new System.Drawing.Size(504, 694);
+            this.historyPage.TabIndex = 1;
+            this.historyPage.TitleBack = null;
+            this.historyPage.TitleBackColorBegin = System.Drawing.Color.White;
+            this.historyPage.TitleBackColorEnd = System.Drawing.Color.White;
             // 
-            // tabPage2
+            // actionshow
             // 
-            this.tabPage2.Controls.Add(this.LightDataGridView);
-            this.tabPage2.ForeColor = System.Drawing.Color.White;
-            this.tabPage2.Location = new System.Drawing.Point(0, 30);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(504, 664);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "动作记录";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.actionshow.BackColor = System.Drawing.Color.Transparent;
+            this.actionshow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.actionshow.Controls.Add(this.actionPage);
+            this.actionshow.Font = new System.Drawing.Font("华文宋体", 14.25F);
+            this.actionshow.ForeColor = System.Drawing.Color.White;
+            this.actionshow.Location = new System.Drawing.Point(0, 40);
+            this.actionshow.Name = "actionshow";
+            this.actionshow.Padding = new System.Windows.Forms.Padding(3);
+            this.actionshow.Size = new System.Drawing.Size(510, 700);
+            this.actionshow.TabIndex = 2;
+            this.actionshow.Text = "动作数据记录";
+            this.actionshow.UseVisualStyleBackColor = true;
             // 
-            // LightDataGridView
+            // actionPage
             // 
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.LightDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.LightDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.LightDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.LightDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.LightDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LightDataGridView.ColumnFont = null;
-            this.LightDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.actionPage.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.actionPage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.actionPage.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.actionPage.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.actionPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.actionPage.ColumnFont = null;
+            this.actionPage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("华文宋体", 14.25F);
             dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LightDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.LightDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.LightDataGridView.ColumnSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
-            this.LightDataGridView.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.actionPage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.actionPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.actionPage.ColumnSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
+            this.actionPage.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("华文宋体", 14.25F);
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LightDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
-            this.LightDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LightDataGridView.EnableHeadersVisualStyles = false;
-            this.LightDataGridView.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LightDataGridView.HeadFont = new System.Drawing.Font("华文宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LightDataGridView.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.LightDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.LightDataGridView.Name = "LightDataGridView";
-            this.LightDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.LightDataGridView.RowHeadersVisible = false;
-            this.LightDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.actionPage.DefaultCellStyle = dataGridViewCellStyle11;
+            this.actionPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionPage.EnableHeadersVisualStyles = false;
+            this.actionPage.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.actionPage.HeadFont = new System.Drawing.Font("华文宋体", 14.25F);
+            this.actionPage.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.actionPage.Location = new System.Drawing.Point(3, 3);
+            this.actionPage.Name = "actionPage";
+            this.actionPage.ReadOnly = true;
+            this.actionPage.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.actionPage.RowHeadersVisible = false;
+            this.actionPage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(176)))), ((int)(((byte)(104)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.LightDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.LightDataGridView.RowTemplate.Height = 23;
-            this.LightDataGridView.Size = new System.Drawing.Size(498, 658);
-            this.LightDataGridView.TabIndex = 1;
-            this.LightDataGridView.TitleBack = null;
-            this.LightDataGridView.TitleBackColorBegin = System.Drawing.Color.White;
-            this.LightDataGridView.TitleBackColorEnd = System.Drawing.Color.White;
+            this.actionPage.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.actionPage.RowTemplate.Height = 23;
+            this.actionPage.Size = new System.Drawing.Size(504, 694);
+            this.actionPage.TabIndex = 1;
+            this.actionPage.TitleBack = null;
+            this.actionPage.TitleBackColorBegin = System.Drawing.Color.White;
+            this.actionPage.TitleBackColorEnd = System.Drawing.Color.White;
             // 
             // DataCenterfrm
             // 
@@ -397,12 +340,10 @@
             this.TabRealAndHistroy.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RealDataGridView)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.TabHistroy.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MaDataGridView)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LightDataGridView)).EndInit();
+            this.historyshow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.historyPage)).EndInit();
+            this.actionshow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.actionPage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,12 +353,10 @@
         private CCWin.SkinControl.SkinPanel skinPanel;
         private CCWin.SkinControl.SkinTabControl TabRealAndHistroy;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage historyshow;
+        private System.Windows.Forms.TabPage actionshow;
         private CCWin.SkinControl.SkinDataGridView RealDataGridView;
-        private System.Windows.Forms.TabPage tabPage4;
-        private CCWin.SkinControl.SkinTabControl TabHistroy;
-        private System.Windows.Forms.TabPage tabPage1;
-        private CCWin.SkinControl.SkinDataGridView MaDataGridView;
-        private System.Windows.Forms.TabPage tabPage2;
-        private CCWin.SkinControl.SkinDataGridView LightDataGridView;
+        private CCWin.SkinControl.SkinDataGridView historyPage;
+        private CCWin.SkinControl.SkinDataGridView actionPage;
     }
 }

@@ -220,12 +220,12 @@ namespace wirelesssacler
                                 cellSheet.Cells[rowIndex, 6].PutValue(ot.Rows[i][6]);
                                 cellSheet.Cells[rowIndex, 7].PutValue(ot.Rows[i][8]);
                               //  cellSheet.Cells[rowIndex, 8].PutValue(ot.Rows[i][8]);
-                               
+                                rowIndex++;
                                 break;
                             }
                             _p = _p.Next;
                         }
-                        rowIndex++;
+
                     }
                 }
 
@@ -293,10 +293,11 @@ namespace wirelesssacler
                                 cellSheet.Cells[rowIndex, 5].PutValue(ot.Rows[i][5]);
 
                                 break;
+                                rowIndex++;
                             }
                             _p = _p.Next;
                         }
-                        rowIndex++;
+ 
                     }
                 }
 
@@ -338,11 +339,11 @@ namespace wirelesssacler
                     cellSheet.Cells[0, 1].PutValue("设备序列号");
                     cellSheet.Cells[0, 2].PutValue("设备安装地址");
                     cellSheet.Cells[0, 3].PutValue("监测相位(A/B/C)");
-                    cellSheet.Cells[0, 4].PutValue("当前记录条数");
-                    cellSheet.Cells[0, 5].PutValue("全电流(uA)");
-                    cellSheet.Cells[0, 6].PutValue("存储时间");
-                    cellSheet.Cells[0, 7].PutValue("历史记录总条数");
-                    cellSheet.Cells[0, 8].PutValue("下载时间");
+                    //cellSheet.Cells[0, 4].PutValue("当前记录条数");
+                    cellSheet.Cells[0, 4].PutValue("全电流(uA)");
+                    cellSheet.Cells[0, 5].PutValue("存储时间");
+                    cellSheet.Cells[0, 6].PutValue("历史记录总条数");
+                    cellSheet.Cells[0, 7].PutValue("下载时间");
 
                 }
                 #endregion
@@ -362,16 +363,17 @@ namespace wirelesssacler
                                 cellSheet.Cells[rowIndex, 1].PutValue(ot.Rows[i][1]);
                                 cellSheet.Cells[rowIndex, 2].PutValue(ot.Rows[i][2]);
                                 cellSheet.Cells[rowIndex, 3].PutValue(ot.Rows[i][3]);
-                                cellSheet.Cells[rowIndex, 4].PutValue(ot.Rows[i][4]);
-                                cellSheet.Cells[rowIndex, 5].PutValue(ot.Rows[i][5]);
-                                cellSheet.Cells[rowIndex, 6].PutValue(ot.Rows[i][6]);
-                                cellSheet.Cells[rowIndex, 7].PutValue(ot.Rows[i][7]);
-                                cellSheet.Cells[rowIndex, 8].PutValue(ot.Rows[i][8]);
+                                //cellSheet.Cells[rowIndex, 4].PutValue(ot.Rows[i][4]);
+                                cellSheet.Cells[rowIndex, 4].PutValue(ot.Rows[i][5]);
+                                cellSheet.Cells[rowIndex, 5].PutValue(ot.Rows[i][6]);
+                                cellSheet.Cells[rowIndex, 6].PutValue(ot.Rows[i][7]);
+                                cellSheet.Cells[rowIndex, 7].PutValue(ot.Rows[i][8]);
                                 break;
+                                rowIndex++;
                             }
                             _p = _p.Next;
                         }
-                        rowIndex++;
+
                     }
                 }
 
@@ -392,6 +394,7 @@ namespace wirelesssacler
             path = Path.Combine(path, path2);
             System.Diagnostics.Process.Start("explorer.exe", path);
         }
+
 
     }
 }

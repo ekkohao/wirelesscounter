@@ -155,11 +155,11 @@ namespace wirelesssacler
                                 cellSheet.Cells[rowIndex, 1].PutValue(ot.Rows[i][1]);
                                 cellSheet.Cells[rowIndex, 2].PutValue(ot.Rows[i][2]);
                                 cellSheet.Cells[rowIndex, 3].PutValue(ot.Rows[i][3]);
+                                rowIndex++;
                                 break;
                             }
                             _p = _p.Next;
-                        }
-                        rowIndex++;
+                        }         
                     }
                 }
 

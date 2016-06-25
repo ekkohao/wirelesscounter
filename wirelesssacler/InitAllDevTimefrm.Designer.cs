@@ -1,6 +1,6 @@
 ﻿namespace wirelesssacler
 {
-    partial class InitAllDevInfofrm
+    partial class InitAllDevTimefrm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitAllDevInfofrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitAllDevTimefrm));
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.RichTextBox = new CCWin.SkinControl.RtfRichTextBox();
@@ -77,6 +77,7 @@
             this.RichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RichTextBox.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RichTextBox.HideSelection = false;
             this.RichTextBox.HiglightColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.White;
             this.RichTextBox.Location = new System.Drawing.Point(3, 87);
             this.RichTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -121,7 +122,7 @@
             this.Indicator.TabIndex = 5;
             this.Indicator.Text = "skinProgressIndicator1";
             // 
-            // InitAllDevInfofrm
+            // InitAllDevTimefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +140,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
-            this.Name = "InitAllDevInfofrm";
+            this.Name = "InitAllDevTimefrm";
             this.ShowBorder = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -147,8 +148,8 @@
             this.TitleCenter = false;
             this.TitleColor = System.Drawing.Color.White;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InitAllDevInfofrm_FormClosing);
-            this.Load += new System.EventHandler(this.InitAllDevInfofrm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InitAllDevTimefrm_FormClosing);
+            this.Load += new System.EventHandler(this.InitAllDevTimefrm_Load);
             this.skinPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

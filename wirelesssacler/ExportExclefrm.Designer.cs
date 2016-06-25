@@ -153,6 +153,7 @@
             this.btn_Excle.TabIndex = 0;
             this.btn_Excle.Text = "导出Excle";
             this.btn_Excle.UseVisualStyleBackColor = false;
+            this.btn_Excle.Click += new System.EventHandler(this.btn_Excle_Click);
             // 
             // skinPictureBox2
             // 

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainfrm));
-            CCWin.SkinControl.ChatListItem chatListItem1 = new CCWin.SkinControl.ChatListItem();
+            CCWin.SkinControl.ChatListItem chatListItem2 = new CCWin.SkinControl.ChatListItem();
             this.chatlb_All = new CCWin.SkinControl.ChatListBox();
             this.UserMenu = new CCWin.SkinControl.SkinContextMenuStrip();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
@@ -101,7 +101,10 @@
             this.DownRecentHistroy = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.QueryRecordMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.initGroupDev = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+            this.initGroupTime = new System.Windows.Forms.ToolStripMenuItem();
             this.datacenter = new System.Windows.Forms.TabPage();
             this.devmanger = new System.Windows.Forms.TabPage();
             this.skinPanel4 = new CCWin.SkinControl.SkinPanel();
@@ -150,15 +153,15 @@
             resources.ApplyResources(this.chatlb_All, "chatlb_All");
             this.chatlb_All.ForeColor = System.Drawing.Color.Black;
             this.chatlb_All.FriendsMobile = false;
-            chatListItem1.Bounds = new System.Drawing.Rectangle(0, 1, 669, 25);
-            chatListItem1.IsOpen = true;
-            chatListItem1.IsTwinkleHide = false;
-            chatListItem1.OwnerChatListBox = this.chatlb_All;
-            chatListItem1.Tag = null;
-            chatListItem1.Text = "全部设备";
-            chatListItem1.TwinkleSubItemNumber = 0;
+            chatListItem2.Bounds = new System.Drawing.Rectangle(0, 1, 669, 25);
+            chatListItem2.IsOpen = true;
+            chatListItem2.IsTwinkleHide = false;
+            chatListItem2.OwnerChatListBox = this.chatlb_All;
+            chatListItem2.Tag = null;
+            chatListItem2.Text = "全部设备";
+            chatListItem2.TwinkleSubItemNumber = 0;
             this.chatlb_All.Items.AddRange(new CCWin.SkinControl.ChatListItem[] {
-            chatListItem1});
+            chatListItem2});
             this.chatlb_All.ListSubItemMenu = this.UserMenu;
             this.chatlb_All.Name = "chatlb_All";
             this.chatlb_All.ScrollBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
@@ -385,6 +388,7 @@
             // 
             // skinPanel2
             // 
+            resources.ApplyResources(this.skinPanel2, "skinPanel2");
             this.skinPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
             this.skinPanel2.Controls.Add(this.skinLabel8);
             this.skinPanel2.Controls.Add(this.btn_init_all);
@@ -399,7 +403,6 @@
             this.skinPanel2.Controls.Add(this.btn_downRealData);
             this.skinPanel2.Controls.Add(this.pic_Com);
             this.skinPanel2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            resources.ApplyResources(this.skinPanel2, "skinPanel2");
             this.skinPanel2.DownBack = null;
             this.skinPanel2.MouseBack = null;
             this.skinPanel2.Name = "skinPanel2";
@@ -852,7 +855,10 @@
             this.DownRecentHistroy,
             this.toolStripSeparator7,
             this.QueryRecordMenu,
-            this.initGroupDev});
+            this.toolStripSeparator10,
+            this.initGroupDev,
+            this.toolStripSeparator18,
+            this.initGroupTime});
             this.ChatGropuMenu.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.ChatGropuMenu.Name = "MenuState";
             this.ChatGropuMenu.RadiusStyle = CCWin.SkinClass.RoundStyle.None;
@@ -902,11 +908,27 @@
             resources.ApplyResources(this.QueryRecordMenu, "QueryRecordMenu");
             this.QueryRecordMenu.Click += new System.EventHandler(this.QueryRecordMenu_Click);
             // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+            // 
             // initGroupDev
             // 
             this.initGroupDev.Name = "initGroupDev";
             resources.ApplyResources(this.initGroupDev, "initGroupDev");
             this.initGroupDev.Click += new System.EventHandler(this.initGroupDev_Click);
+            // 
+            // toolStripSeparator18
+            // 
+            this.toolStripSeparator18.Name = "toolStripSeparator18";
+            resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
+            // 
+            // initGroupTime
+            // 
+            this.initGroupTime.Name = "initGroupTime";
+            resources.ApplyResources(this.initGroupTime, "initGroupTime");
+            this.initGroupTime.Click += new System.EventHandler(this.initGroupTime_Click);
             // 
             // datacenter
             // 
@@ -942,6 +964,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
             this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(159)))), ((int)(((byte)(215)))));
             this.btnSearch.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.DownBack = null;
             this.btnSearch.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btnSearch.MouseBack = null;
@@ -952,12 +975,12 @@
             // 
             // txtSearch
             // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearch.BackAlpha = 0;
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.ForeColor = System.Drawing.Color.White;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1302,6 +1325,9 @@
         private CCWin.SkinControl.SkinButton btn_init_all;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripMenuItem initGroupDev;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
+        private System.Windows.Forms.ToolStripMenuItem initGroupTime;
 
     }
 }

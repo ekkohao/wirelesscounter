@@ -10,7 +10,7 @@ using CCWin;
 using MySqlCon;
 namespace wirelesssacler
 {
-    public partial class Form1 :Form
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -41,12 +41,6 @@ namespace wirelesssacler
             RealDataGridView.Columns.Add("DevmA", "电流(uA)");
             RealDataGridView.Columns.Add("Devloactime", "召测数据时间");
 
-            LightDataGridView.Columns.Add("DevID", "设备序列号");
-            LightDataGridView.Columns.Add("DevAddr", "安装地址");
-            LightDataGridView.Columns.Add("DevPhase", "监测路线位置");
-            LightDataGridView.Columns.Add("DevNum", "动作次数");
-            LightDataGridView.Columns.Add("Devtime", "动作时间");
-
             MaDataGridView.Columns.Add("DevID", "设备序列号");
             MaDataGridView.Columns.Add("DevAddr", "安装地址");
             MaDataGridView.Columns.Add("DevPhase", "监测路线位置");
@@ -54,8 +48,12 @@ namespace wirelesssacler
             MaDataGridView.Columns.Add("DevmA", "电流(uA)");
             MaDataGridView.Columns.Add("Devtime", "数据存储时间");
             MaDataGridView.Columns.Add("Devloactime", "召测数据时间");
-
-
+            
+            LightDataGridView.Columns.Add("DevID", "设备序列号");
+            LightDataGridView.Columns.Add("DevAddr", "安装地址");
+            LightDataGridView.Columns.Add("DevPhase", "监测路线位置");
+            LightDataGridView.Columns.Add("DevNum", "动作次数");
+            LightDataGridView.Columns.Add("Devtime", "动作时间");
         }
         private void UpdateReal()
         {
@@ -82,7 +80,7 @@ namespace wirelesssacler
             }
             else
             {
-             //   MessageBox.Show("读取上次查询实时记录数据失败，当前没有记录的数据");
+                //   MessageBox.Show("读取上次查询实时记录数据失败，当前没有记录的数据");
             }
 
         }
@@ -108,7 +106,7 @@ namespace wirelesssacler
             }
             else
             {
-              //  MessageBox.Show("读取动作记录数据失败，当前没有记录的数据");
+                //  MessageBox.Show("读取动作记录数据失败，当前没有记录的数据");
             }
         }
 
@@ -135,7 +133,7 @@ namespace wirelesssacler
             }
             else
             {
-            //    MessageBox.Show("读取历史记录数据失败，当前没有记录的数据");
+                //    MessageBox.Show("读取历史记录数据失败，当前没有记录的数据");
             }
         }
         void DataCenterfrm_Shown(object sender, EventArgs e)
@@ -147,18 +145,6 @@ namespace wirelesssacler
 
         }
 
-        private void TabHistroy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (TabHistroy.SelectedIndex == 0)
-            {
-
-                UpdataMaHistroy();
-            }
-            else
-            {
-                UpdataLightHistroy();
-            }
-        }
 
         private void TabRealAndHistroy_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -167,6 +153,16 @@ namespace wirelesssacler
                 //默认的
                 UpdateReal();
             }
+            else if (TabRealAndHistroy.SelectedIndex == 1)
+            {
+
+                UpdataMaHistroy(); 
+            }
+            else
+            {
+                UpdataLightHistroy();
+            }
         }
+
     }
 }

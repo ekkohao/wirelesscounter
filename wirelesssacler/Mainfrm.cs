@@ -1647,6 +1647,17 @@ namespace wirelesssacler
             f.Show();
         }
 
+        private void initGroupTime_Click(object sender, EventArgs e)
+        {
+            if (WireCom == null || WireCom.getIsOpen() == false)
+            {
+                MessageBox.Show("通信端口没有打开，请打开通信端口!");
+                return;
+            }
+            InitAllDevfrm f = new InitAllDevfrm(WireCom, CurentGroup);
+            f.Show();
+        }
+
 
     }
 }

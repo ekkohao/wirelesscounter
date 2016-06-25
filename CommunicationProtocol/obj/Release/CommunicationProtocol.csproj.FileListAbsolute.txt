@@ -2,3 +2,4 @@ E:\Project\wirelesscounter\CommunicationProtocol\bin\Release\CommunicationProtoc
 E:\Project\wirelesscounter\CommunicationProtocol\bin\Release\CommunicationProtocol.pdb
 E:\Project\wirelesscounter\CommunicationProtocol\obj\Release\CommunicationProtocol.dll
 E:\Project\wirelesscounter\CommunicationProtocol\obj\Release\CommunicationProtocol.pdb
+E:\Project\wirelesscounter\CommunicationProtocol\obj\Release\CommunicationProtocol.csprojResolveAssemblyReference.cache

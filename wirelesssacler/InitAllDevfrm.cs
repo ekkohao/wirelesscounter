@@ -65,6 +65,7 @@ namespace wirelesssacler
                         }                  
                 }
             }
+            date_Time_Picker.Value = DateTime.Now;
         }
 
         private void check_all_CheckedChanged(object sender, EventArgs e)
@@ -107,8 +108,44 @@ namespace wirelesssacler
                 return;
             }
             InitAllDevInfofrm f = new InitAllDevInfofrm(mylist,WireCom);
-            f.Show();
+            if (f.ShowDialog() == DialogResult.Yes)
+                f.flag = false;
+            f.Dispose();
 
         }
+
+        private void box_set_time_CheckedChanged(object sender, EventArgs e)
+        {
+                date_Time_Picker.Enabled = box_set_time.Checked;
+        }
+
+        private void init_all_time_Click(object sender, EventArgs e)
+        {
+            if (btn_initAll.Text != "初始化所选设备") return;
+            mylist = new LinkedList<string>();
+            for (int j = 0; j < ListBox_dev.Items.Count; j++)
+            {
+                if (ListBox_dev.GetItemChecked(j))
+                {
+
+                    string onum = ListBox_dev.Items[j].ToString();///);
+                    int i = onum.IndexOf("[") + 1;
+                    int k = onum.IndexOf("]");
+                    string nnum = onum.Substring(i, k - i);
+                    mylist.AddLast(nnum);
+
+                }
+            }
+            if (mylist == null || mylist.Count == 0)
+            {
+                MessageBox.Show("请选择至少一个设备");
+                return;
+            }
+            InitAllDevTimefrm f = new InitAllDevTimefrm(mylist, WireCom, date_Time_Picker.Value, box_set_time.Checked);
+            if (f.ShowDialog() == DialogResult.Yes)
+                f.flag = false;
+            f.Dispose();
+        }
+
     }
 }

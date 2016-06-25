@@ -41,19 +41,19 @@ namespace wirelesssacler
             RealDataGridView.Columns.Add("DevmA", "电流(uA)");
             RealDataGridView.Columns.Add("Devloactime", "召测数据时间");
 
-            LightDataGridView.Columns.Add("DevID", "设备序列号");
-            LightDataGridView.Columns.Add("DevAddr", "安装地址");
-            LightDataGridView.Columns.Add("DevPhase", "监测路线位置");
-            LightDataGridView.Columns.Add("DevNum", "动作次数");
-            LightDataGridView.Columns.Add("Devtime", "动作时间");
+            actionPage.Columns.Add("DevID", "设备序列号");
+            actionPage.Columns.Add("DevAddr", "安装地址");
+            actionPage.Columns.Add("DevPhase", "监测路线位置");
+            actionPage.Columns.Add("DevNum", "动作次数");
+            actionPage.Columns.Add("Devtime", "动作时间");
 
-            MaDataGridView.Columns.Add("DevID", "设备序列号");
-            MaDataGridView.Columns.Add("DevAddr", "安装地址");
-            MaDataGridView.Columns.Add("DevPhase", "监测路线位置");
-            MaDataGridView.Columns.Add("DevNum", "历史数据条数");
-            MaDataGridView.Columns.Add("DevmA", "电流(uA)");
-            MaDataGridView.Columns.Add("Devtime", "数据存储时间");
-            MaDataGridView.Columns.Add("Devloactime", "召测数据时间");
+            historyPage.Columns.Add("DevID", "设备序列号");
+            historyPage.Columns.Add("DevAddr", "安装地址");
+            historyPage.Columns.Add("DevPhase", "监测路线位置");
+            historyPage.Columns.Add("DevNum", "历史数据条数");
+            historyPage.Columns.Add("DevmA", "电流(uA)");
+            historyPage.Columns.Add("Devtime", "数据存储时间");
+            historyPage.Columns.Add("Devloactime", "召测数据时间");
 
            
         }
@@ -91,7 +91,7 @@ namespace wirelesssacler
             DataTable dt = query.ReturnTable(lightstr);
             if (dt.Rows.Count > 0)
             {
-                LightDataGridView.Rows.Clear();
+                actionPage.Rows.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
 
@@ -101,7 +101,7 @@ namespace wirelesssacler
                     f[2] = dt.Rows[i][3];
                     f[3] = dt.Rows[i][4];
                     f[4] = dt.Rows[i][5];
-                    LightDataGridView.Rows.Add(f);
+                    actionPage.Rows.Add(f);
 
 
                 }
@@ -117,7 +117,7 @@ namespace wirelesssacler
             DataTable dt = query.ReturnTable(mastr);
             if (dt.Rows.Count > 0)
             {
-                MaDataGridView.Rows.Clear();
+                historyPage.Rows.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     object[] f = new object[7];
@@ -128,9 +128,7 @@ namespace wirelesssacler
                     f[4] = dt.Rows[i][5];
                     f[5] = dt.Rows[i][6];
                     f[6] = dt.Rows[i][8];
-                    MaDataGridView.Rows.Add(f);
-
-
+                    historyPage.Rows.Add(f);
                 }
             }
             else
@@ -143,30 +141,16 @@ namespace wirelesssacler
             UpdateReal();
             //UpdataLightHistroy();
             UpdataMaHistroy();
-           
-            
-        }
-
-        private void TabHistroy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-             if (TabHistroy.SelectedIndex == 0)
-            {
-
-                UpdataMaHistroy();
-            }
-            else
-            {
-                UpdataLightHistroy();
-            }
         }
 
         private void TabRealAndHistroy_SelectedIndexChanged(object sender, EventArgs e)
         {
-             if (TabRealAndHistroy.SelectedIndex == 0)
-            {
-                //默认的
+            if (TabRealAndHistroy.SelectedIndex == 0)
                 UpdateReal();
-            }
+            else if(TabRealAndHistroy.SelectedIndex == 1)
+                UpdataMaHistroy();
+            else
+                UpdataLightHistroy();
         }
 
 

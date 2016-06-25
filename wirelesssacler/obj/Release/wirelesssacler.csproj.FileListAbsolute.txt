@@ -48,3 +48,4 @@ E:\Project\wirelesscounter\wirelesssacler\obj\Release\wirelesssacler.pdb
 E:\Project\wirelesscounter\wirelesssacler\obj\Release\wirelesssacler.ExportDevExclefrm.resources
 E:\Project\wirelesscounter\wirelesssacler\obj\Release\wirelesssacler.InitAllDevfrm.resources
 E:\Project\wirelesscounter\wirelesssacler\obj\Release\wirelesssacler.InitAllDevInfofrm.resources
+E:\Project\wirelesscounter\wirelesssacler\obj\Release\wirelesssacler.InitAllDevTimefrm.resources

@@ -47,3 +47,4 @@ E:\Project\wirelesscounter\wirelesssacler\obj\Debug\wirelesssacler.pdb
 E:\Project\wirelesscounter\wirelesssacler\obj\Debug\wirelesssacler.InitAllDevInfofrm.resources
 E:\Project\wirelesscounter\wirelesssacler\obj\Debug\wirelesssacler.ExportDevExclefrm.resources
 E:\Project\wirelesscounter\wirelesssacler\obj\Debug\wirelesssacler.InitAllDevfrm.resources
+E:\Project\wirelesscounter\wirelesssacler\obj\Debug\wirelesssacler.InitAllDevTimefrm.resources

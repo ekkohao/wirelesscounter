@@ -3,3 +3,8 @@ E:\Project\wirelesscounter\CommunicationProtocol\bin\Debug\CommunicationProtocol
 E:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.csprojResolveAssemblyReference.cache
 E:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.dll
 E:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.pdb
+Y:\Project\wirelesscounter\CommunicationProtocol\bin\Debug\CommunicationProtocol.dll
+Y:\Project\wirelesscounter\CommunicationProtocol\bin\Debug\CommunicationProtocol.pdb
+Y:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.csprojResolveAssemblyReference.cache
+Y:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.dll
+Y:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.pdb

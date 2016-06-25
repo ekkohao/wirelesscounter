@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainfrm));
-            CCWin.SkinControl.ChatListItem chatListItem2 = new CCWin.SkinControl.ChatListItem();
+            CCWin.SkinControl.ChatListItem chatListItem1 = new CCWin.SkinControl.ChatListItem();
             this.chatlb_All = new CCWin.SkinControl.ChatListBox();
             this.UserMenu = new CCWin.SkinControl.SkinContextMenuStrip();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
@@ -108,7 +108,6 @@
             this.datacenter = new System.Windows.Forms.TabPage();
             this.devmanger = new System.Windows.Forms.TabPage();
             this.skinPanel4 = new CCWin.SkinControl.SkinPanel();
-            this.btnSearch = new CCWin.SkinControl.SkinButton();
             this.txtSearch = new CCWin.SkinControl.SkinAlphaWaterTextBox();
             this.imageList_tab = new System.Windows.Forms.ImageList(this.components);
             this.MangerMenu = new CCWin.SkinControl.SkinContextMenuStrip();
@@ -129,6 +128,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer_start = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
+            this.btnSearch = new CCWin.SkinControl.SkinButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserMenu.SuspendLayout();
             this.ChatAllDevItemMenu.SuspendLayout();
             this.tlPanel.SuspendLayout();
@@ -145,6 +146,7 @@
             this.skinPanel4.SuspendLayout();
             this.MangerMenu.SuspendLayout();
             this.SystemSetMenu.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chatlb_All
@@ -153,15 +155,15 @@
             resources.ApplyResources(this.chatlb_All, "chatlb_All");
             this.chatlb_All.ForeColor = System.Drawing.Color.Black;
             this.chatlb_All.FriendsMobile = false;
-            chatListItem2.Bounds = new System.Drawing.Rectangle(0, 1, 669, 25);
-            chatListItem2.IsOpen = true;
-            chatListItem2.IsTwinkleHide = false;
-            chatListItem2.OwnerChatListBox = this.chatlb_All;
-            chatListItem2.Tag = null;
-            chatListItem2.Text = "全部设备";
-            chatListItem2.TwinkleSubItemNumber = 0;
+            chatListItem1.Bounds = new System.Drawing.Rectangle(0, 1, 669, 25);
+            chatListItem1.IsOpen = true;
+            chatListItem1.IsTwinkleHide = false;
+            chatListItem1.OwnerChatListBox = this.chatlb_All;
+            chatListItem1.Tag = null;
+            chatListItem1.Text = "全部设备";
+            chatListItem1.TwinkleSubItemNumber = 0;
             this.chatlb_All.Items.AddRange(new CCWin.SkinControl.ChatListItem[] {
-            chatListItem2});
+            chatListItem1});
             this.chatlb_All.ListSubItemMenu = this.UserMenu;
             this.chatlb_All.Name = "chatlb_All";
             this.chatlb_All.ScrollBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
@@ -388,7 +390,6 @@
             // 
             // skinPanel2
             // 
-            resources.ApplyResources(this.skinPanel2, "skinPanel2");
             this.skinPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
             this.skinPanel2.Controls.Add(this.skinLabel8);
             this.skinPanel2.Controls.Add(this.btn_init_all);
@@ -403,6 +404,7 @@
             this.skinPanel2.Controls.Add(this.btn_downRealData);
             this.skinPanel2.Controls.Add(this.pic_Com);
             this.skinPanel2.ControlState = CCWin.SkinClass.ControlState.Normal;
+            resources.ApplyResources(this.skinPanel2, "skinPanel2");
             this.skinPanel2.DownBack = null;
             this.skinPanel2.MouseBack = null;
             this.skinPanel2.Name = "skinPanel2";
@@ -736,8 +738,8 @@
             // 
             this.tlp_2.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.tlp_2, "tlp_2");
+            this.tlp_2.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tlp_2.Controls.Add(this.devtab, 0, 1);
-            this.tlp_2.Controls.Add(this.skinPanel4, 0, 0);
             this.tlp_2.Name = "tlp_2";
             // 
             // devtab
@@ -948,7 +950,6 @@
             // 
             this.skinPanel4.BackColor = System.Drawing.Color.Transparent;
             this.skinPanel4.BackRectangle = new System.Drawing.Rectangle(5, 5, 5, 5);
-            this.skinPanel4.Controls.Add(this.btnSearch);
             this.skinPanel4.Controls.Add(this.txtSearch);
             this.skinPanel4.ControlState = CCWin.SkinClass.ControlState.Normal;
             resources.ApplyResources(this.skinPanel4, "skinPanel4");
@@ -957,21 +958,6 @@
             this.skinPanel4.Name = "skinPanel4";
             this.skinPanel4.NormlBack = ((System.Drawing.Image)(resources.GetObject("skinPanel4.NormlBack")));
             this.skinPanel4.Palace = true;
-            // 
-            // btnSearch
-            // 
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(159)))), ((int)(((byte)(215)))));
-            this.btnSearch.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.DownBack = null;
-            this.btnSearch.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnSearch.MouseBack = null;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.NormlBack = null;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -1158,6 +1144,28 @@
             this.label6.ForeColor = System.Drawing.Color.Honeydew;
             this.label6.Name = "label6";
             // 
+            // btnSearch
+            // 
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(159)))), ((int)(((byte)(215)))));
+            this.btnSearch.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.DownBack = null;
+            this.btnSearch.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btnSearch.MouseBack = null;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.NormlBack = null;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.skinPanel4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSearch, 1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
             // Mainfrm
             // 
             resources.ApplyResources(this, "$this");
@@ -1223,6 +1231,7 @@
             this.skinPanel4.PerformLayout();
             this.MangerMenu.ResumeLayout(false);
             this.SystemSetMenu.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1238,7 +1247,6 @@
         private System.Windows.Forms.ToolStripButton tsb_SysSet;
         private System.Windows.Forms.ToolStripButton tsb_openfile;
         private CCWin.SkinControl.SkinPanel skinPanel4;
-        private CCWin.SkinControl.SkinButton btnSearch;
         private CCWin.SkinControl.SkinAlphaWaterTextBox txtSearch;
         private CCWin.SkinControl.SkinContextMenuStrip MangerMenu;
         private System.Windows.Forms.ToolStripMenuItem MangerMenuItem;
@@ -1328,6 +1336,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
         private System.Windows.Forms.ToolStripMenuItem initGroupTime;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private CCWin.SkinControl.SkinButton btnSearch;
 
     }
 }

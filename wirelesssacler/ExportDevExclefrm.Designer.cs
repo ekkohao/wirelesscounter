@@ -29,31 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportDevExclefrm));
-            this.ListBox_dev = new System.Windows.Forms.CheckedListBox();
             this.check_all = new CCWin.SkinControl.SkinCheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Excle = new CCWin.SkinControl.SkinButton();
             this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             this.btn_openfile = new CCWin.SkinControl.SkinButton();
+            this.DevTreeView = new System.Windows.Forms.TreeView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ListBox_dev
-            // 
-            this.ListBox_dev.BackColor = System.Drawing.Color.White;
-            this.ListBox_dev.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListBox_dev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListBox_dev.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ListBox_dev.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.ListBox_dev.FormattingEnabled = true;
-            this.ListBox_dev.HorizontalScrollbar = true;
-            this.ListBox_dev.Location = new System.Drawing.Point(3, 3);
-            this.ListBox_dev.Name = "ListBox_dev";
-            this.ListBox_dev.Size = new System.Drawing.Size(324, 372);
-            this.ListBox_dev.TabIndex = 19;
             // 
             // check_all
             // 
@@ -84,8 +71,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel1.Controls.Add(this.check_all, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ListBox_dev, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.DevTreeView, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 34);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -97,10 +84,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Excle);
             this.panel1.Controls.Add(this.skinPictureBox1);
             this.panel1.Controls.Add(this.btn_openfile);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(333, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(174, 372);
@@ -114,7 +101,7 @@
             this.btn_Excle.DownBack = null;
             this.btn_Excle.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_Excle.ForeColor = System.Drawing.Color.White;
-            this.btn_Excle.Location = new System.Drawing.Point(27, 148);
+            this.btn_Excle.Location = new System.Drawing.Point(27, 119);
             this.btn_Excle.MouseBack = null;
             this.btn_Excle.Name = "btn_Excle";
             this.btn_Excle.NormlBack = null;
@@ -143,7 +130,7 @@
             this.btn_openfile.DownBack = null;
             this.btn_openfile.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_openfile.ForeColor = System.Drawing.Color.White;
-            this.btn_openfile.Location = new System.Drawing.Point(27, 234);
+            this.btn_openfile.Location = new System.Drawing.Point(27, 190);
             this.btn_openfile.MouseBack = null;
             this.btn_openfile.Name = "btn_openfile";
             this.btn_openfile.NormlBack = null;
@@ -152,6 +139,26 @@
             this.btn_openfile.Text = "打开文件位置";
             this.btn_openfile.UseVisualStyleBackColor = false;
             this.btn_openfile.Click += new System.EventHandler(this.btn_openfile_Click);
+            // 
+            // DevTreeView
+            // 
+            this.DevTreeView.CheckBoxes = true;
+            this.DevTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DevTreeView.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DevTreeView.Location = new System.Drawing.Point(3, 3);
+            this.DevTreeView.Name = "DevTreeView";
+            this.DevTreeView.Size = new System.Drawing.Size(324, 372);
+            this.DevTreeView.TabIndex = 22;
+            this.DevTreeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.DevTreeView_AfterCheck);
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(27, 257);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 103);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "提示：组号前的复选框可全选或取消子节点的复选框，但请勿双击";
             // 
             // ExportDevExclefrm
             // 
@@ -182,12 +189,13 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox ListBox_dev;
         private CCWin.SkinControl.SkinCheckBox check_all;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private CCWin.SkinControl.SkinButton btn_Excle;
         private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
         private CCWin.SkinControl.SkinButton btn_openfile;
+        private System.Windows.Forms.TreeView DevTreeView;
+        private System.Windows.Forms.Label label1;
     }
 }

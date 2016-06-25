@@ -1657,7 +1657,5 @@ namespace wirelesssacler
             InitAllDevfrm f = new InitAllDevfrm(WireCom, CurentGroup);
             f.Show();
         }
-
-
     }
 }

@@ -3,3 +3,8 @@ E:\Project\wirelesscounter\ConnectCom\bin\Debug\ConnectCom.pdb
 E:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.csprojResolveAssemblyReference.cache
 E:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.dll
 E:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.pdb
+Y:\Project\wirelesscounter\ConnectCom\bin\Debug\ConnectCom.dll
+Y:\Project\wirelesscounter\ConnectCom\bin\Debug\ConnectCom.pdb
+Y:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.csprojResolveAssemblyReference.cache
+Y:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.dll
+Y:\Project\wirelesscounter\ConnectCom\obj\Debug\ConnectCom.pdb

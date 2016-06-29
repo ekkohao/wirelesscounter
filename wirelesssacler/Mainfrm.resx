@@ -117,71 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="chatlb_All.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="chatlb_All.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
   <metadata name="UserMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>423, 19</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="UserMenu.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="UserMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 196</value>
-  </data>
-  <data name="&gt;&gt;UserMenu.Name" xml:space="preserve">
-    <value>UserMenu</value>
-  </data>
-  <data name="&gt;&gt;UserMenu.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="chatlb_All.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="chatlb_All.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
-  </data>
-  <data name="chatlb_All.Size" type="System.Drawing.Size, System.Drawing">
-    <value>669, 355</value>
-  </data>
-  <metadata name="ChatAllDevItemMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 18</value>
-  </metadata>
-  <data name="ChatAllDevItemMenu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="ChatAllDevItemMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 126</value>
-  </data>
-  <data name="&gt;&gt;ChatAllDevItemMenu.Name" xml:space="preserve">
-    <value>ChatAllDevItemMenu</value>
-  </data>
-  <data name="&gt;&gt;ChatAllDevItemMenu.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="chatlb_All.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="chatlb_All.Text" xml:space="preserve">
-    <value>设备</value>
-  </data>
-  <data name="&gt;&gt;chatlb_All.Name" xml:space="preserve">
-    <value>chatlb_All</value>
-  </data>
-  <data name="&gt;&gt;chatlb_All.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.ChatListBox, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;chatlb_All.Parent" xml:space="preserve">
-    <value>alldev</value>
-  </data>
-  <data name="&gt;&gt;chatlb_All.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 6</value>
@@ -240,6 +181,21 @@
   <data name="JiaoZhuntimeMenu.Text" xml:space="preserve">
     <value>设备校正时间</value>
   </data>
+  <data name="UserMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 196</value>
+  </data>
+  <data name="&gt;&gt;UserMenu.Name" xml:space="preserve">
+    <value>UserMenu</value>
+  </data>
+  <data name="&gt;&gt;UserMenu.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <metadata name="ChatAllDevItemMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>256, 18</value>
+  </metadata>
+  <data name="ChatAllDevItemMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
   <data name="queryMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 26</value>
   </data>
@@ -248,12 +204,6 @@
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 6</value>
-  </data>
-  <data name="toolStripMenuItem107.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 26</value>
-  </data>
-  <data name="toolStripMenuItem107.Text" xml:space="preserve">
-    <value>设备排序显示</value>
   </data>
   <data name="tsmItemSortbyid.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 26</value>
@@ -273,6 +223,12 @@
   <data name="tsmItemSortbyaddr.Text" xml:space="preserve">
     <value>按安装地址排序</value>
   </data>
+  <data name="toolStripMenuItem107.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 26</value>
+  </data>
+  <data name="toolStripMenuItem107.Text" xml:space="preserve">
+    <value>设备排序显示</value>
+  </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 6</value>
   </data>
@@ -291,623 +247,18 @@
   <data name="tsmItemDatacenter.Text" xml:space="preserve">
     <value>数据记录查询</value>
   </data>
+  <data name="ChatAllDevItemMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 126</value>
+  </data>
+  <data name="&gt;&gt;ChatAllDevItemMenu.Name" xml:space="preserve">
+    <value>ChatAllDevItemMenu</value>
+  </data>
+  <data name="&gt;&gt;ChatAllDevItemMenu.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tlPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;skinLabel8.Name" xml:space="preserve">
-    <value>skinLabel8</value>
-  </data>
-  <data name="&gt;&gt;skinLabel8.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel8.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel8.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btn_init_all.Name" xml:space="preserve">
-    <value>btn_init_all</value>
-  </data>
-  <data name="&gt;&gt;btn_init_all.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_init_all.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;btn_init_all.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;skinLabel7.Name" xml:space="preserve">
-    <value>skinLabel7</value>
-  </data>
-  <data name="&gt;&gt;skinLabel7.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel7.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel7.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel6.Name" xml:space="preserve">
-    <value>skinLabel6</value>
-  </data>
-  <data name="&gt;&gt;skinLabel6.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel6.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel6.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;skinLabel5.Name" xml:space="preserve">
-    <value>skinLabel5</value>
-  </data>
-  <data name="&gt;&gt;skinLabel5.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel5.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel5.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;skinLabel4.Name" xml:space="preserve">
-    <value>skinLabel4</value>
-  </data>
-  <data name="&gt;&gt;skinLabel4.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel4.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;skinLabel3.Name" xml:space="preserve">
-    <value>skinLabel3</value>
-  </data>
-  <data name="&gt;&gt;skinLabel3.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel3.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel3.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;btn_help.Name" xml:space="preserve">
-    <value>btn_help</value>
-  </data>
-  <data name="&gt;&gt;btn_help.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_help.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;btn_help.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btn_setDev.Name" xml:space="preserve">
-    <value>btn_setDev</value>
-  </data>
-  <data name="&gt;&gt;btn_setDev.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_setDev.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;btn_setDev.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;btn_CheckData.Name" xml:space="preserve">
-    <value>btn_CheckData</value>
-  </data>
-  <data name="&gt;&gt;btn_CheckData.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_CheckData.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;btn_CheckData.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;btn_downRealData.Name" xml:space="preserve">
-    <value>btn_downRealData</value>
-  </data>
-  <data name="&gt;&gt;btn_downRealData.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_downRealData.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;btn_downRealData.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;pic_Com.Name" xml:space="preserve">
-    <value>pic_Com</value>
-  </data>
-  <data name="&gt;&gt;pic_Com.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pic_Com.Parent" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;pic_Com.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="skinPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="skinPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="skinPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 1</value>
-  </data>
-  <data name="skinPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 96</value>
-  </data>
-  <data name="skinPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="skinPanel2.ToolTip" xml:space="preserve">
-    <value>快捷操作栏</value>
-  </data>
-  <data name="&gt;&gt;skinPanel2.Name" xml:space="preserve">
-    <value>skinPanel2</value>
-  </data>
-  <data name="&gt;&gt;skinPanel2.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinPanel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinPanel2.Parent" xml:space="preserve">
-    <value>tlPanel</value>
-  </data>
-  <data name="&gt;&gt;skinPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="SkToolCdTwo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>21, 17</value>
-  </metadata>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;skinLabel2.Name" xml:space="preserve">
-    <value>skinLabel2</value>
-  </data>
-  <data name="&gt;&gt;skinLabel2.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel2.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;skinLabel2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;skinLabel1.Name" xml:space="preserve">
-    <value>skinLabel1</value>
-  </data>
-  <data name="&gt;&gt;skinLabel1.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinLabel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinLabel1.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;skinLabel1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;SkToolCdTwo.Name" xml:space="preserve">
-    <value>SkToolCdTwo</value>
-  </data>
-  <data name="&gt;&gt;SkToolCdTwo.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinToolStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;SkToolCdTwo.Parent" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;SkToolCdTwo.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="skinPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="skinPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 568</value>
-  </data>
-  <data name="skinPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 1, 3, 3</value>
-  </data>
-  <data name="skinPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 62</value>
-  </data>
-  <data name="skinPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;skinPanel3.Name" xml:space="preserve">
-    <value>skinPanel3</value>
-  </data>
-  <data name="&gt;&gt;skinPanel3.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinPanel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinPanel3.Parent" xml:space="preserve">
-    <value>tlPanel</value>
-  </data>
-  <data name="&gt;&gt;skinPanel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tlp_2.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;skinPanel4.Name" xml:space="preserve">
-    <value>skinPanel4</value>
-  </data>
-  <data name="&gt;&gt;skinPanel4.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinPanel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinPanel4.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;skinPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
-    <value>btnSearch</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>683, 34</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>132</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>tlp_2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="skinPanel4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnSearch" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,50" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.Name" xml:space="preserve">
-    <value>metroPanel_Scrol</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.Parent" xml:space="preserve">
-    <value>alldev</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="alldev.Font" type="System.Drawing.Font, System.Drawing">
-    <value>华文宋体, 14.999999pt</value>
-  </data>
-  <data name="alldev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 36</value>
-  </data>
-  <data name="alldev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="alldev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>675, 361</value>
-  </data>
-  <data name="alldev.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="alldev.Text" xml:space="preserve">
-    <value>全部设备</value>
-  </data>
-  <data name="&gt;&gt;alldev.Name" xml:space="preserve">
-    <value>alldev</value>
-  </data>
-  <data name="&gt;&gt;alldev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alldev.Parent" xml:space="preserve">
-    <value>devtab</value>
-  </data>
-  <data name="&gt;&gt;alldev.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;chatlb_Group.Name" xml:space="preserve">
-    <value>chatlb_Group</value>
-  </data>
-  <data name="&gt;&gt;chatlb_Group.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.ChatListBox, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;chatlb_Group.Parent" xml:space="preserve">
-    <value>groupdev</value>
-  </data>
-  <data name="&gt;&gt;chatlb_Group.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupdev.Font" type="System.Drawing.Font, System.Drawing">
-    <value>华文宋体, 14.249999pt</value>
-  </data>
-  <data name="groupdev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 36</value>
-  </data>
-  <data name="groupdev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="groupdev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>675, 361</value>
-  </data>
-  <data name="groupdev.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupdev.Text" xml:space="preserve">
-    <value>设备分组</value>
-  </data>
-  <data name="&gt;&gt;groupdev.Name" xml:space="preserve">
-    <value>groupdev</value>
-  </data>
-  <data name="&gt;&gt;groupdev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupdev.Parent" xml:space="preserve">
-    <value>devtab</value>
-  </data>
-  <data name="&gt;&gt;groupdev.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="datacenter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>华文宋体, 14.249999pt</value>
-  </data>
-  <data name="datacenter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 36</value>
-  </data>
-  <data name="datacenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>675, 381</value>
-  </data>
-  <data name="datacenter.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="datacenter.Text" xml:space="preserve">
-    <value>数据中心</value>
-  </data>
-  <data name="&gt;&gt;datacenter.Name" xml:space="preserve">
-    <value>datacenter</value>
-  </data>
-  <data name="&gt;&gt;datacenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;datacenter.Parent" xml:space="preserve">
-    <value>devtab</value>
-  </data>
-  <data name="&gt;&gt;datacenter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="devmanger.Font" type="System.Drawing.Font, System.Drawing">
-    <value>华文宋体, 14.249999pt</value>
-  </data>
-  <data name="devmanger.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 36</value>
-  </data>
-  <data name="devmanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>675, 381</value>
-  </data>
-  <data name="devmanger.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="devmanger.Text" xml:space="preserve">
-    <value>设备管理</value>
-  </data>
-  <data name="&gt;&gt;devmanger.Name" xml:space="preserve">
-    <value>devmanger</value>
-  </data>
-  <data name="&gt;&gt;devmanger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;devmanger.Parent" xml:space="preserve">
-    <value>devtab</value>
-  </data>
-  <data name="&gt;&gt;devmanger.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="devtab.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="devtab.ItemSize" type="System.Drawing.Size, System.Drawing">
-    <value>85, 32</value>
-  </data>
-  <data name="devtab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 43</value>
-  </data>
-  <data name="devtab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>683, 401</value>
-  </data>
-  <data name="devtab.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;devtab.Name" xml:space="preserve">
-    <value>devtab</value>
-  </data>
-  <data name="&gt;&gt;devtab.Type" xml:space="preserve">
-    <value>DMSkin.Controls.DMTabControl, DMSkin, Version=0.3.0.6, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;devtab.Parent" xml:space="preserve">
-    <value>tlp_2</value>
-  </data>
-  <data name="&gt;&gt;devtab.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tlp_2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlp_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tlp_2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlp_2.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tlp_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 467</value>
-  </data>
-  <data name="tlp_2.TabIndex" type="System.Int32, mscorlib">
-    <value>138</value>
-  </data>
-  <data name="&gt;&gt;tlp_2.Name" xml:space="preserve">
-    <value>tlp_2</value>
-  </data>
-  <data name="&gt;&gt;tlp_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlp_2.Parent" xml:space="preserve">
-    <value>skinPanel</value>
-  </data>
-  <data name="&gt;&gt;tlp_2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlp_2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="devtab" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,685" /&gt;&lt;Rows Styles="Absolute,40,Percent,100,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="skinPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="skinPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 100</value>
-  </data>
-  <data name="skinPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
-  </data>
-  <data name="skinPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 467</value>
-  </data>
-  <data name="skinPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;skinPanel.Name" xml:space="preserve">
-    <value>skinPanel</value>
-  </data>
-  <data name="&gt;&gt;skinPanel.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinPanel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;skinPanel.Parent" xml:space="preserve">
-    <value>tlPanel</value>
-  </data>
-  <data name="&gt;&gt;skinPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tlPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
-  </data>
-  <data name="tlPanel.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tlPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>695, 633</value>
-  </data>
-  <data name="tlPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tlPanel.Name" xml:space="preserve">
-    <value>tlPanel</value>
-  </data>
-  <data name="&gt;&gt;tlPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlPanel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tlPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="skinPanel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="skinPanel3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="skinPanel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,100,Percent,100,Absolute,66" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="skinLabel8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -915,6 +266,7 @@
   <data name="skinLabel8.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 12pt</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="skinLabel8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -942,9 +294,6 @@
   <data name="&gt;&gt;skinLabel8.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="skinToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>155, 43</value>
-  </metadata>
   <data name="btn_init_all.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
@@ -3428,6 +2777,9 @@
   <data name="btn_init_all.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
+  <metadata name="skinToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>155, 43</value>
+  </metadata>
   <data name="btn_init_all.ToolTip" xml:space="preserve">
     <value>初始化所有设备</value>
   </data>
@@ -5739,6 +5091,36 @@
   <data name="&gt;&gt;pic_Com.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="skinPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="skinPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="skinPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 1</value>
+  </data>
+  <data name="skinPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>689, 96</value>
+  </data>
+  <data name="skinPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="skinPanel2.ToolTip" xml:space="preserve">
+    <value>快捷操作栏</value>
+  </data>
+  <data name="&gt;&gt;skinPanel2.Name" xml:space="preserve">
+    <value>skinPanel2</value>
+  </data>
+  <data name="&gt;&gt;skinPanel2.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinPanel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;skinPanel2.Parent" xml:space="preserve">
+    <value>tlPanel</value>
+  </data>
+  <data name="&gt;&gt;skinPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6403,206 +5785,56 @@
   <data name="&gt;&gt;SkToolCdTwo.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="metroPanel_Scrol.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="&gt;&gt;btn_down.Name" xml:space="preserve">
-    <value>btn_down</value>
-  </data>
-  <data name="&gt;&gt;btn_down.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_down.Parent" xml:space="preserve">
-    <value>metroPanel_Scrol</value>
-  </data>
-  <data name="&gt;&gt;btn_down.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btn_up.Name" xml:space="preserve">
-    <value>btn_up</value>
-  </data>
-  <data name="&gt;&gt;btn_up.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_up.Parent" xml:space="preserve">
-    <value>metroPanel_Scrol</value>
-  </data>
-  <data name="&gt;&gt;btn_up.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="metroPanel_Scrol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>615, 150</value>
-  </data>
-  <data name="metroPanel_Scrol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 141</value>
-  </data>
-  <data name="metroPanel_Scrol.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.Name" xml:space="preserve">
-    <value>metroPanel_Scrol</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.Parent" xml:space="preserve">
-    <value>alldev</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_Scrol.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btn_down.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btn_down.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 73</value>
-  </data>
-  <data name="btn_down.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 65</value>
-  </data>
-  <data name="btn_down.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btn_down.Text" xml:space="preserve">
-    <value>向下</value>
-  </data>
-  <data name="&gt;&gt;btn_down.Name" xml:space="preserve">
-    <value>btn_down</value>
-  </data>
-  <data name="&gt;&gt;btn_down.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_down.Parent" xml:space="preserve">
-    <value>metroPanel_Scrol</value>
-  </data>
-  <data name="&gt;&gt;btn_down.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btn_up.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="btn_up.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 64</value>
-  </data>
-  <data name="btn_up.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btn_up.Text" xml:space="preserve">
-    <value>向上</value>
-  </data>
-  <data name="&gt;&gt;btn_up.Name" xml:space="preserve">
-    <value>btn_up</value>
-  </data>
-  <data name="&gt;&gt;btn_up.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinButton, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_up.Parent" xml:space="preserve">
-    <value>metroPanel_Scrol</value>
-  </data>
-  <data name="&gt;&gt;btn_up.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="chatlb_Group.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="skinPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="chatlb_Group.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
+  <data name="skinPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 568</value>
   </data>
-  <data name="chatlb_Group.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="skinPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 1, 3, 3</value>
   </data>
-  <data name="chatlb_Group.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
+  <data name="skinPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>689, 62</value>
   </data>
-  <data name="chatlb_Group.Size" type="System.Drawing.Size, System.Drawing">
-    <value>669, 355</value>
-  </data>
-  <metadata name="ChatGropuMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>533, 18</value>
-  </metadata>
-  <data name="ChatGropuMenu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="ChatGropuMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 190</value>
-  </data>
-  <data name="&gt;&gt;ChatGropuMenu.Name" xml:space="preserve">
-    <value>ChatGropuMenu</value>
-  </data>
-  <data name="&gt;&gt;ChatGropuMenu.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="chatlb_Group.TabIndex" type="System.Int32, mscorlib">
+  <data name="skinPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="chatlb_Group.Text" xml:space="preserve">
-    <value>设备分组</value>
+  <data name="&gt;&gt;skinPanel3.Name" xml:space="preserve">
+    <value>skinPanel3</value>
   </data>
-  <data name="&gt;&gt;chatlb_Group.Name" xml:space="preserve">
-    <value>chatlb_Group</value>
+  <data name="&gt;&gt;skinPanel3.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinPanel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;chatlb_Group.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.ChatListBox, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;skinPanel3.Parent" xml:space="preserve">
+    <value>tlPanel</value>
   </data>
-  <data name="&gt;&gt;chatlb_Group.Parent" xml:space="preserve">
-    <value>groupdev</value>
+  <data name="&gt;&gt;skinPanel3.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;chatlb_Group.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tlp_2.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="CallgroupMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 26</value>
+  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="CallgroupMenu.Text" xml:space="preserve">
-    <value>招收该组杆塔设备实时数据</value>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="CallgroupMenu.ToolTipText" xml:space="preserve">
-    <value>可查询当前设备的数据</value>
+  <data name="txtSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 6</value>
+  <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9.75pt</value>
   </data>
-  <data name="ToolStripMenuItem_downgl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 26</value>
+  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
   </data>
-  <data name="ToolStripMenuItem_downgl.Text" xml:space="preserve">
-    <value>招收该组杆塔设备动作记录数据</value>
+  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>621, 15</value>
   </data>
-  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 6</value>
-  </data>
-  <data name="DownRecentHistroy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 26</value>
-  </data>
-  <data name="DownRecentHistroy.Text" xml:space="preserve">
-    <value>招收该组设备泄漏电流历史记录数据</value>
-  </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 6</value>
-  </data>
-  <data name="QueryRecordMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 26</value>
-  </data>
-  <data name="QueryRecordMenu.Text" xml:space="preserve">
-    <value>查看本组杆塔设备数据记录</value>
-  </data>
-  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 6</value>
-  </data>
-  <data name="initGroupDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 26</value>
-  </data>
-  <data name="initGroupDev.Text" xml:space="preserve">
-    <value>该组设备初始化</value>
-  </data>
-  <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 6</value>
-  </data>
-  <data name="initGroupTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 26</value>
-  </data>
-  <data name="initGroupTime.Text" xml:space="preserve">
-    <value>该组设备同步时间</value>
+  <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>130</value>
   </data>
   <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
     <value>txtSearch</value>
@@ -6660,217 +5892,6 @@
   </data>
   <data name="&gt;&gt;skinPanel4.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="txtSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>宋体, 9.75pt</value>
-  </data>
-  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 10</value>
-  </data>
-  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 15</value>
-  </data>
-  <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>130</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
-    <value>txtSearch</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinAlphaWaterTextBox, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Parent" xml:space="preserve">
-    <value>skinPanel4</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="imageList_tab.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>22, 43</value>
-  </metadata>
-  <data name="imageList_tab.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAa
-        CwAAAk1TRnQBSQFMAgEBBAEAAdwBAQHcAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
-        AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
-        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
-        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
-        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
-        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
-        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
-        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
-        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
-        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
-        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
-        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
-        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
-        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
-        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
-        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
-        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
-        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
-        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
-        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
-        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
-        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
-        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
-        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
-        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
-        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
-        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
-        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD//8A/wD/AP8ANwAD/wHz
-        AfAB7wH3Ae8B8AHzBP8FAAH/AdUB9wH0BwAFrAEAAawDigGsARkEihAAAv8B8QG8Ae8B8gH/AfMBBwHt
-        Am0B7QEHAfIB/wQAAbQBGQEJAhkBIgEHAf8EAAWsAQADrAKKAQkEigQACIoFAAH/Ae8BBwHvAfIB/wHz
-        AQcB7QJtAe0BBwHxAf8CAAHyAxkBCQEZAfQCKgEkAdUB8AH/AQAFrAEABKwBigEJBIoEAAWsA4oEsgIA
-        AQcBvAHvAfIB/wHzAbwBkgJtAe0BBwH0AwAB3QMZAQkBGQH0AlIBKgIZAbQBAAGzBKwBAAWsAQAEigUH
-        BqwFsgIAAQcB7AESAhQBEgEUARABQwETAW0B7QH0AwABCQMZAdYCGQNSAhkB1QQAARsEAAHwBAABvAMA
-        ArwDBwSsAYoFsgMAAbwB7wHyAf8B8wEHAe0CbQHtAQcEAAEJARkB1gEBASUB3AMZASICGQHVBAAFGwEa
-        A/ACvAMABbwErAGyAdMDsgMAAgcB7wHyAf8B8wEHAe0CbQHtAQcB9AMAAdYBRAQlAd0FGQHVCQABGwkA
-        AfACvAasAtoB0wQAAQcBvAHvAfIB/wHzAbwBkgJtAe0BBwH0AgAB8gUlAkYEGQEJAdUFAATcAbQEuwUA
-        AfEC8ALNBKwD2gHTAwABBwHsARICFAESARQBEAFDARMBbQHtAfQCAAQlAf8DTAEjAwkB1QHPAQcDAAHT
-        As0IrAQAAvIB8QHTAs0DrAHbA9oEAAEHAe8B8gH/AfMBBwHtAm0B7QEHAwAB9AElAUYBGQH/AQkBTAFN
-        AVMBIwHVASQBIwUAAdMDzQesAwAC8wLyAdUB0wLNAawBtALbAtoDAAIHAe8B8gH/AfMBBwHtAm0B7QEH
-        AfQDAAH0AUwDGQFNAlMBTQFGAf8GAALTAs0HrAMAA/MC8gHxAdMBzQEAAtwC2wHaAwACBwHvAfIB/wHz
-        AbwBkgJtAe0BBwH0BAABGwFMAQkDUwFMAf8IAAPTAs0GrAQAAfQC8wHyAfEDAAEZAdwC2wQAAgcC7wEH
-        AfQBBwFtAZIBBwG8AfAB9AUAAbwCUwEjCwAD0wLNBqwFAAH0AfMB8g0AA/IB8AHvAbwB8AEHAe8CBzgA
-        AfQC8AHyAf9FAAFCAU0BPgcAAT4DAAEoAwABQAMAASADAAEBAQABAQYAAQEWAAP/gQAG/wHAAQAB+AF/
-        AQQBAAL/AgAB8AEPAQQBAAHwAQ8BgAEAAcABAQEEAQAB8AEAAcABAQHAAQEBBAEQAgABwAEBAcABAQHv
-        AXsBgAEAAeABAwHAAQEB4AEDAYABAQHAAQEBwAEBAf8BfwHAAQMBwAEBAYABAQHwAQcBwAEBAcABAQGA
-        AQAB4AEDAcABAQHgAQMBgAEDAeABAwGAAQEBwAEBAcABBwHgAQMBgAFBAcABAQHgAR8B4AEDAcEBwwHA
-        AQEB8AH/AeABAwHjAf8B4AEDBv8B/AEfCP8L
-</value>
-  </data>
-  <metadata name="MangerMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>130, 20</value>
-  </metadata>
-  <data name="MangerMenu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="MangerMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 100</value>
-  </data>
-  <data name="&gt;&gt;MangerMenu.Name" xml:space="preserve">
-    <value>MangerMenu</value>
-  </data>
-  <data name="&gt;&gt;MangerMenu.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="MangerMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 26</value>
-  </data>
-  <data name="MangerMenuItem.Text" xml:space="preserve">
-    <value>设备管理器</value>
-  </data>
-  <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <data name="tbMenu_QueryCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 26</value>
-  </data>
-  <data name="tbMenu_QueryCenter.Text" xml:space="preserve">
-    <value>数据记录查询</value>
-  </data>
-  <data name="toolStripMenuItem46.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <data name="QuitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 26</value>
-  </data>
-  <data name="QuitMenuItem.Text" xml:space="preserve">
-    <value>退出程序</value>
-  </data>
-  <data name="toolStripMenuItem50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <metadata name="SystemSetMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>673, 17</value>
-  </metadata>
-  <data name="SystemSetMenu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 12pt</value>
-  </data>
-  <data name="SystemSetMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 100</value>
-  </data>
-  <data name="SystemSetMenu.Text" xml:space="preserve">
-    <value>设置</value>
-  </data>
-  <data name="&gt;&gt;SystemSetMenu.Name" xml:space="preserve">
-    <value>SystemSetMenu</value>
-  </data>
-  <data name="&gt;&gt;SystemSetMenu.Type" xml:space="preserve">
-    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="communication_protocol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 26</value>
-  </data>
-  <data name="communication_protocol.Text" xml:space="preserve">
-    <value>通信协议设置</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <data name="importList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 26</value>
-  </data>
-  <data name="importList.Text" xml:space="preserve">
-    <value>导入设备清单</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <data name="outList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 26</value>
-  </data>
-  <data name="outList.Text" xml:space="preserve">
-    <value>导出设备清单</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <metadata name="skinToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>155, 43</value>
-  </metadata>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>281, 43</value>
-  </metadata>
-  <metadata name="timer_start.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>371, 43</value>
-  </metadata>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>宋体, 6.75pt</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 33</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 9</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>v2.0.0</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="btnSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -6986,6 +6007,565 @@
   </data>
   <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>683, 34</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>132</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>tlp_2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="skinPanel4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnSearch" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,50" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="AllListBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AllListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="AllListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>669, 355</value>
+  </data>
+  <data name="AllListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="AllListBox.Text" xml:space="preserve">
+    <value>chatListBox21</value>
+  </data>
+  <data name="&gt;&gt;AllListBox.Name" xml:space="preserve">
+    <value>AllListBox</value>
+  </data>
+  <data name="&gt;&gt;AllListBox.Type" xml:space="preserve">
+    <value>_CUSTOM_CONTROLS.ChatListBox2, _CUSTOM_CONTROLS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;AllListBox.Parent" xml:space="preserve">
+    <value>alldev</value>
+  </data>
+  <data name="&gt;&gt;AllListBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="alldev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>华文宋体, 14.999999pt</value>
+  </data>
+  <data name="alldev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="alldev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="alldev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>675, 361</value>
+  </data>
+  <data name="alldev.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="alldev.Text" xml:space="preserve">
+    <value>全部设备</value>
+  </data>
+  <data name="&gt;&gt;alldev.Name" xml:space="preserve">
+    <value>alldev</value>
+  </data>
+  <data name="&gt;&gt;alldev.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;alldev.Parent" xml:space="preserve">
+    <value>devtab</value>
+  </data>
+  <data name="&gt;&gt;alldev.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupListBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GroupListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="GroupListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>669, 355</value>
+  </data>
+  <data name="GroupListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupListBox.Text" xml:space="preserve">
+    <value>chatListBox21</value>
+  </data>
+  <data name="&gt;&gt;GroupListBox.Name" xml:space="preserve">
+    <value>GroupListBox</value>
+  </data>
+  <data name="&gt;&gt;GroupListBox.Type" xml:space="preserve">
+    <value>_CUSTOM_CONTROLS.ChatListBox2, _CUSTOM_CONTROLS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;GroupListBox.Parent" xml:space="preserve">
+    <value>groupdev</value>
+  </data>
+  <data name="&gt;&gt;GroupListBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupdev.Font" type="System.Drawing.Font, System.Drawing">
+    <value>华文宋体, 14.249999pt</value>
+  </data>
+  <data name="groupdev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="groupdev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="groupdev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>675, 361</value>
+  </data>
+  <data name="groupdev.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupdev.Text" xml:space="preserve">
+    <value>设备分组</value>
+  </data>
+  <data name="&gt;&gt;groupdev.Name" xml:space="preserve">
+    <value>groupdev</value>
+  </data>
+  <data name="&gt;&gt;groupdev.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupdev.Parent" xml:space="preserve">
+    <value>devtab</value>
+  </data>
+  <data name="&gt;&gt;groupdev.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="datacenter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>华文宋体, 14.249999pt</value>
+  </data>
+  <data name="datacenter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="datacenter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>675, 361</value>
+  </data>
+  <data name="datacenter.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="datacenter.Text" xml:space="preserve">
+    <value>数据中心</value>
+  </data>
+  <data name="&gt;&gt;datacenter.Name" xml:space="preserve">
+    <value>datacenter</value>
+  </data>
+  <data name="&gt;&gt;datacenter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;datacenter.Parent" xml:space="preserve">
+    <value>devtab</value>
+  </data>
+  <data name="&gt;&gt;datacenter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="devmanger.Font" type="System.Drawing.Font, System.Drawing">
+    <value>华文宋体, 14.249999pt</value>
+  </data>
+  <data name="devmanger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 36</value>
+  </data>
+  <data name="devmanger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>675, 361</value>
+  </data>
+  <data name="devmanger.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="devmanger.Text" xml:space="preserve">
+    <value>设备管理</value>
+  </data>
+  <data name="&gt;&gt;devmanger.Name" xml:space="preserve">
+    <value>devmanger</value>
+  </data>
+  <data name="&gt;&gt;devmanger.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;devmanger.Parent" xml:space="preserve">
+    <value>devtab</value>
+  </data>
+  <data name="&gt;&gt;devmanger.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="devtab.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="devtab.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>85, 32</value>
+  </data>
+  <data name="devtab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 43</value>
+  </data>
+  <data name="devtab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>683, 401</value>
+  </data>
+  <data name="devtab.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;devtab.Name" xml:space="preserve">
+    <value>devtab</value>
+  </data>
+  <data name="&gt;&gt;devtab.Type" xml:space="preserve">
+    <value>DMSkin.Controls.DMTabControl, DMSkin, Version=0.3.0.6, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;devtab.Parent" xml:space="preserve">
+    <value>tlp_2</value>
+  </data>
+  <data name="&gt;&gt;devtab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlp_2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlp_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlp_2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlp_2.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tlp_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>689, 467</value>
+  </data>
+  <data name="tlp_2.TabIndex" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="&gt;&gt;tlp_2.Name" xml:space="preserve">
+    <value>tlp_2</value>
+  </data>
+  <data name="&gt;&gt;tlp_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlp_2.Parent" xml:space="preserve">
+    <value>skinPanel</value>
+  </data>
+  <data name="&gt;&gt;tlp_2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlp_2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="devtab" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,685" /&gt;&lt;Rows Styles="Absolute,40,Percent,100,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="skinPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="skinPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 100</value>
+  </data>
+  <data name="skinPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="skinPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>689, 467</value>
+  </data>
+  <data name="skinPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;skinPanel.Name" xml:space="preserve">
+    <value>skinPanel</value>
+  </data>
+  <data name="&gt;&gt;skinPanel.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinPanel, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;skinPanel.Parent" xml:space="preserve">
+    <value>tlPanel</value>
+  </data>
+  <data name="&gt;&gt;skinPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 64</value>
+  </data>
+  <data name="tlPanel.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tlPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>695, 633</value>
+  </data>
+  <data name="tlPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tlPanel.Name" xml:space="preserve">
+    <value>tlPanel</value>
+  </data>
+  <data name="&gt;&gt;tlPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlPanel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tlPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="skinPanel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="skinPanel3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="skinPanel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,100,Percent,100,Absolute,66" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="ChatGropuMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>533, 18</value>
+  </metadata>
+  <data name="ChatGropuMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="CallgroupMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 26</value>
+  </data>
+  <data name="CallgroupMenu.Text" xml:space="preserve">
+    <value>招收该组杆塔设备实时数据</value>
+  </data>
+  <data name="CallgroupMenu.ToolTipText" xml:space="preserve">
+    <value>可查询当前设备的数据</value>
+  </data>
+  <data name="toolStripSeparator17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 6</value>
+  </data>
+  <data name="ToolStripMenuItem_downgl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 26</value>
+  </data>
+  <data name="ToolStripMenuItem_downgl.Text" xml:space="preserve">
+    <value>招收该组杆塔设备动作记录数据</value>
+  </data>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 6</value>
+  </data>
+  <data name="DownRecentHistroy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 26</value>
+  </data>
+  <data name="DownRecentHistroy.Text" xml:space="preserve">
+    <value>招收该组设备泄漏电流历史记录数据</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 6</value>
+  </data>
+  <data name="QueryRecordMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 26</value>
+  </data>
+  <data name="QueryRecordMenu.Text" xml:space="preserve">
+    <value>查看本组杆塔设备数据记录</value>
+  </data>
+  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 6</value>
+  </data>
+  <data name="initGroupDev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 26</value>
+  </data>
+  <data name="initGroupDev.Text" xml:space="preserve">
+    <value>该组设备初始化</value>
+  </data>
+  <data name="toolStripSeparator18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 6</value>
+  </data>
+  <data name="initGroupTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 26</value>
+  </data>
+  <data name="initGroupTime.Text" xml:space="preserve">
+    <value>该组设备同步时间</value>
+  </data>
+  <data name="ChatGropuMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 190</value>
+  </data>
+  <data name="&gt;&gt;ChatGropuMenu.Name" xml:space="preserve">
+    <value>ChatGropuMenu</value>
+  </data>
+  <data name="&gt;&gt;ChatGropuMenu.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <metadata name="imageList_tab.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>22, 43</value>
+  </metadata>
+  <data name="imageList_tab.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAa
+        CwAAAk1TRnQBSQFMAgEBBAEAAfwBAQH8AQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
+        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
+        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
+        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
+        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
+        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
+        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
+        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
+        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
+        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
+        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
+        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
+        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
+        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
+        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
+        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
+        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
+        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
+        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
+        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
+        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
+        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
+        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
+        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
+        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
+        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
+        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD//8A/wD/AP8ANwAD/wHz
+        AfAB7wH3Ae8B8AHzBP8FAAH/AdUB9wH0BwAFrAEAAawDigGsARkEihAAAv8B8QG8Ae8B8gH/AfMBBwHt
+        Am0B7QEHAfIB/wQAAbQBGQEJAhkBIgEHAf8EAAWsAQADrAKKAQkEigQACIoFAAH/Ae8BBwHvAfIB/wHz
+        AQcB7QJtAe0BBwHxAf8CAAHyAxkBCQEZAfQCKgEkAdUB8AH/AQAFrAEABKwBigEJBIoEAAWsA4oEsgIA
+        AQcBvAHvAfIB/wHzAbwBkgJtAe0BBwH0AwAB3QMZAQkBGQH0AlIBKgIZAbQBAAGzBKwBAAWsAQAEigUH
+        BqwFsgIAAQcB7AESAhQBEgEUARABQwETAW0B7QH0AwABCQMZAdYCGQNSAhkB1QQAARsEAAHwBAABvAMA
+        ArwDBwSsAYoFsgMAAbwB7wHyAf8B8wEHAe0CbQHtAQcEAAEJARkB1gEBASUB3AMZASICGQHVBAAFGwEa
+        A/ACvAMABbwErAGyAdMDsgMAAgcB7wHyAf8B8wEHAe0CbQHtAQcB9AMAAdYBRAQlAd0FGQHVCQABGwkA
+        AfACvAasAtoB0wQAAQcBvAHvAfIB/wHzAbwBkgJtAe0BBwH0AgAB8gUlAkYEGQEJAdUFAATcAbQEuwUA
+        AfEC8ALNBKwD2gHTAwABBwHsARICFAESARQBEAFDARMBbQHtAfQCAAQlAf8DTAEjAwkB1QHPAQcDAAHT
+        As0IrAQAAvIB8QHTAs0DrAHbA9oEAAEHAe8B8gH/AfMBBwHtAm0B7QEHAwAB9AElAUYBGQH/AQkBTAFN
+        AVMBIwHVASQBIwUAAdMDzQesAwAC8wLyAdUB0wLNAawBtALbAtoDAAIHAe8B8gH/AfMBBwHtAm0B7QEH
+        AfQDAAH0AUwDGQFNAlMBTQFGAf8GAALTAs0HrAMAA/MC8gHxAdMBzQEAAtwC2wHaAwACBwHvAfIB/wHz
+        AbwBkgJtAe0BBwH0BAABGwFMAQkDUwFMAf8IAAPTAs0GrAQAAfQC8wHyAfEDAAEZAdwC2wQAAgcC7wEH
+        AfQBBwFtAZIBBwG8AfAB9AUAAbwCUwEjCwAD0wLNBqwFAAH0AfMB8g0AA/IB8AHvAbwB8AEHAe8CBzgA
+        AfQC8AHyAf9FAAFCAU0BPgcAAT4DAAEoAwABQAMAASADAAEBAQABAQYAAQEWAAP/gQAG/wHAAQAB+AF/
+        AQQBAAL/AgAB8AEPAQQBAAHwAQ8BgAEAAcABAQEEAQAB8AEAAcABAQHAAQEBBAEQAgABwAEBAcABAQHv
+        AXsBgAEAAeABAwHAAQEB4AEDAYABAQHAAQEBwAEBAf8BfwHAAQMBwAEBAYABAQHwAQcBwAEBAcABAQGA
+        AQAB4AEDAcABAQHgAQMBgAEDAeABAwGAAQEBwAEBAcABBwHgAQMBgAFBAcABAQHgAR8B4AEDAcEBwwHA
+        AQEB8AH/AeABAwHjAf8B4AEDBv8B/AEfCP8L
+</value>
+  </data>
+  <metadata name="MangerMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>130, 20</value>
+  </metadata>
+  <data name="MangerMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="MangerMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 26</value>
+  </data>
+  <data name="MangerMenuItem.Text" xml:space="preserve">
+    <value>设备管理器</value>
+  </data>
+  <data name="toolStripSeparator15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="tbMenu_QueryCenter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 26</value>
+  </data>
+  <data name="tbMenu_QueryCenter.Text" xml:space="preserve">
+    <value>数据记录查询</value>
+  </data>
+  <data name="toolStripMenuItem46.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="QuitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 26</value>
+  </data>
+  <data name="QuitMenuItem.Text" xml:space="preserve">
+    <value>退出程序</value>
+  </data>
+  <data name="toolStripMenuItem50.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="MangerMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 100</value>
+  </data>
+  <data name="&gt;&gt;MangerMenu.Name" xml:space="preserve">
+    <value>MangerMenu</value>
+  </data>
+  <data name="&gt;&gt;MangerMenu.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <metadata name="SystemSetMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>673, 17</value>
+  </metadata>
+  <data name="SystemSetMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 12pt</value>
+  </data>
+  <data name="communication_protocol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 26</value>
+  </data>
+  <data name="communication_protocol.Text" xml:space="preserve">
+    <value>通信协议设置</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="importList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 26</value>
+  </data>
+  <data name="importList.Text" xml:space="preserve">
+    <value>导入设备清单</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="outList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 26</value>
+  </data>
+  <data name="outList.Text" xml:space="preserve">
+    <value>导出设备清单</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 6</value>
+  </data>
+  <data name="SystemSetMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 100</value>
+  </data>
+  <data name="SystemSetMenu.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="&gt;&gt;SystemSetMenu.Name" xml:space="preserve">
+    <value>SystemSetMenu</value>
+  </data>
+  <data name="&gt;&gt;SystemSetMenu.Type" xml:space="preserve">
+    <value>CCWin.SkinControl.SkinContextMenuStrip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <metadata name="timer_start.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>371, 43</value>
+  </metadata>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 6.75pt</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>413, 33</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 9</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>v2.0.0</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -12514,12 +12094,6 @@
   </data>
   <data name="&gt;&gt;skinToolTip1.Type" xml:space="preserve">
     <value>CCWin.SkinToolTip, CSkin, Version=15.3.3.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
-    <value>timer1</value>
-  </data>
-  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;timer_start.Name" xml:space="preserve">
     <value>timer_start</value>

@@ -18,6 +18,7 @@ using CommunicationProtocol;
 using System.Xml;
 using System.Threading;
 using System.Runtime.InteropServices;
+using _CUSTOM_CONTROLS;
 
 namespace wirelesssacler
 {
@@ -26,12 +27,12 @@ namespace wirelesssacler
         public Mainfrm()
         {
             InitializeComponent();
-          //  this.ShowInTaskbar = false;
+            //  this.ShowInTaskbar = false;
             //SetStyle(ControlStyles.UserPaint, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
             //SetStyle(ControlStyles.DoubleBuffer, true); // 双缓冲
-            Point sp = new Point(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height); 
-            this.Left = sp.X - this.Width-100; // dp.X + 600;           
+            Point sp = new Point(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            this.Left = sp.X - this.Width - 100; // dp.X + 600;           
             this.Top = (sp.Y - this.Height) / 2;
             mysql = new SqlHelp();
 
@@ -42,7 +43,7 @@ namespace wirelesssacler
             {
                 Directory.CreateDirectory(filepath);
             }
-            GetMyProVersion=GetAppConfig("ProtocolVersion");
+            GetMyProVersion = GetAppConfig("ProtocolVersion");
             if (GetMyProVersion != null)
             {
                 //读取成功数据
@@ -50,12 +51,12 @@ namespace wirelesssacler
                 {
                     MyProConnect = new CommunicationProtocol.CommunicateWithOutmA();
                     //不带全电流，则历史记录不能获取，关闭相关功能
-                   
-           
+
+
                     MyProConnect.Name = GetMyProVersion;
                     DownLoadRecentHistroy.Enabled = false;
                     DownRecentHistroy.Enabled = false;
-                   
+
                 }
                 else if (GetMyProVersion == "2.0.0.0")//偶数带全电流
                 {
@@ -65,33 +66,33 @@ namespace wirelesssacler
                     DownRecentHistroy.Enabled = true;
                 }
 
-            
 
-             
-               // this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true); 
+
+
+                // this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true); 
             }
-           // MessageBox.Show(MyProConnect.Name);
-              DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
-              if (dt.Rows.Count > 0)
-              {
-                  SequenceWithStrToByte Sequence = new SequenceWithStrToByte();
-                  Device initdevice;
-                  string notyms="ok";
-                  for (int i = 0; i < dt.Rows.Count; i++)
-                  {
-                      initdevice.number = dt.Rows[i]["Dev_ID"].ToString();
-                      initdevice.phase  = dt.Rows[i]["Dev_Phase"].ToString();
-                      initdevice.addr = dt.Rows[i]["Dev_Addr"].ToString();
-                      byte[] ad=Sequence.SeqStrToByte(initdevice.number, ref notyms);
-                      if (ad != null)
-                      {
-                          initdevice.sqeuence= ad;
-                          _PData.AddLast(initdevice);
-                      }
-                  }
-                  
-              }
-            
+            // MessageBox.Show(MyProConnect.Name);
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            if (dt.Rows.Count > 0)
+            {
+                SequenceWithStrToByte Sequence = new SequenceWithStrToByte();
+                Device initdevice;
+                string notyms = "ok";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    initdevice.number = dt.Rows[i]["Dev_ID"].ToString();
+                    initdevice.phase = dt.Rows[i]["Dev_Phase"].ToString();
+                    initdevice.addr = dt.Rows[i]["Dev_Addr"].ToString();
+                    byte[] ad = Sequence.SeqStrToByte(initdevice.number, ref notyms);
+                    if (ad != null)
+                    {
+                        initdevice.sqeuence = ad;
+                        _PData.AddLast(initdevice);
+                    }
+                }
+
+            }
+
 
         }
 
@@ -101,7 +102,7 @@ namespace wirelesssacler
         private string CurentGroup;//鼠标点击分组的名称
 
         private UsewireCom WireCom;
-      
+
         private CommunicationProtocol.ProtoColConnect MyProConnect;
         private string MyprotocolVersion = null;
         public LinkedList<Device> _PData = new LinkedList<Device>();
@@ -110,7 +111,7 @@ namespace wirelesssacler
         private int MyRate = 9600;
 
         //管理窗口
-        private static Form1 manger2=new Form1();
+        private static Form1 manger2 = new Form1();
         //数据窗口
         private static Form2 center = new Form2();
 
@@ -138,7 +139,7 @@ namespace wirelesssacler
                 if (key == strKey)
                 {
                     string strvalue = ConfigurationManager.AppSettings[strKey];
-                    if(strvalue=="")
+                    if (strvalue == "")
                     {
                         return null;
                     }
@@ -166,64 +167,64 @@ namespace wirelesssacler
             center.Parent = this.devtab.TabPages[3];
             center.Dock = DockStyle.Fill;
 
-             Microsoft.Win32.SystemEvents.DisplaySettingsChanged+=SystemEvents_DisplaySettingsChanged; 
-   
-          //  Connectfrm con = new Connectfrm();
+            Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
 
-          //  if (con.ShowDialog() == DialogResult.OK)
-          //  {
-          //      MyPort = con.UsePort;
+            //  Connectfrm con = new Connectfrm();
 
-          //      if (MyProConnect != null)
-          //      {
-          //          //读取协议
-          //          WireCom = new UsewireCom(MyPort, MyRate, MyProConnect.Name, MyProConnect,_PData);
-          //          try
-          //          {
-                        
-          //              //ConPort.Open();
-          //              bool ok = WireCom.openPort();
-          //              if (ok)
-          //              {
-          //                  pic_Com.BackgroundImage = Properties.Resources.online;
-                                                   
-          //              }
-          //          }
-          //          catch
-          //          {
-          //              MessageBox.Show("串口打开失败!");
-          //          }
-          //      }
-          //      else
-          //      {
-          //          MessageBox.Show("配置协议失败:无协议");
-                    
-          //      }
-              
-              
-          //  }
-          //  con.Dispose();
+            //  if (con.ShowDialog() == DialogResult.OK)
+            //  {
+            //      MyPort = con.UsePort;
 
-          //  //加载设备到列表中
-          //  AddDevToList();
+            //      if (MyProConnect != null)
+            //      {
+            //          //读取协议
+            //          WireCom = new UsewireCom(MyPort, MyRate, MyProConnect.Name, MyProConnect,_PData);
+            //          try
+            //          {
 
-      
-          //DataTable  ds=  mysql.ReturnTable("select * from Dev_List");
-          //  if(ds.Rows.Count>0)
-          //  {
-          //      for (int k = 0; k < ds.Rows.Count;k++)
-          //      {
-          //          string v = ds.Rows[k]["Dev_ID"].ToString();
-          //          string s = ds.Rows[k]["Dev_Addr"].ToString();
-          //          txtSearch.AutoCompleteCustomSource.Add(v);
-          //          txtSearch.AutoCompleteCustomSource.Add(s);
-          //      }
-          //  }
-            
+            //              //ConPort.Open();
+            //              bool ok = WireCom.openPort();
+            //              if (ok)
+            //              {
+            //                  pic_Com.BackgroundImage = Properties.Resources.online;
+
+            //              }
+            //          }
+            //          catch
+            //          {
+            //              MessageBox.Show("串口打开失败!");
+            //          }
+            //      }
+            //      else
+            //      {
+            //          MessageBox.Show("配置协议失败:无协议");
+
+            //      }
+
+
+            //  }
+            //  con.Dispose();
+
+            //  //加载设备到列表中
+            //  AddDevToList();
+
+
+            //DataTable  ds=  mysql.ReturnTable("select * from Dev_List");
+            //  if(ds.Rows.Count>0)
+            //  {
+            //      for (int k = 0; k < ds.Rows.Count;k++)
+            //      {
+            //          string v = ds.Rows[k]["Dev_ID"].ToString();
+            //          string s = ds.Rows[k]["Dev_Addr"].ToString();
+            //          txtSearch.AutoCompleteCustomSource.Add(v);
+            //          txtSearch.AutoCompleteCustomSource.Add(s);
+            //      }
+            //  }
+
         }
-       // using System.Runtime.InteropServices;
+        // using System.Runtime.InteropServices;
 
-//然后写API引用部分的代码，放入 class 内部
+        //然后写API引用部分的代码，放入 class 内部
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private static extern int SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
         const int WM_SYSCOMMAND = 0x112;
@@ -233,8 +234,8 @@ namespace wirelesssacler
 
         private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
         {
-         // this.WindowState = FormWindowState.Maximized;
-            IntPtr hwnd= this.Handle;
+            // this.WindowState = FormWindowState.Maximized;
+            IntPtr hwnd = this.Handle;
             SendMessage(hwnd, WM_SYSCOMMAND, SC_MAXIMIZE, 0); // 最大化
         }
         //获取数据到txt列表中
@@ -250,13 +251,13 @@ namespace wirelesssacler
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-     
-                    ChatListSubItem cst = new ChatListSubItem();
+
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dt.Rows[i]["Dev_ID"].ToString();
-                    cst.NicName = "监测路线位置："+ dt.Rows[i]["Dev_Phase"].ToString();
-                    cst.PersonalMsg =  "所在杆塔位置：" +dt.Rows[i]["Dev_Addr"].ToString();
+                    cst.NicName = "监测路线位置：" + dt.Rows[i]["Dev_Phase"].ToString();
+                    cst.PersonalMsg = "所在杆塔位置：" + dt.Rows[i]["Dev_Addr"].ToString();
                     cst.HeadImage = Properties.Resources.dev;
-                    chatlb_All.Items[0].SubItems.Add(cst);
+                    AllListBox.Items[0].SubItems.Add(cst);
 
                 }
                 //选项卡2
@@ -267,12 +268,12 @@ namespace wirelesssacler
                 for (int j = 0; j < dtcopy.Rows.Count; j++)
                 {
                     //添加第一次循环数据
-                    ChatListItem lt = new ChatListItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListItem lt = new _CUSTOM_CONTROLS._ChatListBox2.ChatListItem();
                     lt.Text = dtcopy.Rows[j]["Dev_Addr"].ToString();
-                    ChatListSubItem cst = new ChatListSubItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dtcopy.Rows[j]["Dev_ID"].ToString();
                     cst.NicName = "监测路线位置：" + dtcopy.Rows[j]["Dev_Phase"].ToString();
-                    cst.PersonalMsg =  "所在杆塔位置：" +dtcopy.Rows[j]["Dev_Addr"].ToString();
+                    cst.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[j]["Dev_Addr"].ToString();
                     cst.HeadImage = cst.HeadImage = Properties.Resources.dev; //; Image.FromFile("./img/dev.jpg");
                     lt.SubItems.Add(cst);
 
@@ -286,10 +287,10 @@ namespace wirelesssacler
                         if (String.Compare(str1, str2) == 0)
                         {
 
-                           ChatListSubItem cst2 = new ChatListSubItem();
+                            _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst2 = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                             cst2.DisplayName = dtcopy.Rows[k]["Dev_ID"].ToString();
                             cst2.NicName = "监测路线位置：" + dtcopy.Rows[k]["Dev_Phase"].ToString();
-                            cst2.PersonalMsg =  "所在杆塔位置：" +dtcopy.Rows[k]["Dev_Addr"].ToString();
+                            cst2.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[k]["Dev_Addr"].ToString();
                             cst2.HeadImage = cst.HeadImage = Properties.Resources.dev;// Image.FromFile("./img/dev.jpg");
                             lt.SubItems.Add(cst2);
                             j++;//找到一行一样加入，并跳过此行 
@@ -298,7 +299,7 @@ namespace wirelesssacler
 
 
                     }
-                    chatlb_Group.Items.Add(lt);
+                    GroupListBox.Items.Add(lt);
 
                 }
 
@@ -307,25 +308,25 @@ namespace wirelesssacler
             {
                 MessageBox.Show("加载失败，设备数据为空，请手动加入设备清单");
             }
-          
+
         }
         private void AddDevToList2()
         {
             //添加设备
             //添加选项卡一的设备
             //添加选项卡二的设备
-      
+
             DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                   ChatListSubItem cst = new ChatListSubItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dt.Rows[i]["Dev_ID"].ToString();
                     cst.NicName = "监测路线位置：" + dt.Rows[i]["Dev_Phase"].ToString();
-                    cst.PersonalMsg = "所在杆塔位置："+dt.Rows[i]["Dev_Addr"].ToString();
+                    cst.PersonalMsg = "所在杆塔位置：" + dt.Rows[i]["Dev_Addr"].ToString();
                     cst.HeadImage = Properties.Resources.dev;
-                    chatlb_All.Items[0].SubItems.Add(cst);
+                    AllListBox.Items[0].SubItems.Add(cst);
 
                 }
                 //选项卡2
@@ -336,12 +337,12 @@ namespace wirelesssacler
                 for (int j = 0; j < dtcopy.Rows.Count; j++)
                 {
                     //添加第一次循环数据
-                    ChatListItem lt = new ChatListItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListItem lt = new _CUSTOM_CONTROLS._ChatListBox2.ChatListItem();
                     lt.Text = dtcopy.Rows[j]["Dev_Addr"].ToString();
-                    ChatListSubItem cst = new ChatListSubItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dtcopy.Rows[j]["Dev_ID"].ToString();
                     cst.NicName = "监测路线位置：" + dtcopy.Rows[j]["Dev_Phase"].ToString();
-                    cst.PersonalMsg =  "所在杆塔位置："+dtcopy.Rows[j]["Dev_Addr"].ToString();
+                    cst.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[j]["Dev_Addr"].ToString();
                     cst.HeadImage = cst.HeadImage = Properties.Resources.dev; //; Image.FromFile("./img/dev.jpg");
                     lt.SubItems.Add(cst);
 
@@ -355,10 +356,10 @@ namespace wirelesssacler
                         if (String.Compare(str1, str2) == 0)
                         {
 
-                           ChatListSubItem cst2 = new ChatListSubItem();
+                            _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst2 = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                             cst2.DisplayName = dtcopy.Rows[k]["Dev_ID"].ToString();
                             cst2.NicName = "监测路线位置：" + dtcopy.Rows[k]["Dev_Phase"].ToString();
-                            cst2.PersonalMsg =  "所在杆塔位置："+dtcopy.Rows[k]["Dev_Addr"].ToString();
+                            cst2.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[k]["Dev_Addr"].ToString();
                             cst2.HeadImage = cst.HeadImage = Properties.Resources.dev;// Image.FromFile("./img/dev.jpg");
                             lt.SubItems.Add(cst2);
                             j++;//找到一行一样加入，并跳过此行 
@@ -367,7 +368,7 @@ namespace wirelesssacler
 
 
                     }
-                    chatlb_Group.Items.Add(lt);
+                    GroupListBox.Items.Add(lt);
 
                 }
 
@@ -375,15 +376,15 @@ namespace wirelesssacler
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text=="") return;
+            if (txtSearch.Text == "") return;
             SerchfrmDate(txtSearch.Text);
             //txtSearch.Text = "";
-          
+
         }
 
         private void SerchfrmDate(string Data)
         {
-            Messagefrm mfrm = new Messagefrm(Data,MyProConnect.Name);
+            Messagefrm mfrm = new Messagefrm(Data, MyProConnect.Name);
             mfrm.Doquery += new Messagefrm.DoQuery(QuerySerch);
             mfrm.DoqueryAddr += new Messagefrm.DoQueryAddr(QuerySerchAddr);
             mfrm.Dolight += mfrm_Dolight;
@@ -397,7 +398,7 @@ namespace wirelesssacler
             //动作记录
             LightGroupfrm grop = new LightGroupfrm(add);
             grop.Query += new LightGroupfrm.queryLight(Querylight);
-            if(grop.ShowDialog()==DialogResult.Yes)
+            if (grop.ShowDialog() == DialogResult.Yes)
             {
                 grop.Query -= new LightGroupfrm.queryLight(Querylight);
             }
@@ -409,11 +410,11 @@ namespace wirelesssacler
         {
             LightCountfrm lc = new LightCountfrm(num);
             lc.Query += new LightCountfrm.queryLight(Querylight);
-           
-           if( lc.ShowDialog()==DialogResult.Yes)
-           {
-               lc.Query -= new LightCountfrm.queryLight(Querylight);
-           }
+
+            if (lc.ShowDialog() == DialogResult.Yes)
+            {
+                lc.Query -= new LightCountfrm.queryLight(Querylight);
+            }
             lc.Dispose();
         }
 
@@ -422,22 +423,22 @@ namespace wirelesssacler
             //throw new NotImplementedException();
             if (isreal)
             {
-                CallGroupfrm grop = new CallGroupfrm(add, true,GetMyProVersion);
+                CallGroupfrm grop = new CallGroupfrm(add, true, GetMyProVersion);
                 grop.callRealData += new CallGroupfrm.CallReal(this.sendGroupReal);
 
-              if( grop.ShowDialog()==DialogResult.Yes)
-              {
-                  grop.callRealData -= new CallGroupfrm.CallReal(this.sendGroupReal);
-              }
+                if (grop.ShowDialog() == DialogResult.Yes)
+                {
+                    grop.callRealData -= new CallGroupfrm.CallReal(this.sendGroupReal);
+                }
                 grop.Dispose();
             }
             else
             {
-                
-                CallGroupfrm grop = new CallGroupfrm(add, false,GetMyProVersion);
+
+                CallGroupfrm grop = new CallGroupfrm(add, false, GetMyProVersion);
                 grop.callHistroyData += new CallGroupfrm.CallHistroy(sendGroupHistroy);
 
-                if(grop.ShowDialog()==DialogResult.Yes)
+                if (grop.ShowDialog() == DialogResult.Yes)
                 {
                     grop.callHistroyData -= new CallGroupfrm.CallHistroy(sendGroupHistroy);
                 }
@@ -450,11 +451,11 @@ namespace wirelesssacler
         {
             if (isreal) //下载序列的实时数据
             {
-                CallCurrentFrom call = new CallCurrentFrom(num, true,GetMyProVersion);
+                CallCurrentFrom call = new CallCurrentFrom(num, true, GetMyProVersion);
                 call.callRealData += new CallCurrentFrom.CallReal(sendOneReal);
 
-     
-                if(call.ShowDialog()==DialogResult.Yes)
+
+                if (call.ShowDialog() == DialogResult.Yes)
                 {
                     call.callRealData -= new CallCurrentFrom.CallReal(sendOneReal);
                 }
@@ -462,9 +463,9 @@ namespace wirelesssacler
             }
             else  //下载序列的历史数据
             {
-                CallCurrentFrom call = new CallCurrentFrom(num, false,GetMyProVersion);
+                CallCurrentFrom call = new CallCurrentFrom(num, false, GetMyProVersion);
                 call.callHistroyData += new CallCurrentFrom.CallHistroy(sendOneHistroy);
-                if(call.ShowDialog()==DialogResult.Yes)
+                if (call.ShowDialog() == DialogResult.Yes)
                 {
                     call.callHistroyData -= new CallCurrentFrom.CallHistroy(sendOneHistroy);
                 }
@@ -478,7 +479,7 @@ namespace wirelesssacler
             //{
             //     WireCom = new UsewireCom(MyPort,MyRate, MyProConnect.Name, MyProConnect, _PData);
             //}
-            if (WireCom!=null && WireCom.getIsOpen())
+            if (WireCom != null && WireCom.getIsOpen())
             {
                 ConClosefrm close = new ConClosefrm(WireCom._CComPort.PortName, WireCom._CComPort.BaudRate.ToString(), WireCom._CComPort.DataBits.ToString(), WireCom._CComPort.StopBits.ToString());
                 if (DialogResult.OK == close.ShowDialog())
@@ -494,19 +495,19 @@ namespace wirelesssacler
 
                 if (con.ShowDialog() == DialogResult.OK)
                 {
-                    MyPort= con.UsePort;
+                    MyPort = con.UsePort;
                     con.Close();
 
                     //连接串口,并打开
-                  
+
                     if (MyProConnect != null)
                     {
                         //读取协议
-                        WireCom = new UsewireCom(MyPort,MyRate, MyProConnect.Name,MyProConnect,_PData);
+                        WireCom = new UsewireCom(MyPort, MyRate, MyProConnect.Name, MyProConnect, _PData);
                         try
                         {
                             WireCom.openPort();
-                            pic_Com.BackgroundImage = Properties.Resources.online;                        
+                            pic_Com.BackgroundImage = Properties.Resources.online;
                         }
                         catch
                         {
@@ -518,7 +519,7 @@ namespace wirelesssacler
                         MessageBox.Show("配置协议失败:无协议");
                         return;
                     }
-                   
+
                 }
                 con.Dispose();
             }
@@ -562,7 +563,7 @@ namespace wirelesssacler
         {
             SqlHelp outsql = new SqlHelp();
             DataTable ot = outsql.ReturnTable("select * from `Dev_List`");
-            string filename ="导出设备清单-"+ DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xls";
+            string filename = "导出设备清单-" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xls";
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string path2 = "设备清单";
             path = Path.Combine(path, path2);
@@ -632,15 +633,15 @@ namespace wirelesssacler
         private void importList_Click(object sender, EventArgs e)
         {
             ImportDevfrm import = new ImportDevfrm();
-            import.refresh+= new ImportDevfrm.RefashList(ReFreList);
+            import.refresh += new ImportDevfrm.RefashList(ReFreList);
             import.Show();
         }
 
         private void ReFreList()
         {
-                 //刷新设备
-            chatlb_All.Items[0].SubItems.Clear();
-            chatlb_Group.Items.Clear();
+            //刷新设备
+            AllListBox.Items[0].SubItems.Clear();
+            GroupListBox.Items.Clear();
             AddDevToList2();
             _PData.Clear();
             //更新设备列表
@@ -654,7 +655,7 @@ namespace wirelesssacler
                 {
                     initdevice.number = dt.Rows[i]["Dev_ID"].ToString();
                     initdevice.phase = dt.Rows[i]["Dev_Phase"].ToString();
-                    initdevice.addr =  dt.Rows[i]["Dev_Addr"].ToString();
+                    initdevice.addr = dt.Rows[i]["Dev_Addr"].ToString();
                     byte[] ad = Sequence.SeqStrToByte(initdevice.number, ref notyms);
                     if (ad != null)
                     {
@@ -665,11 +666,11 @@ namespace wirelesssacler
 
             }
             //更新协议里面的设备列表
-            if(WireCom!=null)
+            if (WireCom != null)
             {
                 WireCom.RefreshList(_PData);
             }
-        
+
         }
 
         private void MangerMenuItem_Click(object sender, EventArgs e)
@@ -681,7 +682,7 @@ namespace wirelesssacler
 
         void manger_RefreshNow()
         {
-           //刷新列表
+            //刷新列表
             ReFreList();
         }
 
@@ -701,32 +702,32 @@ namespace wirelesssacler
             DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
             if (dt.Rows.Count > 0)
             {
-                chatlb_All.Items[0].SubItems.Clear();
+                AllListBox.Items[0].SubItems.Clear();
                 DataTable dtcopy2 = dt.Copy();
                 DataView dv2 = dt.DefaultView;
                 dv2.Sort = "Dev_Addr";
                 dtcopy2 = dv2.ToTable();
                 for (int i = 0; i < dtcopy2.Rows.Count; i++)
                 {
-                  ChatListSubItem cst = new ChatListSubItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dt.Rows[i]["Dev_ID"].ToString();
                     cst.NicName = "监测路线位置：" + dt.Rows[i]["Dev_Phase"].ToString();
                     cst.PersonalMsg = "所在杆塔位置：" + dt.Rows[i]["Dev_Addr"].ToString();
                     cst.HeadImage = cst.HeadImage = Properties.Resources.dev; //Image.FromFile("./img/dev.jpg");
-                    chatlb_All.Items[0].SubItems.Add(cst);
+                    AllListBox.Items[0].SubItems.Add(cst);
 
                 }
                 DataTable dtcopy = dt.Copy();
                 DataView dv = dt.DefaultView;
                 dv.Sort = "Dev_Addr";
                 dtcopy = dv.ToTable();
-                chatlb_Group.Items.Clear();
+                GroupListBox.Items.Clear();
                 for (int j = 0; j < dtcopy.Rows.Count; j++)
                 {
                     //添加第一次循环数据
-                   ChatListItem lt = new ChatListItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListItem lt = new _CUSTOM_CONTROLS._ChatListBox2.ChatListItem();
                     lt.Text = dtcopy.Rows[j]["Dev_Addr"].ToString();
-                    ChatListSubItem cst = new ChatListSubItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dtcopy.Rows[j]["Dev_ID"].ToString();
                     cst.NicName = "监测路线位置：" + dtcopy.Rows[j]["Dev_Phase"].ToString();
                     cst.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[j]["Dev_Addr"].ToString();
@@ -743,7 +744,7 @@ namespace wirelesssacler
                         if (String.Compare(str1, str2) == 0)
                         {
 
-                           ChatListSubItem cst2 = new ChatListSubItem();
+                            _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst2 = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                             cst2.DisplayName = dtcopy.Rows[k]["Dev_ID"].ToString();
                             cst2.NicName = "监测路线位置：" + dtcopy.Rows[k]["Dev_Phase"].ToString();
                             cst2.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[k]["Dev_Addr"].ToString();
@@ -755,7 +756,7 @@ namespace wirelesssacler
 
 
                     }
-                    chatlb_Group.Items.Add(lt);
+                    GroupListBox.Items.Add(lt);
                 }
             }
         }
@@ -763,28 +764,28 @@ namespace wirelesssacler
         private void tsmItemSortbyid_Click(object sender, EventArgs e)
         {
 
-             DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
-             if (dt.Rows.Count > 0)
-             {
-                 
-                 DataTable dtcopy = dt.Copy();
-                 DataView dv = dt.DefaultView;
-                 dv.Sort = "Dev_ID";
-                 dtcopy = dv.ToTable();
-                 chatlb_All.Items[0].SubItems.Clear();
-                 for (int j = 0; j < dtcopy.Rows.Count; j++)
-                 {
-                     //添加第一次循环数据
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            if (dt.Rows.Count > 0)
+            {
 
-                 ChatListSubItem cst = new ChatListSubItem();
-                     cst.DisplayName = dtcopy.Rows[j]["Dev_ID"].ToString();
-                     cst.NicName = "监测路线位置：" + dtcopy.Rows[j]["Dev_Phase"].ToString();
-                     cst.PersonalMsg ="所在杆塔位置："+ dtcopy.Rows[j]["Dev_Addr"].ToString();
-                     cst.HeadImage = cst.HeadImage = Properties.Resources.dev; //Image.FromFile("./img/dev.jpg");
-                  
-                     chatlb_All.Items[0].SubItems.Add(cst);
-                 }
-             }
+                DataTable dtcopy = dt.Copy();
+                DataView dv = dt.DefaultView;
+                dv.Sort = "Dev_ID";
+                dtcopy = dv.ToTable();
+                AllListBox.Items[0].SubItems.Clear();
+                for (int j = 0; j < dtcopy.Rows.Count; j++)
+                {
+                    //添加第一次循环数据
+
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
+                    cst.DisplayName = dtcopy.Rows[j]["Dev_ID"].ToString();
+                    cst.NicName = "监测路线位置：" + dtcopy.Rows[j]["Dev_Phase"].ToString();
+                    cst.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[j]["Dev_Addr"].ToString();
+                    cst.HeadImage = cst.HeadImage = Properties.Resources.dev; //Image.FromFile("./img/dev.jpg");
+
+                    AllListBox.Items[0].SubItems.Add(cst);
+                }
+            }
 
         }
 
@@ -793,22 +794,22 @@ namespace wirelesssacler
             DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
             if (dt.Rows.Count > 0)
             {
-                chatlb_All.Items[0].SubItems.Clear();
+                AllListBox.Items[0].SubItems.Clear();
                 DataTable dtcopy = dt.Copy();
                 DataView dv = dt.DefaultView;
                 dv.Sort = "Dev_Phase";
                 dtcopy = dv.ToTable();
-              
+
                 for (int j = 0; j < dtcopy.Rows.Count; j++)
                 {
                     //添加第一次循环数据
-                   ChatListSubItem cst = new ChatListSubItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dtcopy.Rows[j]["Dev_ID"].ToString();
                     cst.NicName = "监测路线位置：" + dtcopy.Rows[j]["Dev_Phase"].ToString();
-                    cst.PersonalMsg ="所在杆塔位置："+ dtcopy.Rows[j]["Dev_Addr"].ToString();
+                    cst.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[j]["Dev_Addr"].ToString();
                     cst.HeadImage = cst.HeadImage = Properties.Resources.dev; //Image.FromFile("./img/dev.jpg");
 
-                    chatlb_All.Items[0].SubItems.Add(cst);
+                    AllListBox.Items[0].SubItems.Add(cst);
                 }
             }
         }
@@ -818,29 +819,29 @@ namespace wirelesssacler
             DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
             if (dt.Rows.Count > 0)
             {
-                
+
                 DataTable dtcopy = dt.Copy();
                 DataView dv = dt.DefaultView;
                 dv.Sort = "Dev_Addr";
                 dtcopy = dv.ToTable();
-                chatlb_All.Items[0].SubItems.Clear();
+                AllListBox.Items[0].SubItems.Clear();
                 for (int j = 0; j < dtcopy.Rows.Count; j++)
                 {
                     //添加第一次循环数据
-                    ChatListSubItem cst = new ChatListSubItem();
+                    _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem cst = new _CUSTOM_CONTROLS._ChatListBox2.ChatListSubItem();
                     cst.DisplayName = dtcopy.Rows[j]["Dev_ID"].ToString();
                     cst.NicName = "监测路线位置：" + dtcopy.Rows[j]["Dev_Phase"].ToString();
-                    cst.PersonalMsg ="所在杆塔位置："+dtcopy.Rows[j]["Dev_Addr"].ToString();
+                    cst.PersonalMsg = "所在杆塔位置：" + dtcopy.Rows[j]["Dev_Addr"].ToString();
                     cst.HeadImage = cst.HeadImage = Properties.Resources.dev;// Image.FromFile("./img/dev.jpg");
-                    
-                    chatlb_All.Items[0].SubItems.Add(cst);
+
+                    AllListBox.Items[0].SubItems.Add(cst);
                 }
             }
         }
 
         private void queryMenu_Click(object sender, EventArgs e)
         {
-            if(WireCom==null || WireCom.getIsOpen()==false)
+            if (WireCom == null || WireCom.getIsOpen() == false)
             {
                 MessageBox.Show("通信端口没有打开，请打开通信端口!");
                 return;
@@ -854,23 +855,23 @@ namespace wirelesssacler
                 call.CallHistroyData2 += new CallMutinData.MutinHistroydata2(SendLastDayHistroyData);
                 call.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
 
         }
 
         private BackState SendLastDayHistroyData(string number, int day, out string err, out int num)
         {
-            return  WireCom.SendOneHistroy(number, day, out err, out num);
+            return WireCom.SendOneHistroy(number, day, out err, out num);
         }
 
-        private bool call_CallLight(string p,int total,int old,out string err)
+        private bool call_CallLight(string p, int total, int old, out string err)
         {
 
-            bool call = WireCom.Query_Light2(p,total,old,out err);//Query_Light2(string CurrentNumber, int count,int start, out string err)
+            bool call = WireCom.Query_Light2(p, total, old, out err);//Query_Light2(string CurrentNumber, int count,int start, out string err)
             return false;
         }
 
@@ -893,10 +894,10 @@ namespace wirelesssacler
                 MessageBox.Show("通信端口没有打开，请打开通信端口!");
                 return;
             }
-            CallCurrentFrom  call= new CallCurrentFrom(CurrentNumber, true,GetMyProVersion);
+            CallCurrentFrom call = new CallCurrentFrom(CurrentNumber, true, GetMyProVersion);
             call.callRealData += new CallCurrentFrom.CallReal(sendOneReal);
 
-            if(call.ShowDialog()==DialogResult.Yes)
+            if (call.ShowDialog() == DialogResult.Yes)
             {
                 call.callRealData -= new CallCurrentFrom.CallReal(sendOneReal);
             }
@@ -910,15 +911,15 @@ namespace wirelesssacler
                 MessageBox.Show("通信端口没有打开，请打开通信端口!");
                 return;
             }
-            CallCurrentFrom call = new CallCurrentFrom(CurrentNumber, false,GetMyProVersion);
+            CallCurrentFrom call = new CallCurrentFrom(CurrentNumber, false, GetMyProVersion);
             call.callHistroyData += new CallCurrentFrom.CallHistroy(sendOneHistroy);
-           if( call.ShowDialog()==DialogResult.Yes)
-           {
-               call.Visible = false;
-               call.callHistroyData -= new CallCurrentFrom.CallHistroy(sendOneHistroy);
-               
-           }
-           call.Dispose();
+            if (call.ShowDialog() == DialogResult.Yes)
+            {
+                call.Visible = false;
+                call.callHistroyData -= new CallCurrentFrom.CallHistroy(sendOneHistroy);
+
+            }
+            call.Dispose();
 
         }
 
@@ -932,11 +933,11 @@ namespace wirelesssacler
             byte[] initfo = new byte[8];
             //检测报文
             string number = CurrentNumber;
-            Initdevfrom init = new Initdevfrom(initfo,number);
+            Initdevfrom init = new Initdevfrom(initfo, number);
             init.InitDev += new Initdevfrom.InitDevice(this.InitDev);
-            if(init.ShowDialog()==DialogResult.OK)
+            if (init.ShowDialog() == DialogResult.OK)
             {
-              
+
                 init.InitDev -= new Initdevfrom.InitDevice(this.InitDev);
                 init.Close();
             }
@@ -947,7 +948,7 @@ namespace wirelesssacler
         private void QueryRecordMenu_Click(object sender, EventArgs e)
         {
             QueryGroupForm grop = new QueryGroupForm(CurentGroup);
-            
+
             grop.Show();
         }
 
@@ -958,7 +959,7 @@ namespace wirelesssacler
                 MessageBox.Show("通信端口没有打开，请打开通信端口!");
                 return;
             }
-            CallGroupfrm grop = new CallGroupfrm(CurentGroup,false,GetMyProVersion);
+            CallGroupfrm grop = new CallGroupfrm(CurentGroup, false, GetMyProVersion);
             grop.callHistroyData += new CallGroupfrm.CallHistroy(this.sendGroupHistroy);
             grop.ShowDialog();
             grop.Dispose();
@@ -972,45 +973,61 @@ namespace wirelesssacler
                 MessageBox.Show("通信端口没有打开，请打开通信端口!");
                 return;
             }
-            CallGroupfrm grop = new CallGroupfrm(CurentGroup, true,GetMyProVersion);
+            CallGroupfrm grop = new CallGroupfrm(CurentGroup, true, GetMyProVersion);
             grop.callRealData += new CallGroupfrm.CallReal(this.sendGroupReal);
-            if(grop.ShowDialog()==DialogResult.Yes)
+            if (grop.ShowDialog() == DialogResult.Yes)
             {
                 grop.callRealData -= new CallGroupfrm.CallReal(this.sendGroupReal);
             }
             grop.Dispose();
         }
 
-   
-        private void chatlb_All_UpSubItem(object sender, ChatListClickEventArgs e, MouseEventArgs es)
+
+        private void AllListBox_MouseUpItem(object sender, _CUSTOM_CONTROLS._ChatListBox2.ChatListEventArgs e)
+        {
+            CurentGroup = e.SelectItem.Text;
+            if (e.Button == MouseButtons.Right)
+                ChatAllDevItemMenu.Show(Cursor.Position);
+        }
+        private void AllListBox_MouseUpSubItem(object sender, _CUSTOM_CONTROLS._ChatListBox2.ChatListEventArgs e)
         {
             CurrentNumber = e.SelectSubItem.DisplayName;
-           
+            if (e.Button == MouseButtons.Right)
+                UserMenu.Show(Cursor.Position);
+        }
+        private void GroupListBox_MouseUpItem(object sender, _CUSTOM_CONTROLS._ChatListBox2.ChatListEventArgs e)
+        {
+            CurentGroup = e.SelectItem.Text;
+            if (e.Button == MouseButtons.Right)
+                ChatGropuMenu.Show(Cursor.Position);
         }
 
-        private void chatlb_Group_UpSubItem(object sender, ChatListClickEventArgs e, MouseEventArgs es)
+        private void GroupListBox_MouseUpSubItem(object sender, _CUSTOM_CONTROLS._ChatListBox2.ChatListEventArgs e)
         {
             CurrentNumber = e.SelectSubItem.DisplayName;
+            if (e.Button == MouseButtons.Right)
+                UserMenu.Show(Cursor.Position);
         }
 
-        private void chatlb_Group_Click(object sender, EventArgs e)
-        {
-            if (this.chatlb_Group.SelectItem!= null)
-                       CurentGroup = this.chatlb_Group.SelectItem.Text;
-         
-        }
+        //private void chatlb_Group_Click(object sender, EventArgs e)
+        //{
+        //    //this.VerticalScroll.
+        //    if (this.GroupListBox.SelectItem != null)
+        //               CurentGroup = this.chatlb_Group.SelectItem.Text;
+
+        //}
 
         #region 召测设备数据被调用函数
 
-       //1个初始化，2个召测数据，实时数据和历史数据(分组和单个和多个)，7个,外加动作记录数据查询
+        //1个初始化，2个召测数据，实时数据和历史数据(分组和单个和多个)，7个,外加动作记录数据查询
 
         //设备初始化函数，若收到数据，请置Initdevfrom.Isback=true;
         private BackState InitDev()
         {
             BackState init = BackState.No;
-            init= WireCom.InitDev(CurrentNumber);
+            init = WireCom.InitDev(CurrentNumber);
             //发送报文
-           // MessageBox.Show(CurrentNumber);
+            // MessageBox.Show(CurrentNumber);
             return init;
         }
 
@@ -1019,17 +1036,17 @@ namespace wirelesssacler
         {
             BackState bs = WireCom.sendOneReal(num);
             //发送一个设备的地址
-          //  bs.bs = BackState.Yes;
+            //  bs.bs = BackState.Yes;
 
             return bs;
         }
 
         //发送1个设备4小时记录的报文
-        private BackState sendOneHistroy(string number,out string msg,out int num)
+        private BackState sendOneHistroy(string number, out string msg, out int num)
         {
             //发送一个设备的地址
-            BackState bs = WireCom.SendOneHistroy(number,out msg,out num);
-          
+            BackState bs = WireCom.SendOneHistroy(number, out msg, out num);
+
             return bs;
         }
 
@@ -1037,10 +1054,10 @@ namespace wirelesssacler
         //根据分组发送1组设备实时记录的报文
         private BackState sendGroupReal(string addr)
         {
-   
+
             //根据分组发送1组设备实时的报文
             BackState bs = WireCom.sendOneReal(addr);
-          
+
             return bs;
         }
         //根据分组发送1组设备2小时记录的报文
@@ -1049,22 +1066,22 @@ namespace wirelesssacler
             //MessageBox.Show(CurentGroup);
             //string num,out string msg,out int totol
 
-            BackState bs = WireCom.SendOneHistroy(num,out msg,out totol);
+            BackState bs = WireCom.SendOneHistroy(num, out msg, out totol);
             return bs;
         }
 
 
 
         //发送多个个设备实时的报文
-        private bool sendMultitermReal(string Sendstr,out string err)
+        private bool sendMultitermReal(string Sendstr, out string err)
         {
-            
+
             //MessageBox.Show(Sendstr.Count.ToString());
-            bool bs = WireCom.SendMultitermRealData(Sendstr,out err);
+            bool bs = WireCom.SendMultitermRealData(Sendstr, out err);
             return bs;
         }
         //发送多个设备2小时记录的报文
-        private BackState sendMultitermHistroy(string number,out string msg,out int num)
+        private BackState sendMultitermHistroy(string number, out string msg, out int num)
         {
             //MessageBox.Show(Sendstr.Count.ToString());
             BackState bs = WireCom.SendOneHistroy(number, out msg, out num);
@@ -1072,12 +1089,12 @@ namespace wirelesssacler
         }
         //发送召测动作记录的报文
 
-        #endregion 
+        #endregion
 
         private void Mainfrm_Shown(object sender, EventArgs e)
         {
-            
-        //    this.WindowState = FormWindowState.Maximized;
+
+            //    this.WindowState = FormWindowState.Maximized;
             //try
             //{
             //    string bv = GetAppConfig("Notytime");
@@ -1114,20 +1131,20 @@ namespace wirelesssacler
             //         }
 
             //     }
-               
+
             //为taabpge添加数据管理窗体
             //this.WindowState = FormWindowState.Maximized;
 
             timer_start.Start();//显示窗体
-          
-            
+
+
         }
         private void SystemEvents_TimeChanged(object sender, EventArgs e)
         {
             SetAppConfig("Calibration", "ture");
-            MessageBox.Show("系统时间被改变了,软件将以系统\r时间为依据同步设备时间，现在时间为：" + DateTime.Now.ToString(),"系统时间更改提示");
-           
-            
+            MessageBox.Show("系统时间被改变了,软件将以系统\r时间为依据同步设备时间，现在时间为：" + DateTime.Now.ToString(), "系统时间更改提示");
+
+
         }
 
         private void MenuItem_Light_Click(object sender, EventArgs e)
@@ -1140,7 +1157,7 @@ namespace wirelesssacler
             LightCountfrm lc = new LightCountfrm(CurrentNumber);
             lc.Query += new LightCountfrm.queryLight(Querylight);
 
-            if(lc.ShowDialog()==DialogResult.Yes)
+            if (lc.ShowDialog() == DialogResult.Yes)
             {
                 lc.Visible = false;
                 lc.Query -= new LightCountfrm.queryLight(Querylight);
@@ -1148,17 +1165,17 @@ namespace wirelesssacler
             lc.Dispose();
         }
 
-        
-        private bool Query_Light(int cout,string number,out string err)
+
+        private bool Query_Light(int cout, string number, out string err)
         {
-            bool bs = WireCom.Query_Light(cout, CurrentNumber,out err);
-     
+            bool bs = WireCom.Query_Light(cout, CurrentNumber, out err);
+
             return bs;
         }
 
         private void communication_protocol_Click(object sender, EventArgs e)
         {
-         //   if (MessageBox.Show("是否更改协议，请去保持协议与设备使用协议一致", "更改提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            //   if (MessageBox.Show("是否更改协议，请去保持协议与设备使用协议一致", "更改提示", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
                 Protocolfrm profrm;
                 if (WireCom == null)
@@ -1176,42 +1193,42 @@ namespace wirelesssacler
 
         private bool Pro_change(string ver)
         {
-           
-            if(WireCom==null || WireCom.getIsOpen()==false)
+
+            if (WireCom == null || WireCom.getIsOpen() == false)
             {
-              
+
                 if (ver == "1.0.0.0")//奇数不带全电流
                 {
                     MyProConnect = new CommunicationProtocol.CommunicateWithOutmA();
                     //不带全电流，则历史记录不能获取，关闭相关功能
-                  
+
                     DownLoadRecentHistroy.Enabled = false;
                     DownRecentHistroy.Enabled = false;
                     DownLoadRecentHistroy.ToolTipText = "该版本为不带全电流的计数器，无历史记录功能";
-                   
+
                 }
                 else if (ver == "2.0.0.0")//偶数带全电流
                 {
                     MyProConnect = new CommunicationProtocol.CommunicateWithmA();
-                  
+
                     DownLoadRecentHistroy.Enabled = true;
                     DownRecentHistroy.Enabled = true;
-                 
+
                 }
                 MyProConnect.Name = ver;
                 MyprotocolVersion = ver;
                 //WireCom = new UsewireCom(tb_port.Text, Convert.ToInt32(cbx_braoud.Text.Trim()), MyProConnect.Name, MyProConnect, _PData);
                 //读取appconfig
-                SetAppConfig("ProtocolVersion",ver);
+                SetAppConfig("ProtocolVersion", ver);
             }
 
             return true;
         }
-        private void  SetAppConfig(string strKey,string keyValue)
+        private void SetAppConfig(string strKey, string keyValue)
         {
             XmlDocument doc = new XmlDocument();
 
-            doc.Load(Application.ExecutablePath+".config");
+            doc.Load(Application.ExecutablePath + ".config");
             XmlNode xnode;
             XmlElement x1;
             XmlElement x2;
@@ -1221,14 +1238,14 @@ namespace wirelesssacler
             else
             {
                 x2 = doc.CreateElement("add");
-                x2.SetAttribute("key",strKey);
+                x2.SetAttribute("key", strKey);
                 x2.SetAttribute("value", keyValue);
                 xnode.AppendChild(x2);
             }
 
             doc.Save(Application.ExecutablePath + ".config");
         }
-     
+
         ///每次使用是设备都插入零时列表中
         //
         private void btn_help_Click(object sender, EventArgs e)
@@ -1240,14 +1257,14 @@ namespace wirelesssacler
             }
             catch
             {
-                MessageBox.Show("打开文档失败，文件不存在！文档可能人为\r被损害或者删除，请重新安装程序解决,或者\r使用提供的说明使用书.","打开失败",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("打开文档失败，文件不存在！文档可能人为\r被损害或者删除，请重新安装程序解决,或者\r使用提供的说明使用书.", "打开失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             //处理数据
-            if (e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 //按下enter键
                 //处理信息
@@ -1264,9 +1281,9 @@ namespace wirelesssacler
         }
 
 
-        public bool Querylight( string number ,int count,int start,out string err)
+        public bool Querylight(string number, int count, int start, out string err)
         {
-            bool bs=WireCom.Query_Light2(number,count,start,out err);
+            bool bs = WireCom.Query_Light2(number, count, start, out err);
             return bs;
         }
 
@@ -1279,11 +1296,11 @@ namespace wirelesssacler
             }
             LightGroupfrm grop = new LightGroupfrm(CurentGroup);
             grop.Query += new LightGroupfrm.queryLight(Querylight);
-           if(grop.ShowDialog()==DialogResult.Yes)
-           {
-               grop.Query -= new LightGroupfrm.queryLight(Querylight);
-           }
-           // grop.Show();
+            if (grop.ShowDialog() == DialogResult.Yes)
+            {
+                grop.Query -= new LightGroupfrm.queryLight(Querylight);
+            }
+            // grop.Show();
             grop.Dispose();
         }
 
@@ -1297,7 +1314,7 @@ namespace wirelesssacler
             QueryTimeForm qt = new QueryTimeForm(CurrentNumber);
             qt.GetDevtime += qt_GetDevtime;
             qt.Writedev += qt_Writedev;
-            if(qt.ShowDialog()==DialogResult.Yes)
+            if (qt.ShowDialog() == DialogResult.Yes)
             {
                 qt.GetDevtime -= qt_GetDevtime;
                 qt.Writedev -= qt_Writedev;
@@ -1311,13 +1328,13 @@ namespace wirelesssacler
             return wriok;
         }
 
-        bool qt_GetDevtime(string Numbe,out string tim,out string local)
+        bool qt_GetDevtime(string Numbe, out string tim, out string local)
         {
             tim = string.Empty;
             local = string.Empty;
             bool ok = false;
-            ok=WireCom.SendTime(Numbe);  
-            if(ok)
+            ok = WireCom.SendTime(Numbe);
+            if (ok)
             {
                 LinkedListNode<DevBackTime> _pD = UsewireCom._DBtime.First;
                 while (_pD != null)
@@ -1327,7 +1344,7 @@ namespace wirelesssacler
                     {
                         //设置时间
                         tim = _pD.Value.btime.ToString();
-                        local=_pD.Value.curtime.ToString();
+                        local = _pD.Value.curtime.ToString();
                         break;
                     }
                     _pD = _pD.Next;
@@ -1345,7 +1362,7 @@ namespace wirelesssacler
             }
             LastOneHistroyForm last = new LastOneHistroyForm(CurrentNumber);
             last.callHistroyData += last_callHistroyData;
-            if(last.ShowDialog()==DialogResult.Yes)
+            if (last.ShowDialog() == DialogResult.Yes)
             {
                 last.Visible = false;
                 last.callHistroyData -= last_callHistroyData;
@@ -1358,7 +1375,7 @@ namespace wirelesssacler
             return WireCom.SendOneHistroy(number, daynum, out err, out num);
         }
 
-      
+
 
         BackState lg_callHistroyData(string number, int daynum, out string err, out int num)
         {
@@ -1367,7 +1384,7 @@ namespace wirelesssacler
 
         private void Mainfrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("是否退出应用？","提示",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning)==DialogResult.OK)
+            if (MessageBox.Show("是否退出应用？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 e.Cancel = false;
             }
@@ -1387,41 +1404,41 @@ namespace wirelesssacler
             }
             LastCheckGroup lg = new LastCheckGroup(this.CurentGroup);
             lg.callHistroyData += lg_callHistroyData;
-            if(lg.ShowDialog()==DialogResult.Yes)
+            if (lg.ShowDialog() == DialogResult.Yes)
             {
                 lg.Visible = false;
                 lg.callHistroyData -= lg_callHistroyData;
-                
+
             }
         }
 
-        private void chatlb_All_ClickSubItem(object sender, ChatListClickEventArgs e, MouseEventArgs es)
+        private void AllListBox_ClickSubItem(object sender, ChatListClickEventArgs e, MouseEventArgs es)
         {
-           ChatListSubItem d = e.SelectSubItem;
-           
+            ChatListSubItem d = e.SelectSubItem;
+
         }
 
         private void btn_downRealData_Click(object sender, EventArgs e)
         {
-            if(devtab.SelectedIndex==0 || devtab.SelectedIndex==1)
+            if (devtab.SelectedIndex == 0 || devtab.SelectedIndex == 1)
             {
                 switch (devtab.SelectedIndex)
                 {
                     case 0://从全部设备选择
-                        if (chatlb_All.SelectSubItem != null)
+                        if (AllListBox.SelectSubItem != null)
                         {
                             if (WireCom == null || WireCom.getIsOpen() == false)
                             {
                                 MessageBox.Show("通信端口没有打开，请打开通信端口!");
                                 return;
                             }
-                            CallCurrentFrom call = new CallCurrentFrom(chatlb_All.SelectSubItem.DisplayName,true,GetMyProVersion);
+                            CallCurrentFrom call = new CallCurrentFrom(AllListBox.SelectSubItem.DisplayName, true, GetMyProVersion);
                             call.callRealData += new CallCurrentFrom.CallReal(sendOneReal);
 
-                           if( call.ShowDialog()==DialogResult.Yes)
-                           {
-                               call.callRealData -= new CallCurrentFrom.CallReal(sendOneReal);
-                           }
+                            if (call.ShowDialog() == DialogResult.Yes)
+                            {
+                                call.callRealData -= new CallCurrentFrom.CallReal(sendOneReal);
+                            }
                             call.Dispose();
                         }
                         else
@@ -1430,17 +1447,17 @@ namespace wirelesssacler
                         }
                         break;
                     case 1://从分组选择
-                        if (chatlb_Group.SelectSubItem != null)
+                        if (GroupListBox.SelectSubItem != null)
                         {
                             if (WireCom == null || WireCom.getIsOpen() == false)
                             {
                                 MessageBox.Show("通信端口没有打开，请打开通信端口!");
                                 return;
                             }
-                            CallCurrentFrom call = new CallCurrentFrom(chatlb_Group.SelectSubItem.DisplayName, true,GetMyProVersion);
+                            CallCurrentFrom call = new CallCurrentFrom(GroupListBox.SelectSubItem.DisplayName, true, GetMyProVersion);
                             call.callRealData += new CallCurrentFrom.CallReal(sendOneReal);
 
-                            if(call.ShowDialog()==DialogResult.Yes)
+                            if (call.ShowDialog() == DialogResult.Yes)
                             {
                                 call.callRealData -= new CallCurrentFrom.CallReal(sendOneReal);
                             }
@@ -1490,64 +1507,64 @@ namespace wirelesssacler
                 SqlHelp sql = new SqlHelp();
                 string str = "insert into Dev_List (Dev_ID,Dev_Addr,Dev_Phase) Values('" + d1 + "','" + d2 + "','" + d3 + "')";
                 sql.Insert(str);
-              //  RefreshNow();
+                //  RefreshNow();
 
                 manger_RefreshNow();
             }
 
         }
 
-        private void chatlb_All_Click(object sender, EventArgs e)
+        private void AllListBox_Click(object sender, EventArgs e)
         {
-            //if(chatlb_All.SelectItem!=null)
+            //if(AllListBox.SelectItem!=null)
             //{
-            //  chatlb_All.SelectItem.IsOpen = true;
+            //  AllListBox.SelectItem.IsOpen = true;
             //}
         }
 
         private int stepvalue = 0;
-        void ScrolValue(int v)
-        {         
-           this.chatlb_All.chatVScroll.Value += v;
-        }
+        //void ScrolValue(int v)
+        //{         
+        //   this.AllListBox.chatVScroll.Value += v;
+        //}
 
-        private void btn_up_MouseDown(object sender, MouseEventArgs e)
-        {
-            stepvalue = -100;
-            timer1.Start();        
-        }
+        //private void btn_up_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    stepvalue = -100;
+        //    timer1.Start();        
+        //}
 
-        private void btn_up_MouseUp(object sender, MouseEventArgs e)
-        {
+        //private void btn_up_MouseUp(object sender, MouseEventArgs e)
+        //{
 
-            timer1.Stop();
-        }
+        //    timer1.Stop();
+        //}
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            ScrolValue(stepvalue);
-        }
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    ScrolValue(stepvalue);
+        //}
 
-        private void btn_down_MouseDown(object sender, MouseEventArgs e)
-        {
-            stepvalue = 200;
-            timer1.Start();
-        }
+        //private void btn_down_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    stepvalue = 200;
+        //    timer1.Start();
+        //}
 
-        private void btn_down_MouseUp(object sender, MouseEventArgs e)
-        {
-            timer1.Stop();
-        }
+        //private void btn_down_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    timer1.Stop();
+        //}
 
-        private void btn_up_Click(object sender, EventArgs e)
-        {
-            ScrolValue(-200);
-        }
+        //private void btn_up_Click(object sender, EventArgs e)
+        //{
+        //    ScrolValue(-200);
+        //}
 
-        private void btn_down_Click(object sender, EventArgs e)
-        {
-            ScrolValue(200);
-        }
+        //private void btn_down_Click(object sender, EventArgs e)
+        //{
+        //    ScrolValue(200);
+        //}
 
         private void timer_start_Tick(object sender, EventArgs e)
         {
@@ -1611,9 +1628,9 @@ namespace wirelesssacler
                 MessageBox.Show("配置参数错误，应用程序不能正常使用，请重新配置参数或重新安装.", "启动失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-#endregion
-           // this.WindowState = FormWindowState.Maximized;
-            
+            #endregion
+            // this.WindowState = FormWindowState.Maximized;
+
             this.Opacity = 1;
             this.ShowInTaskbar = true;
         }
@@ -1657,5 +1674,20 @@ namespace wirelesssacler
             InitAllDevfrm f = new InitAllDevfrm(WireCom, CurentGroup);
             f.Show();
         }
+
+        private void AllListBox_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

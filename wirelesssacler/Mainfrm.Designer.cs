@@ -30,8 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainfrm));
-            CCWin.SkinControl.ChatListItem chatListItem1 = new CCWin.SkinControl.ChatListItem();
-            this.chatlb_All = new CCWin.SkinControl.ChatListBox();
+            _CUSTOM_CONTROLS._ChatListBox2.ChatListItem chatListItem1 = new _CUSTOM_CONTROLS._ChatListBox2.ChatListItem();
             this.UserMenu = new CCWin.SkinControl.SkinContextMenuStrip();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemCallCurrent = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,13 +85,17 @@
             this.importdevlist = new System.Windows.Forms.ToolStripButton();
             this.skinPanel = new CCWin.SkinControl.SkinPanel();
             this.tlp_2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.skinPanel4 = new CCWin.SkinControl.SkinPanel();
+            this.txtSearch = new CCWin.SkinControl.SkinAlphaWaterTextBox();
+            this.btnSearch = new CCWin.SkinControl.SkinButton();
             this.devtab = new DMSkin.Controls.DMTabControl();
             this.alldev = new System.Windows.Forms.TabPage();
-            this.metroPanel_Scrol = new System.Windows.Forms.Panel();
-            this.btn_down = new CCWin.SkinControl.SkinButton();
-            this.btn_up = new CCWin.SkinControl.SkinButton();
+            this.AllListBox = new _CUSTOM_CONTROLS.ChatListBox2();
             this.groupdev = new System.Windows.Forms.TabPage();
-            this.chatlb_Group = new CCWin.SkinControl.ChatListBox();
+            this.GroupListBox = new _CUSTOM_CONTROLS.ChatListBox2();
+            this.datacenter = new System.Windows.Forms.TabPage();
+            this.devmanger = new System.Windows.Forms.TabPage();
             this.ChatGropuMenu = new CCWin.SkinControl.SkinContextMenuStrip();
             this.CallgroupMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
@@ -105,10 +108,6 @@
             this.initGroupDev = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.initGroupTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.datacenter = new System.Windows.Forms.TabPage();
-            this.devmanger = new System.Windows.Forms.TabPage();
-            this.skinPanel4 = new CCWin.SkinControl.SkinPanel();
-            this.txtSearch = new CCWin.SkinControl.SkinAlphaWaterTextBox();
             this.imageList_tab = new System.Windows.Forms.ImageList(this.components);
             this.MangerMenu = new CCWin.SkinControl.SkinContextMenuStrip();
             this.MangerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,11 +124,8 @@
             this.outList = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer_start = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.btnSearch = new CCWin.SkinControl.SkinButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserMenu.SuspendLayout();
             this.ChatAllDevItemMenu.SuspendLayout();
             this.tlPanel.SuspendLayout();
@@ -138,42 +134,15 @@
             this.SkToolCdTwo.SuspendLayout();
             this.skinPanel.SuspendLayout();
             this.tlp_2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.skinPanel4.SuspendLayout();
             this.devtab.SuspendLayout();
             this.alldev.SuspendLayout();
-            this.metroPanel_Scrol.SuspendLayout();
             this.groupdev.SuspendLayout();
             this.ChatGropuMenu.SuspendLayout();
-            this.skinPanel4.SuspendLayout();
             this.MangerMenu.SuspendLayout();
             this.SystemSetMenu.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // chatlb_All
-            // 
-            this.chatlb_All.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.chatlb_All, "chatlb_All");
-            this.chatlb_All.ForeColor = System.Drawing.Color.Black;
-            this.chatlb_All.FriendsMobile = false;
-            chatListItem1.Bounds = new System.Drawing.Rectangle(0, 1, 669, 25);
-            chatListItem1.IsOpen = true;
-            chatListItem1.IsTwinkleHide = false;
-            chatListItem1.OwnerChatListBox = this.chatlb_All;
-            chatListItem1.Tag = null;
-            chatListItem1.Text = "全部设备";
-            chatListItem1.TwinkleSubItemNumber = 0;
-            this.chatlb_All.Items.AddRange(new CCWin.SkinControl.ChatListItem[] {
-            chatListItem1});
-            this.chatlb_All.ListSubItemMenu = this.UserMenu;
-            this.chatlb_All.Name = "chatlb_All";
-            this.chatlb_All.ScrollBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
-            this.chatlb_All.ScrollSliderDefaultColor = System.Drawing.SystemColors.Highlight;
-            this.chatlb_All.ScrollSliderDownColor = System.Drawing.Color.Red;
-            this.chatlb_All.SelectSubItem = null;
-            this.chatlb_All.SubItemMenu = this.ChatAllDevItemMenu;
-            this.chatlb_All.UpSubItem += new CCWin.SkinControl.ChatListBox.ChatListClickEventHandler(this.chatlb_All_UpSubItem);
-            this.chatlb_All.ClickSubItem += new CCWin.SkinControl.ChatListBox.ChatListClickEventHandler(this.chatlb_All_ClickSubItem);
-            this.chatlb_All.Click += new System.EventHandler(this.chatlb_All_Click);
             // 
             // UserMenu
             // 
@@ -742,6 +711,56 @@
             this.tlp_2.Controls.Add(this.devtab, 0, 1);
             this.tlp_2.Name = "tlp_2";
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.skinPanel4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSearch, 1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // skinPanel4
+            // 
+            this.skinPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.skinPanel4.BackRectangle = new System.Drawing.Rectangle(5, 5, 5, 5);
+            this.skinPanel4.Controls.Add(this.txtSearch);
+            this.skinPanel4.ControlState = CCWin.SkinClass.ControlState.Normal;
+            resources.ApplyResources(this.skinPanel4, "skinPanel4");
+            this.skinPanel4.DownBack = ((System.Drawing.Image)(resources.GetObject("skinPanel4.DownBack")));
+            this.skinPanel4.MouseBack = ((System.Drawing.Image)(resources.GetObject("skinPanel4.MouseBack")));
+            this.skinPanel4.Name = "skinPanel4";
+            this.skinPanel4.NormlBack = ((System.Drawing.Image)(resources.GetObject("skinPanel4.NormlBack")));
+            this.skinPanel4.Palace = true;
+            // 
+            // txtSearch
+            // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSearch.BackAlpha = 0;
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtSearch.WaterFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSearch.WaterText = "搜索: 可输入序列号或安装地址查找相关设备";
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // btnSearch
+            // 
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(159)))), ((int)(((byte)(215)))));
+            this.btnSearch.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.DownBack = null;
+            this.btnSearch.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btnSearch.MouseBack = null;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.NormlBack = null;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // devtab
             // 
             this.devtab.BackColor = System.Drawing.Color.Transparent;
@@ -764,72 +783,55 @@
             // alldev
             // 
             this.alldev.BackColor = System.Drawing.Color.Transparent;
-            this.alldev.Controls.Add(this.metroPanel_Scrol);
-            this.alldev.Controls.Add(this.chatlb_All);
+            this.alldev.Controls.Add(this.AllListBox);
             resources.ApplyResources(this.alldev, "alldev");
             this.alldev.ForeColor = System.Drawing.Color.White;
             this.alldev.Name = "alldev";
             // 
-            // metroPanel_Scrol
+            // AllListBox
             // 
-            resources.ApplyResources(this.metroPanel_Scrol, "metroPanel_Scrol");
-            this.metroPanel_Scrol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
-            this.metroPanel_Scrol.Controls.Add(this.btn_down);
-            this.metroPanel_Scrol.Controls.Add(this.btn_up);
-            this.metroPanel_Scrol.DataBindings.Add(new System.Windows.Forms.Binding("Visible", global::wirelesssacler.Properties.Settings.Default, "ScorlSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.metroPanel_Scrol.Name = "metroPanel_Scrol";
-            this.metroPanel_Scrol.Visible = global::wirelesssacler.Properties.Settings.Default.ScorlSet;
-            // 
-            // btn_down
-            // 
-            resources.ApplyResources(this.btn_down, "btn_down");
-            this.btn_down.BackColor = System.Drawing.Color.Transparent;
-            this.btn_down.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(170)))), ((int)(((byte)(130)))));
-            this.btn_down.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn_down.DownBack = null;
-            this.btn_down.MouseBack = null;
-            this.btn_down.Name = "btn_down";
-            this.btn_down.NormlBack = null;
-            this.btn_down.UseVisualStyleBackColor = false;
-            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
-            this.btn_down.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_down_MouseDown);
-            this.btn_down.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_down_MouseUp);
-            // 
-            // btn_up
-            // 
-            this.btn_up.BackColor = System.Drawing.Color.Transparent;
-            this.btn_up.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(170)))), ((int)(((byte)(130)))));
-            this.btn_up.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn_up.DownBack = null;
-            resources.ApplyResources(this.btn_up, "btn_up");
-            this.btn_up.MouseBack = null;
-            this.btn_up.Name = "btn_up";
-            this.btn_up.NormlBack = null;
-            this.btn_up.UseVisualStyleBackColor = false;
-            this.btn_up.Click += new System.EventHandler(this.btn_up_Click);
-            this.btn_up.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_up_MouseDown);
-            this.btn_up.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_up_MouseUp);
+            this.AllListBox.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.AllListBox, "AllListBox");
+            this.AllListBox.ForeColor = System.Drawing.Color.DarkOrange;
+            this.AllListBox.IconSizeMode = _CUSTOM_CONTROLS._ChatListBox2.ChatListItemIcon.Large;
+            chatListItem1.Text = "全部设备";
+            this.AllListBox.Items.AddRange(new _CUSTOM_CONTROLS._ChatListBox2.ChatListItem[] {
+            chatListItem1});
+            this.AllListBox.Name = "AllListBox";
+            this.AllListBox.MouseUpSubItem += new _CUSTOM_CONTROLS.ChatListBox2.ChatListEventHandler(this.AllListBox_MouseUpSubItem);
+            this.AllListBox.MouseUpItem += new _CUSTOM_CONTROLS.ChatListBox2.ChatListEventHandler(this.AllListBox_MouseUpItem);
             // 
             // groupdev
             // 
             this.groupdev.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupdev.Controls.Add(this.chatlb_Group);
+            this.groupdev.Controls.Add(this.GroupListBox);
             resources.ApplyResources(this.groupdev, "groupdev");
             this.groupdev.ForeColor = System.Drawing.Color.White;
             this.groupdev.Name = "groupdev";
             // 
-            // chatlb_Group
+            // GroupListBox
             // 
-            this.chatlb_Group.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.chatlb_Group, "chatlb_Group");
-            this.chatlb_Group.ForeColor = System.Drawing.Color.Black;
-            this.chatlb_Group.FriendsMobile = false;
-            this.chatlb_Group.ListSubItemMenu = this.UserMenu;
-            this.chatlb_Group.Name = "chatlb_Group";
-            this.chatlb_Group.SelectSubItem = null;
-            this.chatlb_Group.SubItemMenu = this.ChatGropuMenu;
-            this.chatlb_Group.UpSubItem += new CCWin.SkinControl.ChatListBox.ChatListClickEventHandler(this.chatlb_Group_UpSubItem);
-            this.chatlb_Group.Click += new System.EventHandler(this.chatlb_Group_Click);
+            this.GroupListBox.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.GroupListBox, "GroupListBox");
+            this.GroupListBox.ForeColor = System.Drawing.Color.DarkOrange;
+            this.GroupListBox.IconSizeMode = _CUSTOM_CONTROLS._ChatListBox2.ChatListItemIcon.Large;
+            this.GroupListBox.Name = "GroupListBox";
+            this.GroupListBox.MouseUpSubItem += new _CUSTOM_CONTROLS.ChatListBox2.ChatListEventHandler(this.GroupListBox_MouseUpSubItem);
+            this.GroupListBox.MouseUpItem += new _CUSTOM_CONTROLS.ChatListBox2.ChatListEventHandler(this.GroupListBox_MouseUpItem);
+            // 
+            // datacenter
+            // 
+            this.datacenter.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.datacenter, "datacenter");
+            this.datacenter.ForeColor = System.Drawing.Color.White;
+            this.datacenter.Name = "datacenter";
+            // 
+            // devmanger
+            // 
+            this.devmanger.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.devmanger, "devmanger");
+            this.devmanger.ForeColor = System.Drawing.Color.White;
+            this.devmanger.Name = "devmanger";
             // 
             // ChatGropuMenu
             // 
@@ -931,48 +933,6 @@
             this.initGroupTime.Name = "initGroupTime";
             resources.ApplyResources(this.initGroupTime, "initGroupTime");
             this.initGroupTime.Click += new System.EventHandler(this.initGroupTime_Click);
-            // 
-            // datacenter
-            // 
-            this.datacenter.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            resources.ApplyResources(this.datacenter, "datacenter");
-            this.datacenter.ForeColor = System.Drawing.Color.White;
-            this.datacenter.Name = "datacenter";
-            // 
-            // devmanger
-            // 
-            this.devmanger.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.devmanger, "devmanger");
-            this.devmanger.ForeColor = System.Drawing.Color.White;
-            this.devmanger.Name = "devmanger";
-            // 
-            // skinPanel4
-            // 
-            this.skinPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.skinPanel4.BackRectangle = new System.Drawing.Rectangle(5, 5, 5, 5);
-            this.skinPanel4.Controls.Add(this.txtSearch);
-            this.skinPanel4.ControlState = CCWin.SkinClass.ControlState.Normal;
-            resources.ApplyResources(this.skinPanel4, "skinPanel4");
-            this.skinPanel4.DownBack = ((System.Drawing.Image)(resources.GetObject("skinPanel4.DownBack")));
-            this.skinPanel4.MouseBack = ((System.Drawing.Image)(resources.GetObject("skinPanel4.MouseBack")));
-            this.skinPanel4.Name = "skinPanel4";
-            this.skinPanel4.NormlBack = ((System.Drawing.Image)(resources.GetObject("skinPanel4.NormlBack")));
-            this.skinPanel4.Palace = true;
-            // 
-            // txtSearch
-            // 
-            resources.ApplyResources(this.txtSearch, "txtSearch");
-            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSearch.BackAlpha = 0;
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.WaterFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSearch.WaterText = "搜索: 可输入序列号或安装地址查找相关设备";
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // imageList_tab
             // 
@@ -1129,10 +1089,6 @@
             this.skinToolTip1.TipFore = System.Drawing.Color.Yellow;
             this.skinToolTip1.TitleFore = System.Drawing.Color.Yellow;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // timer_start
             // 
             this.timer_start.Interval = 1000;
@@ -1143,28 +1099,6 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.ForeColor = System.Drawing.Color.Honeydew;
             this.label6.Name = "label6";
-            // 
-            // btnSearch
-            // 
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(159)))), ((int)(((byte)(215)))));
-            this.btnSearch.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.DownBack = null;
-            this.btnSearch.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnSearch.MouseBack = null;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.NormlBack = null;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.skinPanel4, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnSearch, 1, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // Mainfrm
             // 
@@ -1222,16 +1156,15 @@
             this.SkToolCdTwo.PerformLayout();
             this.skinPanel.ResumeLayout(false);
             this.tlp_2.ResumeLayout(false);
-            this.devtab.ResumeLayout(false);
-            this.alldev.ResumeLayout(false);
-            this.metroPanel_Scrol.ResumeLayout(false);
-            this.groupdev.ResumeLayout(false);
-            this.ChatGropuMenu.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.skinPanel4.ResumeLayout(false);
             this.skinPanel4.PerformLayout();
+            this.devtab.ResumeLayout(false);
+            this.alldev.ResumeLayout(false);
+            this.groupdev.ResumeLayout(false);
+            this.ChatGropuMenu.ResumeLayout(false);
             this.MangerMenu.ResumeLayout(false);
             this.SystemSetMenu.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1318,12 +1251,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private CCWin.SkinControl.ChatListBox chatlb_All;
-        private CCWin.SkinControl.ChatListBox chatlb_Group;
-        private System.Windows.Forms.Panel metroPanel_Scrol;
-        private CCWin.SkinControl.SkinButton btn_down;
-        private CCWin.SkinControl.SkinButton btn_up;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer_start;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton importdevlist;
@@ -1338,6 +1265,8 @@
         private System.Windows.Forms.ToolStripMenuItem initGroupTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CCWin.SkinControl.SkinButton btnSearch;
+        private _CUSTOM_CONTROLS.ChatListBox2 AllListBox;
+        private _CUSTOM_CONTROLS.ChatListBox2 GroupListBox;
 
     }
 }

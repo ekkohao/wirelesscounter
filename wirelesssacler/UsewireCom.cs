@@ -170,7 +170,8 @@ namespace wirelesssacler
                 DataRecived(sender, e, _data);
               
             }
-            //_serialPort.DiscardInBuffer();  //清空接收缓冲区  
+            //_serialPort.DiscardInBuffer();  //清空接收缓冲区
+            //---------------------------------------------------------------------是否全部丢弃
             _CComPort.DiscardInBuffer();
         }
         public  void setSerialPort()

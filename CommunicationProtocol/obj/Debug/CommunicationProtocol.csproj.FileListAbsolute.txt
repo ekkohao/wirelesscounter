@@ -1,6 +1,5 @@
 E:\Project\wirelesscounter\CommunicationProtocol\bin\Debug\CommunicationProtocol.dll
 E:\Project\wirelesscounter\CommunicationProtocol\bin\Debug\CommunicationProtocol.pdb
-E:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.csprojResolveAssemblyReference.cache
 E:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.dll
 E:\Project\wirelesscounter\CommunicationProtocol\obj\Debug\CommunicationProtocol.pdb
 Y:\Project\wirelesscounter\CommunicationProtocol\bin\Debug\CommunicationProtocol.dll

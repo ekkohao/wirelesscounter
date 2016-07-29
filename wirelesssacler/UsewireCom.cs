@@ -75,6 +75,14 @@ namespace wirelesssacler
         public int interval_T = 6000;
         public int InterReal = 7000;
 
+        /// <summary>
+        /// 失败循环次数
+        /// </summary>
+        public int loopCount = 3;
+        /// <summary>
+        /// 当前设备号
+        /// </summary>
+        public byte[] current_devnum=new byte[4]{0x00,0x00,0x00,0x00}; 
         #region 返回的报文
         private byte[] Protocol_real;
         private byte[] Protocol_realtime;
@@ -132,7 +140,7 @@ namespace wirelesssacler
             }
             else if (wireProtocol.Name == "2.0.0.0")
             {
-                InterReal = 8000;
+                InterReal = 6000;
                 this.DataRecived +=DataRecivedWithmA;
             }
             else
@@ -163,16 +171,21 @@ namespace wirelesssacler
         {
 
             byte[] _data = new byte[_CComPort.BytesToRead];
+            //Console.WriteLine("1:"+_CComPort.BytesToRead);
             _CComPort.Read(_data, 0, _data.Length);
+            //Console.WriteLine("2:"+_CComPort.BytesToRead);
+            Console.Write(DateTime.Now + "so ");
+            foreach (var b in _data)
+                Console.Write(b.ToString() + " ");
+            Console.WriteLine();
             if (_data.Length == 0) { return; }
             if (this.DataRecived!= null)
             {
                 DataRecived(sender, e, _data);
               
             }
-            //_serialPort.DiscardInBuffer();  //清空接收缓冲区
-            //---------------------------------------------------------------------是否全部丢弃
-            _CComPort.DiscardInBuffer();
+            //_serialPort.DiscardInBuffer();  //清空接收缓冲区  
+            //_CComPort.DiscardInBuffer();
         }
         public  void setSerialPort()
         {
@@ -231,7 +244,6 @@ namespace wirelesssacler
         /// </summary>
         private void SetReciveStruct()
         {
-
             tempreal = new byte[Protocol_real[2]];
             temptime = new byte[Protocol_realtime[2]];
             tempaction = new byte[Protocol_Action[2]];
@@ -266,13 +278,23 @@ namespace wirelesssacler
         private void DataRecivedWithmA(object sender, System.IO.Ports.SerialDataReceivedEventArgs e, byte[] Readbits)
         {
             PortByte.AddRange(Readbits);
+            //WWrite(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss fff") + "datein ");
+            //foreach (var b in PortByte)
+            //    WWrite(b.ToString() + " ");
+            //WWrite("\r\n");
             while (PortByte.Count >= 10)
             {
                 ///依次比较长度，报文头，功能码，报文接收字符
 
                 if (PortByte[0] == Protocol_realtime[0] && PortByte[5] == Protocol_realtime[1])
                 {
-                    if (PortByte.Count < Protocol_realtime[2]) break;
+                    if (PortByte.Count < Protocol_realtime[2]) 
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        PortByte.RemoveRange(0, Protocol_realtime[2]);
+                        break;
+                    }
                     //校验
                     byte[] temp = new byte[Protocol_realtime[2] - 3];
                     for (int i = 0; i < Protocol_realtime[2] - 3; i++)
@@ -288,8 +310,6 @@ namespace wirelesssacler
                         //返回时间了。
                         //处理temptime
                         ProTimeData(temptime, temptime.Length);
-
-
                     }
                     else
                         PortByte.RemoveRange(0, Protocol_realtime[2]);
@@ -297,8 +317,15 @@ namespace wirelesssacler
                 else if (PortByte[0] == Protocol_real[0] && PortByte[5] == Protocol_real[1])
                 {
                     //返回实时数据 线获得设备的时间，在获取数据
-                    if (PortByte.Count < Protocol_real[2]) break;
-
+                    if (PortByte.Count < Protocol_real[2]) 
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        //WWrite(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss fff")+"内部非本次设备过滤\r\n");
+                        PortByte.RemoveRange(0, Protocol_real[2]);
+                        break;
+                    }
+                    //WWrite(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss fff")+"doing\r\n");
                     //校验
                     byte[] temp = new byte[Protocol_real[2] - 3];
                     for (int i = 0; i < Protocol_real[2] - 3; i++)
@@ -317,12 +344,17 @@ namespace wirelesssacler
                     }
                     else
                         PortByte.RemoveRange(0, Protocol_real[2]);
-
                 }
                 else if (PortByte[0] == Protocol_Action[0] && PortByte[5] == Protocol_Action[1])
                 {
                     //返回动作时间
-                    if (PortByte.Count < Protocol_Action[2]) break;
+                    if (PortByte.Count < Protocol_Action[2]) 
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        PortByte.RemoveRange(0, Protocol_Action[2]);
+                        break;
+                    }
                     //校验
                     byte[] temp = new byte[Protocol_Action[2] - 3];
                     for (int i = 0; i < Protocol_Action[2] - 3; i++)
@@ -346,7 +378,13 @@ namespace wirelesssacler
                 else if (PortByte[0] == Protocol_write[0] && PortByte[5] == Protocol_write[1])
                 {
                     //返回写入时间
-                    if (PortByte.Count < Protocol_write[2]) break;
+                    if (PortByte.Count < Protocol_write[2]) 
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        PortByte.RemoveRange(0, Protocol_write[2]);
+                        break;
+                    }
                     byte[] temp = new byte[Protocol_write[2] - 3];
                     for (int i = 0; i < Protocol_write[2] - 3; i++)
                     {
@@ -368,7 +406,13 @@ namespace wirelesssacler
                 else if (PortByte[0] == Protocol_online[0] && PortByte[5] == Protocol_online[1])
                 {
                     //返回设备是否在线
-                    if (PortByte.Count < Protocol_online[2]) break;
+                    if (PortByte.Count < Protocol_online[2]) 
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        PortByte.RemoveRange(0, Protocol_online[2]);
+                        break;
+                    }
                     byte[] temp = new byte[Protocol_online[2] - 3];
                     for (int i = 0; i < Protocol_online[2] - 3; i++)
                     {
@@ -390,7 +434,13 @@ namespace wirelesssacler
                 else if (PortByte[0] == Protocol_init[0] && PortByte[5] == Protocol_init[1])
                 {
                     //返回初始化
-                    if (PortByte.Count < Protocol_init[2]) break;
+                    if (PortByte.Count < Protocol_init[2]) 
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        PortByte.RemoveRange(0, Protocol_init[2]);
+                        break;
+                    }
                     byte[] temp = new byte[Protocol_init[2] - 3];
                     for (int i = 0; i < Protocol_init[2] - 3; i++)
                     {
@@ -412,7 +462,13 @@ namespace wirelesssacler
                 else if (PortByte[0] == Protocol_hiscot[0] && PortByte[5] == Protocol_hiscot[1])
                 {
                     //返回历史记录个数
-                    if (PortByte.Count < Protocol_hiscot[2]) break;
+                    if (PortByte.Count < Protocol_hiscot[2]) 
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        PortByte.RemoveRange(0, Protocol_hiscot[2]);
+                        break;
+                    }
                     byte[] temp = new byte[Protocol_hiscot[2] - 3];
                     for (int i = 0; i < Protocol_hiscot[2] - 3; i++)
                     {
@@ -434,7 +490,13 @@ namespace wirelesssacler
                 else if (PortByte[0] == Protocol_hismsg[0] && PortByte[5] == Protocol_hismsg[1])
                 {
                     //返回历史记录报文
-                    if (PortByte.Count < Protocol_hismsg[2]) break;
+                    if (PortByte.Count < Protocol_hismsg[2])
+                        break;
+                    else if (!is_current_devnum(ref PortByte))
+                    {
+                        PortByte.RemoveRange(0, Protocol_hismsg[2]);
+                        break;
+                    }
                     byte[] temp = new byte[Protocol_hismsg[2] - 3];
                     for (int i = 0; i < Protocol_hismsg[2] - 3; i++)
                     {
@@ -455,7 +517,21 @@ namespace wirelesssacler
                 }
                 else
                 {
-                    PortByte.RemoveAt(0);
+                    int temp=PortByte.IndexOf(0x69,1);
+                    if (temp < 0)
+                        PortByte.Clear();
+                    else
+                        PortByte.RemoveRange(0, temp);
+
+                    //WWrite(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss fff") + "guolv ");
+                    //foreach (var b in PortByte)
+                    //    WWrite(b.ToString() + " ");
+                    //WWrite("\r\n");
+
+                    //Console.Write(DateTime.Now + "guolv2 ");
+                    //foreach (var b in PortByte)
+                    //    Console.Write(b.ToString() + " ");
+                    //Console.WriteLine();
                 }
             }
 
@@ -879,8 +955,6 @@ namespace wirelesssacler
             if (_binit.number.Length % 2 != 0) _binit.number = "0" + _binit.number;
             _binit.isinit = true;
             Isinit = true;
-
-
         }
         /// <summary>
         /// 处理记录个数函数
@@ -946,7 +1020,6 @@ namespace wirelesssacler
                 }
                 _Hsg = _Hsg.Next;
             }
-
         }
         #endregion
         #region 不带全电流协议处理函数 共6个处理函数
@@ -1153,21 +1226,23 @@ namespace wirelesssacler
             //依次写入时间
             for(int i=0;i<6;i++)//循环写入时间的6个值
             {
-                for (int j = 0; j <2; j++)
+                for (int j = 0; j < loopCount+1; j++)
                 {
                     if (Iswriteok == false)
                     {
-                        if (j >= 1)
+                        if (j >= loopCount)
                         {
                             isok = false;
                            
                         }
-                        else
+                        else if(j==0)
                         {
                             sendmt = wireProtocol.WriteMsg(addr, i, sendd[i]);
+                            if(i==0)
+                                set_current_devnum(ref sendmt);
                             SendData(sendmt, 0, sendmt.Length);
-                            Delaytime.Delay(interval_T);
                         }
+                        Delaytime.Delay(interval_T);
                     }
                     else
                     {
@@ -1206,7 +1281,7 @@ namespace wirelesssacler
                     break;
                 }
             }
-
+            reset_current_devnum();
             return isok;
         }
         public bool Mywrite(string add, out string msg,DateTime mt)
@@ -1226,21 +1301,23 @@ namespace wirelesssacler
             //依次写入时间
             for (int i = 0; i < 6; i++)//循环写入时间的6个值
             {
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < loopCount+1; j++)
                 {
                     if (Iswriteok == false)
                     {
-                        if (j >= 1)
+                        if (j >= loopCount)
                         {
                             isok = false;
+                            break;
 
                         }
-                        else
-                        {
+                        else if(j==0){
                             sendmt = wireProtocol.WriteMsg(addr, i, sendd[i]);
+                            if(i==0)
+                                set_current_devnum(ref sendmt);
                             SendData(sendmt, 0, sendmt.Length);
-                            Delaytime.Delay(interval_T);
                         }
+                        Delaytime.Delay(interval_T);
                     }
                     else
                     {
@@ -1279,7 +1356,7 @@ namespace wirelesssacler
                     break;
                 }
             }
-
+            reset_current_devnum();
             return isok;
         }
         internal BackState InitDev(string CurrentNumber)
@@ -1296,7 +1373,7 @@ namespace wirelesssacler
             byte[] sendp = wireProtocol.InitDevice(add);
             if(sendp!=null)
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < loopCount+1; i++)
                 {
                     //发送设备初始化代码
                     if(Isinit)
@@ -1307,12 +1384,20 @@ namespace wirelesssacler
                     }
                     else
                     {
-                        this.SendData(sendp, 0, sendp.Length);
-                        ok = BackState.No;
-                       // System.Threading.Thread.Sleep(4000);
+                        if (i == 0)
+                        {
+                            set_current_devnum(ref sendp);
+                            this.SendData(sendp, 0, sendp.Length);
+                        }
+                        else if (i >= loopCount)
+                        {
+                            ok = BackState.No;
+                            break;
+                        }
                         Delaytime.Delay(interval_T);
                     }                  
                 }
+                reset_current_devnum();
                 if(ok==BackState.No)
                 {
                     ok = BackState.Err;
@@ -1341,7 +1426,7 @@ namespace wirelesssacler
             if (sendp!=null)
             {
                 //实时数据招测
-                for(int i=0;i<2;i++)
+                for (int i = 0; i < loopCount+1; i++)
                 {
                     if(Isreal)
                     {
@@ -1351,16 +1436,21 @@ namespace wirelesssacler
                     }
                     else
                     {
-                        if(i>=1)
+                        if (i == 0)
                         {
-                            
-                             bs = BackState.Err;
-                             break;
+                            set_current_devnum(ref sendp);
+                            this.SendData(sendp, 0, sendp.Length);
                         }
-                        this.SendData(sendp, 0, sendp.Length);
+                        else if (i >= loopCount)
+                        {
+
+                            bs = BackState.Err;
+                            break;
+                        }          
                         Delaytime.Delay(InterReal);
                     }
                 }
+                reset_current_devnum();
             }
             return bs;
         }
@@ -1375,7 +1465,6 @@ namespace wirelesssacler
             if (add == null)
             {
                // System.Windows.Forms.MessageBox.Show(msg);
-               
                 bs= BackState.Err;
                 return bs;
             }
@@ -1387,7 +1476,7 @@ namespace wirelesssacler
                 return bs;
             }
 
-            for(int i=0;i<2;i++)
+            for (int i = 0; i < loopCount+1; i++)
             {
                 if(Ishisco)
                 {
@@ -1397,21 +1486,23 @@ namespace wirelesssacler
                 }
                 else
                 {
-                    if (i >= 1)
+                    if (i == 0)
+                    {
+                        set_current_devnum(ref sendp);
+                        this.SendData(sendp, 0, sendp.Length);
+                    }
+                    else if (i >= loopCount)
                     {
                         bs = BackState.Err;
                         break;
-                    }
-                    else
-                    {
-                        this.SendData(sendp, 0, sendp.Length);
+                    }        
                         Delaytime.Delay(interval_T);
-                    }
                 }
             }
             if(bs==BackState.Err)
             {
                 msg = "没有查询到历史记录的总条数,请重新点击";
+                reset_current_devnum();
                 return bs; //如果没有招到历史记录的次数，则返回，否则继续
             }
             //获取记录次数
@@ -1421,7 +1512,7 @@ namespace wirelesssacler
             {
 
                 msg = "当前历史记录没有存储数据或存储溢出";
-
+                reset_current_devnum();
                 return bs;
             }
             int b = _bhiscot.count;
@@ -1453,7 +1544,7 @@ namespace wirelesssacler
                             }
                             else
                             {
-                  
+                                set_current_devnum(ref sendt);
                                 this.SendData(sendt, 0, sendt.Length);
                                 Delaytime.Delay(interval_T);
                             }
@@ -1495,6 +1586,7 @@ namespace wirelesssacler
                             }
                             else
                             {
+                                set_current_devnum(ref sendt);
                                 this.SendData(sendt, 0, sendt.Length);
 
                                 Delaytime.Delay(interval_T);
@@ -1506,7 +1598,7 @@ namespace wirelesssacler
                 }
                 #endregion
             }
-            
+            reset_current_devnum();
             //发送本设备历史数据
             return bs;
         }
@@ -1584,7 +1676,7 @@ namespace wirelesssacler
             for (int i = 1; i <= count;i++)
             {
                 byte[] send = wireProtocol.ActionMsg(add,i);
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < loopCount+1; j++)
                 {
                     if (Isaction)
                     {
@@ -1594,17 +1686,17 @@ namespace wirelesssacler
                     }
                     else
                     {
-                        if (j >= 1) 
+                        if (j >= loopCount) 
                         {
                             bs = false;
                             break;
                         }
-                        else
+                        else if (i == 0)
                         {
-                            this.SendData(send, 0, send.Length); 
-                            Delaytime.Delay(interval_T);
+                            set_current_devnum(ref send);
+                            this.SendData(send, 0, send.Length);
                         }
-                     
+                        Delaytime.Delay(interval_T);             
                     }
                 }
 
@@ -1616,6 +1708,7 @@ namespace wirelesssacler
                 }
 
             }
+            reset_current_devnum();
             return bs;
         }
 
@@ -1633,7 +1726,7 @@ namespace wirelesssacler
             for (int i = start+1; i <= count; i++)
             {
                 byte[] send = wireProtocol.ActionMsg(add, i);
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < loopCount+1; j++)
                 {
                     if (Isaction)
                     {
@@ -1643,16 +1736,17 @@ namespace wirelesssacler
                     }
                     else
                     {
-                        if (j >= 1)
+                        if (j >= loopCount)
                         {
                             bs = false;
                             break;
                         }
-                        else
+                        else if (j == 0)
                         {
+                            set_current_devnum(ref send);
                             this.SendData(send, 0, send.Length);
-                            Delaytime.Delay(interval_T);
                         }
+                        Delaytime.Delay(interval_T);
 
                     }
                  }
@@ -1664,6 +1758,7 @@ namespace wirelesssacler
                 }
 
             }
+            reset_current_devnum();
             return bs;
         }
         internal bool SendMultitermRealData(string  number,out string err)
@@ -1680,7 +1775,7 @@ namespace wirelesssacler
                         if (sendp != null)
                         {
                             //发送一组设备的数据
-                            for (int i = 0; i < 2; i++)
+                            for (int i = 0; i < loopCount+1; i++)
                             {
                                 if (Isreal)
                                 {
@@ -1690,19 +1785,21 @@ namespace wirelesssacler
                                 }
                                 else
                                 {
-                                    if (i >= 1)
+                                    if (i >= loopCount)
                                     {
                                         err = "数据获取失败";
                                         bs = false;
                                         break;
                                     }
-                                    else
+                                    else if (i == 0)
                                     {
+                                        set_current_devnum(ref sendp);
                                         this.SendData(sendp, 0, sendp.Length);
-                                        Delaytime.Delay(InterReal);
                                     }
+                                    Delaytime.Delay(InterReal);
                                 }
                             }
+                            reset_current_devnum();
                         }
                        else
                         {
@@ -1774,17 +1871,18 @@ namespace wirelesssacler
                         }
                         else
                         {
+                            set_current_devnum(ref send);
                             this.SendData(send, 0, send.Length);
                             f = BackState.No;
                             Delaytime.Delay(interval_T);
                         }
                     }
                 }
+                reset_current_devnum();
                 _pf = _pf.Next;
 
             }
             f = BackState.Yes;
-
 
             return f;
         }
@@ -1804,7 +1902,7 @@ namespace wirelesssacler
             if (sendt != null)
             {
 
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < loopCount+1; i++)
                 {
                     if (Istime)
                     {
@@ -1814,19 +1912,21 @@ namespace wirelesssacler
                     }
                     else
                     {
-                        if (i >= 1)
+                        if (i == 0)
+                        {
+                            set_current_devnum(ref sendt);
+                            this.SendData(sendt, 0, sendt.Length);
+                        }
+                        else if (i >= loopCount)
                         {
                             ok = false;
                         }
-                        else
-                        {
-                            this.SendData(sendt, 0, sendt.Length);
                             Delaytime.Delay(interval_T);
-                        }
                     }
                 }
+                reset_current_devnum();
             }
-           
+         
          return ok;
             
         }
@@ -1851,7 +1951,7 @@ namespace wirelesssacler
                 return bs;
             }
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < loopCount+1; i++)
             {
                 if (Ishisco)
                 {
@@ -1861,21 +1961,23 @@ namespace wirelesssacler
                 }
                 else
                 {
-                    if (i >= 1)
+                    if (i == 0)
+                    {
+                        set_current_devnum(ref sendp);
+                        this.SendData(sendp, 0, sendp.Length);
+                    }
+                    else if (i >= loopCount)
                     {
                         bs = BackState.Err;
                         break;
                     }
-                    else
-                    {
-                        this.SendData(sendp, 0, sendp.Length);
                         Delaytime.Delay(interval_T);
-                    }
                 }
             }
             if (bs == BackState.Err)
             {
                 err = "没有查询到历史记录的总条数,请重新点击";
+                reset_current_devnum();
                 return bs; //如果没有招到历史记录的次数，则返回，否则继续
             }
             //获取记录次数
@@ -1885,7 +1987,7 @@ namespace wirelesssacler
             {
 
                 err= "当前历史记录没有存储数据或存储溢出";
-
+                reset_current_devnum();
                 return bs;
             }
             int b = _bhiscot.count;
@@ -1922,7 +2024,7 @@ namespace wirelesssacler
                             }
                             else
                             {
-
+                                //set_current_devnum(ref sendt);
                                 this.SendData(sendt, 0, sendt.Length);
                                 Delaytime.Delay(interval_T);
                             }
@@ -1970,6 +2072,7 @@ namespace wirelesssacler
                             }
                             else
                             {
+                                //set_current_devnum(ref sendt);
                                 this.SendData(sendt, 0, sendt.Length);
 
                                 Delaytime.Delay(interval_T);
@@ -1981,9 +2084,39 @@ namespace wirelesssacler
                 }
                 #endregion
             }
-
+            reset_current_devnum();
             //发送本设备历史数据
             return bs;
         }
+        public bool is_current_devnum(ref List<byte> pull){
+            for (int i = 0; i < 4; i++)
+            {
+                if (current_devnum[i] != pull[i + 1])
+                    return false;
+            }
+            return true;
+        }
+        public void set_current_devnum(ref byte[] send)
+        {
+            for (int i = 0; i < 4; i++)
+                current_devnum[i] = send[i + 1];
+        }
+        public void reset_current_devnum()
+        {
+            for (int i = 0; i < 4; i++)
+                current_devnum[i] = 0x00;
+        }
+        //public void WWrite(byte[] data)
+        //{
+        //    System.IO.FileStream fs = new System.IO.FileStream("log.txt", FileMode.Append);
+        //    //获得字节数组
+        //    //byte[] data = System.Text.Encoding.Default.GetBytes("Hello World!");
+        //    //开始写入
+        //    fs.Write(data, 0, data.Length);
+        //    //清空缓冲区、关闭流
+        //    fs.Flush();
+        //    fs.Close();
+        //}
+
     }
 }

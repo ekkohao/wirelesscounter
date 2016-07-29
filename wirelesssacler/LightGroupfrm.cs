@@ -193,7 +193,6 @@ namespace wirelesssacler
             else
             {
 
-
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     if (dt.Rows[i]["Dev_ID"].ToString() == num)

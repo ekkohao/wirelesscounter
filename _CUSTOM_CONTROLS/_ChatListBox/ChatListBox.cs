@@ -478,7 +478,7 @@ namespace _CUSTOM_CONTROLS
         }
 
         protected override void OnClick(EventArgs e) {
-
+            
             if (chatVScroll.IsMouseDown)
             {
                 selectItem = null;

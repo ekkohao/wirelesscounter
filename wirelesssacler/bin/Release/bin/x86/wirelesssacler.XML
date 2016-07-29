@@ -620,7 +620,22 @@
               重写当前线程的 CurrentUICulture 属性。
             </summary>
         </member>
+        <member name="P:wirelesssacler.Properties.Resources._0">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources._0_1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
         <member name="P:wirelesssacler.Properties.Resources.dev">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.mini">
             <summary>
               查找 System.Drawing.Bitmap 类型的本地化资源。
             </summary>
@@ -631,6 +646,11 @@
             </summary>
         </member>
         <member name="P:wirelesssacler.Properties.Resources.online">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.X">
             <summary>
               查找 System.Drawing.Bitmap 类型的本地化资源。
             </summary>
@@ -799,6 +819,16 @@
         <member name="F:wirelesssacler.UsewireCom.interval_T">
             <summary>
             间隔毫秒级别
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.loopCount">
+            <summary>
+            失败循环次数
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.current_devnum">
+            <summary>
+            当前设备号
             </summary>
         </member>
         <member name="F:wirelesssacler.UsewireCom.PortByte">

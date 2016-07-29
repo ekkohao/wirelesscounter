@@ -57,8 +57,6 @@
             this.tsmItemDatacenter = new System.Windows.Forms.ToolStripMenuItem();
             this.tlPanel = new System.Windows.Forms.TableLayoutPanel();
             this.skinPanel2 = new CCWin.SkinControl.SkinPanel();
-            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
-            this.btn_init_all = new CCWin.SkinControl.SkinButton();
             this.skinLabel7 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel6 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
@@ -126,6 +124,8 @@
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.timer_start = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
+            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
+            this.btn_init_all = new CCWin.SkinControl.SkinButton();
             this.UserMenu.SuspendLayout();
             this.ChatAllDevItemMenu.SuspendLayout();
             this.tlPanel.SuspendLayout();
@@ -379,30 +379,6 @@
             this.skinPanel2.Name = "skinPanel2";
             this.skinPanel2.NormlBack = null;
             this.skinToolTip1.SetToolTip(this.skinPanel2, resources.GetString("skinPanel2.ToolTip"));
-            // 
-            // skinLabel8
-            // 
-            this.skinLabel8.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            resources.ApplyResources(this.skinLabel8, "skinLabel8");
-            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel8.BorderColor = System.Drawing.Color.White;
-            this.skinLabel8.ForeColor = System.Drawing.Color.White;
-            this.skinLabel8.Name = "skinLabel8";
-            // 
-            // btn_init_all
-            // 
-            resources.ApplyResources(this.btn_init_all, "btn_init_all");
-            this.btn_init_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
-            this.btn_init_all.BaseColor = System.Drawing.Color.Transparent;
-            this.btn_init_all.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn_init_all.DownBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.DownBack")));
-            this.btn_init_all.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn_init_all.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.MouseBack")));
-            this.btn_init_all.Name = "btn_init_all";
-            this.btn_init_all.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.NormlBack")));
-            this.skinToolTip1.SetToolTip(this.btn_init_all, resources.GetString("btn_init_all.ToolTip"));
-            this.btn_init_all.UseVisualStyleBackColor = false;
-            this.btn_init_all.Click += new System.EventHandler(this.btn_init_all_Click);
             // 
             // skinLabel7
             // 
@@ -1100,6 +1076,30 @@
             this.label6.ForeColor = System.Drawing.Color.Honeydew;
             this.label6.Name = "label6";
             // 
+            // skinLabel8
+            // 
+            this.skinLabel8.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
+            resources.ApplyResources(this.skinLabel8, "skinLabel8");
+            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel8.BorderColor = System.Drawing.Color.White;
+            this.skinLabel8.ForeColor = System.Drawing.Color.White;
+            this.skinLabel8.Name = "skinLabel8";
+            // 
+            // btn_init_all
+            // 
+            resources.ApplyResources(this.btn_init_all, "btn_init_all");
+            this.btn_init_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
+            this.btn_init_all.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_init_all.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btn_init_all.DownBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.DownBack")));
+            this.btn_init_all.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btn_init_all.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.MouseBack")));
+            this.btn_init_all.Name = "btn_init_all";
+            this.btn_init_all.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.NormlBack")));
+            this.skinToolTip1.SetToolTip(this.btn_init_all, resources.GetString("btn_init_all.ToolTip"));
+            this.btn_init_all.UseVisualStyleBackColor = false;
+            this.btn_init_all.Click += new System.EventHandler(this.btn_init_all_Click);
+            // 
             // Mainfrm
             // 
             resources.ApplyResources(this, "$this");
@@ -1108,12 +1108,12 @@
             this.BorderColor = System.Drawing.Color.White;
             this.CaptionBackColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
             this.CaptionBackColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(120)))));
-            this.CaptionFont = new System.Drawing.Font("华文楷体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CaptionHeight = 60;
             this.CloseBoxSize = new System.Drawing.Size(50, 50);
-            this.CloseDownBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseDownBack")));
-            this.CloseMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseMouseBack")));
-            this.CloseNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseNormlBack")));
+            this.CloseDownBack = global::wirelesssacler.Properties.Resources.X;
+            this.CloseMouseBack = global::wirelesssacler.Properties.Resources.X;
+            this.CloseNormlBack = global::wirelesssacler.Properties.Resources.X;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tlPanel);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::wirelesssacler.Properties.Settings.Default, "main_name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -1123,18 +1123,20 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(180)))), ((int)(((byte)(15)))));
             this.IsMdiContainer = true;
-            this.MaxDownBack = ((System.Drawing.Image)(resources.GetObject("$this.MaxDownBack")));
-            this.MaxMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.MaxMouseBack")));
-            this.MaxNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.MaxNormlBack")));
+            this.MaxDownBack = global::wirelesssacler.Properties.Resources._0_1;
+            this.MaxMouseBack = global::wirelesssacler.Properties.Resources._0_1;
+            this.MaxNormlBack = global::wirelesssacler.Properties.Resources._0_1;
             this.MaxSize = new System.Drawing.Size(50, 50);
-            this.MinimizeBox = false;
-            this.MiniSize = new System.Drawing.Size(48, 48);
+            this.MiniDownBack = global::wirelesssacler.Properties.Resources.mini;
+            this.MiniMouseBack = global::wirelesssacler.Properties.Resources.mini;
+            this.MiniNormlBack = global::wirelesssacler.Properties.Resources.mini;
+            this.MiniSize = new System.Drawing.Size(50, 50);
             this.Mobile = CCWin.MobileStyle.TitleMobile;
             this.Name = "Mainfrm";
             this.Opacity = 0D;
-            this.RestoreDownBack = ((System.Drawing.Image)(resources.GetObject("$this.RestoreDownBack")));
-            this.RestoreMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.RestoreMouseBack")));
-            this.RestoreNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.RestoreNormlBack")));
+            this.RestoreDownBack = global::wirelesssacler.Properties.Resources._0;
+            this.RestoreMouseBack = global::wirelesssacler.Properties.Resources._0;
+            this.RestoreNormlBack = global::wirelesssacler.Properties.Resources._0;
             this.ShadowColor = System.Drawing.Color.Silver;
             this.ShowInTaskbar = false;
             this.SkinOpacity = 0D;
@@ -1256,8 +1258,6 @@
         private System.Windows.Forms.ToolStripButton importdevlist;
         private System.Windows.Forms.ToolStripButton btn_exportDev;
         private System.Windows.Forms.Label label1;
-        private CCWin.SkinControl.SkinLabel skinLabel8;
-        private CCWin.SkinControl.SkinButton btn_init_all;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripMenuItem initGroupDev;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
@@ -1267,6 +1267,8 @@
         private CCWin.SkinControl.SkinButton btnSearch;
         private _CUSTOM_CONTROLS.ChatListBox2 AllListBox;
         private _CUSTOM_CONTROLS.ChatListBox2 GroupListBox;
+        private CCWin.SkinControl.SkinLabel skinLabel8;
+        private CCWin.SkinControl.SkinButton btn_init_all;
 
     }
 }

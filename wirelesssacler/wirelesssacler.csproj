@@ -429,6 +429,10 @@
     <Content Include="dll\CSkin.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\X.png" />
+    <None Include="Resources\0.png" />
+    <None Include="Resources\0-1.png" />
+    <None Include="Resources\mini.png" />
     <Content Include="Resources\offline.png" />
     <Content Include="Resources\online.png" />
     <None Include="Resources\dev.png" />

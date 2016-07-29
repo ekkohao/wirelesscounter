@@ -277,8 +277,7 @@ namespace wirelesssacler
                 #region 填入数据
                 {
                    // LinkedListNode<string> _p = plist.First;
-                    int rowIndex = 1;
-                    for (int i = 0; i < ot.Rows.Count; i++)
+                    for (int i = 0,rowIndex = 1; i < ot.Rows.Count; i++)
                     {
                         LinkedListNode<string> _p = plist.First;
                         while (_p!=null)
@@ -291,9 +290,9 @@ namespace wirelesssacler
                                 cellSheet.Cells[rowIndex, 3].PutValue(ot.Rows[i][3]);
                                 cellSheet.Cells[rowIndex, 4].PutValue(ot.Rows[i][4]);
                                 cellSheet.Cells[rowIndex, 5].PutValue(ot.Rows[i][5]);
-
+                                   rowIndex++;
                                 break;
-                                rowIndex++;
+                                
                             }
                             _p = _p.Next;
                         }
@@ -351,8 +350,7 @@ namespace wirelesssacler
                 #region 填入数据
                 {
                    // LinkedListNode<string> _p = plist.First;
-                    int rowIndex = 1;
-                    for (int i = 0; i < ot.Rows.Count; i++)
+                    for (int i = 0,rowIndex = 1; i < ot.Rows.Count; i++)
                     {
                         LinkedListNode<string> _p = plist.First;
                         while (_p!=null)
@@ -368,8 +366,9 @@ namespace wirelesssacler
                                 cellSheet.Cells[rowIndex, 5].PutValue(ot.Rows[i][6]);
                                 cellSheet.Cells[rowIndex, 6].PutValue(ot.Rows[i][7]);
                                 cellSheet.Cells[rowIndex, 7].PutValue(ot.Rows[i][8]);
-                                break;
+                                
                                 rowIndex++;
+                                break;
                             }
                             _p = _p.Next;
                         }

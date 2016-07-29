@@ -1387,7 +1387,7 @@ namespace wirelesssacler
             if (MessageBox.Show("是否退出应用？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 e.Cancel = false;
-            }
+            } 
             else
             {
                 e.Cancel = true;
@@ -1674,19 +1674,6 @@ namespace wirelesssacler
             InitAllDevfrm f = new InitAllDevfrm(WireCom, CurentGroup);
             f.Show();
         }
-
-        private void AllListBox_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
-
-
-
 
 
     }

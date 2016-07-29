@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO.Ports;
 
+using System.IO;
+
+using System.Text;
 namespace ConnectCom
 {
     public class Connect
@@ -105,6 +108,14 @@ namespace ConnectCom
             {
                 _CComPort.Write(data, offset, count);
             }
+            //WWrite(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss fff") + "fa ");
+            //foreach (var b in data)
+            //    WWrite(b.ToString() + " ");
+            //WWrite("\r\n");
+            //Console.Write(DateTime.Now + "fa ");
+            //foreach (var b in data)
+            //    Console.Write(b.ToString() + " ");
+            //Console.WriteLine();
         }
 
         /// <summary>
@@ -137,6 +148,23 @@ namespace ConnectCom
         //    return -1;
         //}
 
+        //public void WWrite(string s)
+        //{
+        //    string sPath="log/"+DateTime.Now.ToString("yyyy-MM-dd");
+        //    if (!Directory.Exists(sPath))
+        //    {
+        //        Directory.CreateDirectory(sPath);
+        //    }
+        //    FileStream fs = new FileStream(sPath+DateTime.Now.ToString("/hh")+"_log.txt", FileMode.Append);
+        //    StreamWriter sw = new StreamWriter(fs);
+        //    //开始写入
+        //    sw.Write(s);
+        //    //清空缓冲区
+        //    sw.Flush();
+        //    //关闭流
+        //    sw.Close();
+        //    fs.Close();
+        //}
 
     }
 }

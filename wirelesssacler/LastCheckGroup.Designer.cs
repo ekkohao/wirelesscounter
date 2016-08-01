@@ -40,17 +40,18 @@
             this.lb_noty = new CCWin.SkinControl.SkinLabel();
             this.Indicator = new CCWin.SkinControl.SkinProgressIndicator();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.LastDayCount = new System.Windows.Forms.TextBox();
             this.btn_callData = new CCWin.SkinControl.SkinButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.LastDayCount = new System.Windows.Forms.NumericUpDown();
             this.skinPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LastDayCount)).BeginInit();
             this.SuspendLayout();
             // 
             // skinPanel1
@@ -64,7 +65,7 @@
             this.skinPanel1.MouseBack = null;
             this.skinPanel1.Name = "skinPanel1";
             this.skinPanel1.NormlBack = null;
-            this.skinPanel1.Size = new System.Drawing.Size(510, 740);
+            this.skinPanel1.Size = new System.Drawing.Size(562, 740);
             this.skinPanel1.TabIndex = 3;
             // 
             // tableLayoutPanel1
@@ -83,7 +84,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.94859F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(510, 740);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 740);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // RichTextBox
@@ -96,7 +97,7 @@
             this.RichTextBox.Location = new System.Drawing.Point(3, 106);
             this.RichTextBox.Name = "RichTextBox";
             this.RichTextBox.ReadOnly = true;
-            this.RichTextBox.Size = new System.Drawing.Size(504, 406);
+            this.RichTextBox.Size = new System.Drawing.Size(556, 406);
             this.RichTextBox.TabIndex = 3;
             this.RichTextBox.Text = "";
             this.RichTextBox.TextColor = CCWin.SkinControl.RtfRichTextBox.RtfColor.Black;
@@ -107,7 +108,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 518);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(504, 147);
+            this.panel1.Size = new System.Drawing.Size(556, 147);
             this.panel1.TabIndex = 4;
             // 
             // rtbmsg
@@ -115,7 +116,7 @@
             this.rtbmsg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbmsg.Location = new System.Drawing.Point(0, 0);
             this.rtbmsg.Name = "rtbmsg";
-            this.rtbmsg.Size = new System.Drawing.Size(504, 147);
+            this.rtbmsg.Size = new System.Drawing.Size(556, 147);
             this.rtbmsg.TabIndex = 0;
             this.rtbmsg.Text = "";
             // 
@@ -128,7 +129,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(504, 97);
+            this.panel2.Size = new System.Drawing.Size(556, 97);
             this.panel2.TabIndex = 5;
             // 
             // skinLabel1
@@ -175,7 +176,7 @@
             this.Indicator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Indicator.BackColor = System.Drawing.Color.Transparent;
             this.Indicator.CircleColor = System.Drawing.Color.White;
-            this.Indicator.Location = new System.Drawing.Point(438, 11);
+            this.Indicator.Location = new System.Drawing.Point(490, 11);
             this.Indicator.Name = "Indicator";
             this.Indicator.Percentage = 0F;
             this.Indicator.Size = new System.Drawing.Size(51, 51);
@@ -184,16 +185,52 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.LastDayCount);
             this.panel3.Controls.Add(this.btn_callData);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.LastDayCount);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 671);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(504, 66);
+            this.panel3.Size = new System.Drawing.Size(556, 66);
             this.panel3.TabIndex = 6;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(213, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 26);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(294, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 26);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // LastDayCount
+            // 
+            this.LastDayCount.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LastDayCount.Location = new System.Drawing.Point(243, 23);
+            this.LastDayCount.Name = "LastDayCount";
+            this.LastDayCount.Size = new System.Drawing.Size(51, 26);
+            this.LastDayCount.TabIndex = 11;
+            this.LastDayCount.Text = "0";
+            this.LastDayCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LastDayCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastDayCount_KeyPress);
             // 
             // btn_callData
             // 
@@ -204,7 +241,7 @@
             this.btn_callData.DownBack = null;
             this.btn_callData.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_callData.ForeColor = System.Drawing.Color.White;
-            this.btn_callData.Location = new System.Drawing.Point(397, 14);
+            this.btn_callData.Location = new System.Drawing.Point(449, 14);
             this.btn_callData.MouseBack = null;
             this.btn_callData.Name = "btn_callData";
             this.btn_callData.NormlBack = null;
@@ -228,7 +265,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(340, 31);
+            this.label3.Location = new System.Drawing.Point(339, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 12);
             this.label3.TabIndex = 10;
@@ -244,21 +281,13 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "查询最近:";
             // 
-            // LastDayCount
-            // 
-            this.LastDayCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LastDayCount.Location = new System.Drawing.Point(214, 23);
-            this.LastDayCount.Name = "LastDayCount";
-            this.LastDayCount.Size = new System.Drawing.Size(120, 26);
-            this.LastDayCount.TabIndex = 9;
-            // 
             // LastCheckGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
             this.CaptionBackColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(518, 778);
+            this.ClientSize = new System.Drawing.Size(570, 778);
             this.Controls.Add(this.skinPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LastCheckGroup";
@@ -277,7 +306,6 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LastDayCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +314,6 @@
 
         private CCWin.SkinControl.SkinPanel skinPanel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown LastDayCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private CCWin.SkinControl.SkinLabel lb_noty;
@@ -300,5 +327,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox rtbmsg;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox LastDayCount;
     }
 }

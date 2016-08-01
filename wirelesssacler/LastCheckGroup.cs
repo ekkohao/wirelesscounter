@@ -65,12 +65,12 @@ namespace wirelesssacler
                     DataTable dr = query.ReturnTable(cmd);
                     if (dr.Rows.Count > 0)
                     {
-                        rtbmsg.Text += nubs[0] + "上次下载到第" + dr.Rows[0]["Dev_Num"] + "条数据,需要下载数据请点击下载按钮";
+                        rtbmsg.Text += nubs[0] + "上次下载到第" + dr.Rows[0]["Dev_Num"] + "条数据,需要下载数据请点击下载按钮\r\n";
 
                     }
                     else
                     {
-                         rtbmsg.Text += nubs[0] + "上次下载到0条数据,需要下载请点击下载按钮";
+                         rtbmsg.Text += nubs[0] + "上次下载到0条数据,需要下载请点击下载按钮\r\n";
                     }
                 }
             }
@@ -85,7 +85,7 @@ namespace wirelesssacler
             if (nubs.Length == 0) return;
             try
             {
-                if (Convert.ToInt32(LastDayCount.Value) == 0)
+                if (Convert.ToInt32(LastDayCount.Text.ToString()) == 0)
                 {
                     MessageBox.Show("查询天数必须大于0");
                     return;
@@ -95,7 +95,7 @@ namespace wirelesssacler
             {
                 return;
             }
-            MyDay = Convert.ToInt32(LastDayCount.Value) * DayCount;
+            MyDay = Convert.ToInt32(LastDayCount.Text.ToString()) * DayCount;
             
             btn_callData.Cursor = Cursors.WaitCursor;
             RichTextBox.Text = "";
@@ -214,5 +214,35 @@ namespace wirelesssacler
         {
             this.DialogResult = DialogResult.Yes;
         }
+
+        private void LastDayCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar!='\b')//这是允许输入退格键  
+            {  
+                if((e.KeyChar<'0')||(e.KeyChar>'9'))//这是允许输入0-9数字  
+                {  
+                e.Handled = true;  
+                }  
+            }  
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int t = Int32.Parse(LastDayCount.Text.ToString());
+            LastDayCount.Text = (t + 1).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int t = Int32.Parse(LastDayCount.Text.ToString());
+            if(t>0)
+                LastDayCount.Text = (t - 1).ToString();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

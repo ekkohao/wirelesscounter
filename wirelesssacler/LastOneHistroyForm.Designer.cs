@@ -33,10 +33,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.RichTextBox = new CCWin.SkinControl.RtfRichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.LastDayCount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_callData = new CCWin.SkinControl.SkinButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.LastDayCount = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Indicator = new CCWin.SkinControl.SkinProgressIndicator();
@@ -46,7 +48,6 @@
             this.skinPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LastDayCount)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,16 +99,51 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.LastDayCount);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btn_callData);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.LastDayCount);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 636);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(504, 101);
             this.panel1.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(98, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 26);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(179, 55);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 26);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // LastDayCount
+            // 
+            this.LastDayCount.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LastDayCount.Location = new System.Drawing.Point(128, 55);
+            this.LastDayCount.Name = "LastDayCount";
+            this.LastDayCount.Size = new System.Drawing.Size(51, 26);
+            this.LastDayCount.TabIndex = 13;
+            this.LastDayCount.Text = "0";
+            this.LastDayCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LastDayCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastDayCount_KeyPress);
             // 
             // label4
             // 
@@ -142,27 +178,20 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(225, 60);
+            this.label3.Location = new System.Drawing.Point(215, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "天";
             // 
-            // LastDayCount
-            // 
-            this.LastDayCount.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LastDayCount.Location = new System.Drawing.Point(99, 52);
-            this.LastDayCount.Name = "LastDayCount";
-            this.LastDayCount.Size = new System.Drawing.Size(120, 29);
-            this.LastDayCount.TabIndex = 9;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 42);
+            this.label2.Location = new System.Drawing.Point(18, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 12);
+            this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "查询最近:";
             // 
@@ -252,7 +281,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LastDayCount)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -269,11 +297,13 @@
         private CCWin.SkinControl.SkinButton btn_callData;
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown LastDayCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox LastDayCount;
     }
 }

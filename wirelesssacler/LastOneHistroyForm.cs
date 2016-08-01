@@ -63,11 +63,11 @@ namespace wirelesssacler
         {
             btn_callData.Cursor = Cursors.WaitCursor;
             Indicator.AutoStart = true;
-            if(Convert.ToInt32(LastDayCount.Value)>0)
+            if(Convert.ToInt32(LastDayCount.Text.ToString())>0)
             {
                 
              //   MessageBox.Show(LastDayCount.Value.ToString());
-                int MyCount =Convert.ToInt32(LastDayCount.Value)*DayCount;
+                int MyCount =Convert.ToInt32(LastDayCount.Text.ToString())*DayCount;
                 lb_noty.Text="开始下载数据，请耐心等候，预计"+MyCount*6+"秒";
                // if(MyCount>LastDownCount)
                
@@ -183,6 +183,30 @@ namespace wirelesssacler
         private void LastOneHistroyForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = DialogResult.Yes;
+        }
+
+        private void LastDayCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b')//这是允许输入退格键  
+            {
+                if ((e.KeyChar < '0') || (e.KeyChar > '9'))//这是允许输入0-9数字  
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int t = Int32.Parse(LastDayCount.Text.ToString());
+            if (t > 0)
+                LastDayCount.Text = (t - 1).ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int t = Int32.Parse(LastDayCount.Text.ToString());
+            LastDayCount.Text = (t + 1).ToString();
         } 
     }
 }

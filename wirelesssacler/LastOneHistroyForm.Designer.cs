@@ -33,12 +33,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.RichTextBox = new CCWin.SkinControl.RtfRichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.LastDayCount = new System.Windows.Forms.TextBox();
+            this.dateToPicker = new System.Windows.Forms.DateTimePicker();
+            this.dateFromPicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_callData = new CCWin.SkinControl.SkinButton();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Indicator = new CCWin.SkinControl.SkinProgressIndicator();
@@ -99,12 +98,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.LastDayCount);
+            this.panel1.Controls.Add(this.dateToPicker);
+            this.panel1.Controls.Add(this.dateFromPicker);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btn_callData);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 636);
@@ -112,38 +110,31 @@
             this.panel1.Size = new System.Drawing.Size(504, 101);
             this.panel1.TabIndex = 4;
             // 
-            // button1
+            // dateToPicker
             // 
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(98, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 26);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dateToPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateToPicker.CalendarFont = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateToPicker.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateToPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateToPicker.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.dateToPicker.Location = new System.Drawing.Point(209, 60);
+            this.dateToPicker.Name = "dateToPicker";
+            this.dateToPicker.Size = new System.Drawing.Size(138, 23);
+            this.dateToPicker.TabIndex = 12;
+            this.dateToPicker.Value = new System.DateTime(2016, 8, 17, 15, 22, 56, 0);
             // 
-            // button2
+            // dateFromPicker
             // 
-            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(179, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 26);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // LastDayCount
-            // 
-            this.LastDayCount.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LastDayCount.Location = new System.Drawing.Point(128, 55);
-            this.LastDayCount.Name = "LastDayCount";
-            this.LastDayCount.Size = new System.Drawing.Size(51, 26);
-            this.LastDayCount.TabIndex = 13;
-            this.LastDayCount.Text = "0";
-            this.LastDayCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.LastDayCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastDayCount_KeyPress);
+            this.dateFromPicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateFromPicker.CalendarFont = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateFromPicker.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateFromPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateFromPicker.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.dateFromPicker.Location = new System.Drawing.Point(209, 28);
+            this.dateFromPicker.Name = "dateFromPicker";
+            this.dateFromPicker.Size = new System.Drawing.Size(138, 23);
+            this.dateFromPicker.TabIndex = 12;
+            this.dateFromPicker.Value = new System.DateTime(2016, 8, 17, 15, 22, 56, 0);
             // 
             // label4
             // 
@@ -151,12 +142,13 @@
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(3, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(365, 12);
+            this.label4.Size = new System.Drawing.Size(257, 12);
             this.label4.TabIndex = 11;
-            this.label4.Text = "上次下载到0条数据,需要下载全部数据请点击下载全部历史数据按钮";
+            this.label4.Text = "请确保本地时间和设备时间与北京时间相差不大";
             // 
             // btn_callData
             // 
+            this.btn_callData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_callData.BackColor = System.Drawing.Color.Transparent;
             this.btn_callData.BaseColor = System.Drawing.Color.Transparent;
             this.btn_callData.ControlState = CCWin.SkinClass.ControlState.Normal;
@@ -173,27 +165,29 @@
             this.btn_callData.UseVisualStyleBackColor = false;
             this.btn_callData.Click += new System.EventHandler(this.btn_callData_Click);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(215, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "天";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(123, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "结束日期:";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 61);
+            this.label2.Location = new System.Drawing.Point(123, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 8;
-            this.label2.Text = "查询最近:";
+            this.label2.Text = "起始日期:";
             // 
             // panel2
             // 
@@ -296,14 +290,13 @@
         private CCWin.SkinControl.RtfRichTextBox RichTextBox;
         private CCWin.SkinControl.SkinButton btn_callData;
         private CCWin.SkinControl.SkinLabel skinLabel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox LastDayCount;
+        private System.Windows.Forms.DateTimePicker dateFromPicker;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateToPicker;
     }
 }

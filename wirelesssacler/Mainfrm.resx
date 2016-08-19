@@ -271,13 +271,13 @@
     <value>NoControl</value>
   </data>
   <data name="skinLabel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 10</value>
+    <value>100, 8</value>
   </data>
   <data name="skinLabel8.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 21</value>
   </data>
   <data name="skinLabel8.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="skinLabel8.Text" xml:space="preserve">
     <value>一键初始化</value>
@@ -1126,7 +1126,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_init_all.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 28</value>
+    <value>115, 26</value>
   </data>
   <data name="btn_init_all.MouseBack" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2772,7 +2772,7 @@
     <value>60, 66</value>
   </data>
   <data name="btn_init_all.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="btn_init_all.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
@@ -2802,7 +2802,7 @@
     <value>微软雅黑, 12pt</value>
   </data>
   <data name="skinLabel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 10</value>
+    <value>454, 8</value>
   </data>
   <data name="skinLabel7.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -2832,7 +2832,7 @@
     <value>微软雅黑, 12pt</value>
   </data>
   <data name="skinLabel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 10</value>
+    <value>364, 8</value>
   </data>
   <data name="skinLabel6.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -2862,7 +2862,7 @@
     <value>微软雅黑, 12pt</value>
   </data>
   <data name="skinLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 10</value>
+    <value>279, 8</value>
   </data>
   <data name="skinLabel5.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -2892,7 +2892,7 @@
     <value>微软雅黑, 12pt</value>
   </data>
   <data name="skinLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 10</value>
+    <value>195, 8</value>
   </data>
   <data name="skinLabel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -3097,7 +3097,7 @@
 </value>
   </data>
   <data name="btn_help.Location" type="System.Drawing.Point, System.Drawing">
-    <value>451, 28</value>
+    <value>462, 26</value>
   </data>
   <data name="btn_help.MouseBack" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3603,7 +3603,7 @@
 </value>
   </data>
   <data name="btn_setDev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 28</value>
+    <value>377, 26</value>
   </data>
   <data name="btn_setDev.MouseBack" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4154,7 +4154,7 @@
 </value>
   </data>
   <data name="btn_CheckData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 28</value>
+    <value>292, 26</value>
   </data>
   <data name="btn_CheckData.MouseBack" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4685,7 +4685,7 @@
 </value>
   </data>
   <data name="btn_downRealData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 28</value>
+    <value>207, 26</value>
   </data>
   <data name="btn_downRealData.MouseBack" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6381,7 +6381,7 @@
     <value>该组设备同步时间</value>
   </data>
   <data name="ChatGropuMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 190</value>
+    <value>337, 212</value>
   </data>
   <data name="&gt;&gt;ChatGropuMenu.Name" xml:space="preserve">
     <value>ChatGropuMenu</value>
@@ -6397,7 +6397,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAa
-        CwAAAk1TRnQBSQFMAgEBBAEAASwBAgEsAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CwAAAk1TRnQBSQFMAgEBBAEAAVwBAgFcAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

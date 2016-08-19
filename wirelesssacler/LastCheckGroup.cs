@@ -25,7 +25,7 @@ namespace wirelesssacler
         private SqlHelp query = new SqlHelp();
         private string[] nubs = null;
         private BackState Isback;
-        private int DayCount=4;
+        private int DayCount=6;
         private int MyDay=0;
         /// <summary>
         /// 查询历史数据
@@ -35,13 +35,13 @@ namespace wirelesssacler
         /// <param name="num"></param>
         /// <param name="lastnum"></param>
         /// <returns></returns>
-        public delegate BackState CallHistroy(string number, int daynum, out string err, out int num);
+        public delegate BackState CallHistroy(string number, int daynum,int daynumend, out string err, out int num);
         public event CallHistroy callHistroyData;
         private void LastCheckGroup_Shown(object sender, EventArgs e)
         {
             string CurentGroup = this.devaddr;
 
-            DataTable dt = query.ReturnTable("select * from `Dev_List` where Dev_Addr='" + CurentGroup + "'");
+            DataTable dt = query.ReturnTable("select * from `Dev_List` where Dev_Addr='" + CurentGroup + "' ORDER BY Dev_ID");
 
             if (dt.Rows.Count > 0)
             {
@@ -52,54 +52,36 @@ namespace wirelesssacler
                 }
                 lb_grop.Text = this.devaddr + ",共有" + nubs.Length + "个设备";
             }
+            if (nubs.Length > 0)
+            {
+                for (int i = 0; i < nubs.Length; i++)
+                {
+                   rtbmsg.Text += nubs[i] + "\r\n"; 
+                }
+            }
             else
             {
                 MessageBox.Show("当前杆塔没有设备");
               
             }
-            if (nubs.Length > 0)
-            {
-                for (int i = 0; i < nubs.Length; i++)
-                {
-                    string cmd = "SELECT DevmA_Histroy.Dev_ID, Last(DevmA_Histroy.Dev_Num) AS Dev_Num FROM DevmA_Histroy GROUP BY DevmA_Histroy.Dev_ID, DevmA_Histroy.Dev_Total HAVING (((DevmA_Histroy.Dev_ID)='" + nubs[i] + "'))";
-                    DataTable dr = query.ReturnTable(cmd);
-                    if (dr.Rows.Count > 0)
-                    {
-                        rtbmsg.Text += nubs[0] + "上次下载到第" + dr.Rows[0]["Dev_Num"] + "条数据,需要下载数据请点击下载按钮\r\n";
+            this.dateFromPicker.CustomFormat = "yyyy-MM-dd";
+            this.dateToPicker.CustomFormat = "yyyy-MM-dd";
 
-                    }
-                    else
-                    {
-                         rtbmsg.Text += nubs[0] + "上次下载到0条数据,需要下载请点击下载按钮\r\n";
-                    }
-                }
-            }
-            else
-            {
-                rtbmsg.Text += "没有查询到设备数据相关信息";
-            }
         }
 
         private void btn_callData_Click(object sender, EventArgs e)
         {
             if (nubs.Length == 0) return;
-            try
+            int countF = GetCount(dateFromPicker.Text.ToString(), 0);
+            int countT = GetCount(dateToPicker.Text.ToString(), 1);
+            if (countF < 0 || countT < 0 || countF < countT)
             {
-                if (Convert.ToInt32(LastDayCount.Text.ToString()) == 0)
-                {
-                    MessageBox.Show("查询天数必须大于0");
-                    return;
-                }
-            }
-            catch
-            {
+                MessageBox.Show("时间大于当前时间或起始时间大于结束时间", "错误", MessageBoxButtons.OK);
                 return;
-            }
-            MyDay = Convert.ToInt32(LastDayCount.Text.ToString()) * DayCount;
-            
+            }      
             btn_callData.Cursor = Cursors.WaitCursor;
             RichTextBox.Text = "";
-            lb_noty.Text = "开始下载数据,大约需要"+ MyDay*6+"秒";
+            lb_noty.Text = "开始下载数据,最长大约需要"+ (countF-countT)*6+"秒";
             Indicator.AutoStart = true;
                 //历史数据
                 lb_noty.Text = "开始下载数据";
@@ -110,7 +92,7 @@ namespace wirelesssacler
                     string err; int num;
                     //
                     #region 历史数据
-                    Isback = callHistroyData(nubs[j],MyDay, out err, out num);
+                    Isback = callHistroyData(nubs[j],countF,countT, out err, out num);
                     if (Isback == BackState.Yes)
                     {
 
@@ -126,18 +108,30 @@ namespace wirelesssacler
                             RichTextBox.Text+="设备："+nubs[j]+"数据下载完成。\r\n";
                             if (dt.Rows.Count > 0)
                             {
+                                int countFF, countTT;
+                                if (num - countF > 0)
+                                {
+                                    countFF = num - countF + 1;
+                                }
+                                else
+                                {
+                                    countFF = 1;
+                                }
+                                if (num - countT > 0)
+                                {
+                                    countTT = num - countT;
+                                }
+                                else
+                                {
+                                    countTT = 1;
+                                }
                                 for (int i = 0; i < dt.Rows.Count; i++)
                                 {
                                     if (num < 1440)
                                     {
                                         int t = Convert.ToInt32(dt.Rows[i]["Dev_Num"]);
-                                        if (num - MyDay > 0)
-                                        {
-                                            MyDay = num - MyDay;
-                                        }
-                                        else
-                                            MyDay = 1;
-                                        for (int k = MyDay; k < num; k++)
+                                       
+                                        for (int k = countFF; k <= countTT; k++)
                                         {
                                             if (t == k)
                                             {
@@ -157,13 +151,7 @@ namespace wirelesssacler
                                     {
                                         int t = Convert.ToInt32(dt.Rows[i]["Dev_Num"]);
                                         t = t % 1440;
-                                        if (num - MyDay > 0)
-                                        {
-                                            MyDay = num - MyDay;
-                                        }
-                                        else
-                                            MyDay = 1;
-                                        for (int k = MyDay; k < num; k++)
+                                        for (int k = countFF; k <= countTT; k++)
                                         {
                                      
                                             if (t == k)
@@ -214,34 +202,23 @@ namespace wirelesssacler
         {
             this.DialogResult = DialogResult.Yes;
         }
-
-        private void LastDayCount_KeyPress(object sender, KeyPressEventArgs e)
+        private int GetCount(string datestr, int mode)
         {
-            if(e.KeyChar!='\b')//这是允许输入退格键  
-            {  
-                if((e.KeyChar<'0')||(e.KeyChar>'9'))//这是允许输入0-9数字  
-                {  
-                e.Handled = true;  
-                }  
-            }  
-        }
+            string nowstr = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime timeFrom = Convert.ToDateTime(datestr);
+            DateTime timeEnd = Convert.ToDateTime(nowstr);
+            int DayDiff = Math.Abs(((TimeSpan)(timeEnd - timeFrom)).Days);
+            int temp = Int32.Parse(DateTime.Now.ToString("HH")) / 4 + 1;
+            DayDiff = DayDiff * DayCount + temp;
+            if (mode == 1)
+            {
+                if (datestr == nowstr)
+                    DayDiff -= temp;
+                else
+                    DayDiff -= DayCount;
+            }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int t = Int32.Parse(LastDayCount.Text.ToString());
-            LastDayCount.Text = (t + 1).ToString();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int t = Int32.Parse(LastDayCount.Text.ToString());
-            if(t>0)
-                LastDayCount.Text = (t - 1).ToString();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
+            return DayDiff;
         }
 
     }

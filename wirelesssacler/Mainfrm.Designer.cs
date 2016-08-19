@@ -57,6 +57,8 @@
             this.tsmItemDatacenter = new System.Windows.Forms.ToolStripMenuItem();
             this.tlPanel = new System.Windows.Forms.TableLayoutPanel();
             this.skinPanel2 = new CCWin.SkinControl.SkinPanel();
+            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
+            this.btn_init_all = new CCWin.SkinControl.SkinButton();
             this.skinLabel7 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel6 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
@@ -124,8 +126,6 @@
             this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.timer_start = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.skinLabel8 = new CCWin.SkinControl.SkinLabel();
-            this.btn_init_all = new CCWin.SkinControl.SkinButton();
             this.UserMenu.SuspendLayout();
             this.ChatAllDevItemMenu.SuspendLayout();
             this.tlPanel.SuspendLayout();
@@ -379,6 +379,30 @@
             this.skinPanel2.Name = "skinPanel2";
             this.skinPanel2.NormlBack = null;
             this.skinToolTip1.SetToolTip(this.skinPanel2, resources.GetString("skinPanel2.ToolTip"));
+            // 
+            // skinLabel8
+            // 
+            this.skinLabel8.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
+            resources.ApplyResources(this.skinLabel8, "skinLabel8");
+            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel8.BorderColor = System.Drawing.Color.White;
+            this.skinLabel8.ForeColor = System.Drawing.Color.White;
+            this.skinLabel8.Name = "skinLabel8";
+            // 
+            // btn_init_all
+            // 
+            resources.ApplyResources(this.btn_init_all, "btn_init_all");
+            this.btn_init_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
+            this.btn_init_all.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_init_all.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btn_init_all.DownBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.DownBack")));
+            this.btn_init_all.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btn_init_all.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.MouseBack")));
+            this.btn_init_all.Name = "btn_init_all";
+            this.btn_init_all.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.NormlBack")));
+            this.skinToolTip1.SetToolTip(this.btn_init_all, resources.GetString("btn_init_all.ToolTip"));
+            this.btn_init_all.UseVisualStyleBackColor = false;
+            this.btn_init_all.Click += new System.EventHandler(this.btn_init_all_Click);
             // 
             // skinLabel7
             // 
@@ -1076,30 +1100,6 @@
             this.label6.ForeColor = System.Drawing.Color.Honeydew;
             this.label6.Name = "label6";
             // 
-            // skinLabel8
-            // 
-            this.skinLabel8.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            resources.ApplyResources(this.skinLabel8, "skinLabel8");
-            this.skinLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel8.BorderColor = System.Drawing.Color.White;
-            this.skinLabel8.ForeColor = System.Drawing.Color.White;
-            this.skinLabel8.Name = "skinLabel8";
-            // 
-            // btn_init_all
-            // 
-            resources.ApplyResources(this.btn_init_all, "btn_init_all");
-            this.btn_init_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(80)))));
-            this.btn_init_all.BaseColor = System.Drawing.Color.Transparent;
-            this.btn_init_all.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn_init_all.DownBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.DownBack")));
-            this.btn_init_all.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn_init_all.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.MouseBack")));
-            this.btn_init_all.Name = "btn_init_all";
-            this.btn_init_all.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn_init_all.NormlBack")));
-            this.skinToolTip1.SetToolTip(this.btn_init_all, resources.GetString("btn_init_all.ToolTip"));
-            this.btn_init_all.UseVisualStyleBackColor = false;
-            this.btn_init_all.Click += new System.EventHandler(this.btn_init_all_Click);
-            // 
             // Mainfrm
             // 
             resources.ApplyResources(this, "$this");
@@ -1259,16 +1259,16 @@
         private System.Windows.Forms.ToolStripButton btn_exportDev;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ToolStripMenuItem initGroupDev;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
-        private System.Windows.Forms.ToolStripMenuItem initGroupTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CCWin.SkinControl.SkinButton btnSearch;
         private _CUSTOM_CONTROLS.ChatListBox2 AllListBox;
         private _CUSTOM_CONTROLS.ChatListBox2 GroupListBox;
         private CCWin.SkinControl.SkinLabel skinLabel8;
         private CCWin.SkinControl.SkinButton btn_init_all;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripMenuItem initGroupDev;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
+        private System.Windows.Forms.ToolStripMenuItem initGroupTime;
 
     }
 }

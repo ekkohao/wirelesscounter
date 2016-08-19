@@ -55,7 +55,7 @@ namespace wirelesssacler
         }
 
         private void add_dev_tree(string addr) {
-            DataTable dt = sql.ReturnTable("select * from Dev_List where Dev_Addr = '"+addr+"'");
+            DataTable dt = sql.ReturnTable("select * from Dev_List where Dev_Addr = '" + addr + "' ORDER BY Dev_ID");
             TreeNode node = DevTreeView.Nodes.Add("组号："+addr);
             for (int i = 0; i < dt.Rows.Count; i++) {
                 node.Nodes.Add("设备序列号：[" + dt.Rows[i]["Dev_ID"].ToString() + "] 监测相位：[" + dt.Rows[i]["Dev_Phase"].ToString()+"]");

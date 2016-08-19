@@ -71,7 +71,7 @@ namespace wirelesssacler
             {
                 if (DG_List.Rows[e.RowIndex].Cells[0].Value == null || DG_List.Rows[e.RowIndex].Cells[1].Value == null || DG_List.Rows[e.RowIndex].Cells[2].Value == null)
                 {
-                   // MessageBox.Show("请填写完整记录");
+                   //MessageBox.Show("请填写完整记录");
                     return;
                 }
                 //if (DG_List.Rows[e.RowIndex].Cells[1].Value == null)

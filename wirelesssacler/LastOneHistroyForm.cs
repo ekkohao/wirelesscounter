@@ -23,7 +23,7 @@ namespace wirelesssacler
              number=addr;
              lb_grop.Text = number;
         }
-        private int DayCount = 4;//一天4条
+        private int DayCount = 6;//一天4条
         private string number;
         /// <summary>
         /// 查询历史数据
@@ -33,7 +33,7 @@ namespace wirelesssacler
         /// <param name="num"></param>
         /// <param name="lastnum"></param>
         /// <returns></returns>
-        public delegate BackState CallHistroy(string number,int daynum ,out string err, out int num);
+        public delegate BackState CallHistroy(string number,int daynum ,int daynumend,out string err, out int num);
         public event CallHistroy callHistroyData;
         public SqlHelp query = new SqlHelp();
         private int LastDownCount = 0;
@@ -44,42 +44,39 @@ namespace wirelesssacler
 
         private void LastOneHistroyForm_Load(object sender, EventArgs e)
         {
-            //获取设备最近的数据
-            string cmd = "SELECT DevmA_Histroy.Dev_ID, Last(DevmA_Histroy.Dev_Num) AS Dev_Num FROM DevmA_Histroy GROUP BY DevmA_Histroy.Dev_ID, DevmA_Histroy.Dev_Total HAVING (((DevmA_Histroy.Dev_ID)='" + number + "'))";
-            DataTable dr = query.ReturnTable(cmd);
-            if (dr.Rows.Count > 0)
-            {
-                label4.Text = "上次下载到第" + dr.Rows[0]["Dev_Num"] + "条数据,需要下载全部数据请点击下载全部历史数据按钮";
-                LastDownCount =Convert.ToInt32(dr.Rows[0]["Dev_Num"]);
-            }
-            else
-            {
-                label4.Text = "上次下载到0条数据,需要下载全部数据请点击下载全部历史数据按钮";
-            }
-
+            this.dateFromPicker.CustomFormat = "yyyy-MM-dd";
+            this.dateToPicker.CustomFormat = "yyyy-MM-dd";
+            //Console.WriteLine(dateFromPicker.Text.ToString());
+            //Console.WriteLine(dateToPicker.Text.ToString());
         }
 
         private void btn_callData_Click(object sender, EventArgs e)
         {
+            int countF = GetCount(dateFromPicker.Text.ToString(),0);
+            int countT = GetCount(dateToPicker.Text.ToString(),1);
+            if (countF < 0 || countT < 0 || countF < countT)
+            {
+                MessageBox.Show("时间大于当前时间或起始时间大于结束时间", "错误", MessageBoxButtons.OK);
+                return;
+            }
+
             btn_callData.Cursor = Cursors.WaitCursor;
             Indicator.AutoStart = true;
-            if(Convert.ToInt32(LastDayCount.Text.ToString())>0)
-            {
                 
              //   MessageBox.Show(LastDayCount.Value.ToString());
-                int MyCount =Convert.ToInt32(LastDayCount.Text.ToString())*DayCount;
-                lb_noty.Text="开始下载数据，请耐心等候，预计"+MyCount*6+"秒";
+             //int MyCount = Convert.ToInt32(dateFromPicker.Text.ToString()) * DayCount;
+            lb_noty.Text = "开始下载数据，请耐心等候，最长等待" + (countF - countT) * 6 + "秒";
                // if(MyCount>LastDownCount)
                
                     //要查询的天数的历史记录大于总记录，则从0开始，否则从总记录减去要查询的次数开始
                 RichTextBox.Text = "";
                 string err; int total = 0;
-                BackState bs = callHistroyData(number, MyCount, out err, out total);
+                BackState bs = callHistroyData(number, countF, countT, out err, out total);
                 if(bs==BackState.Yes)
                 {
                    // lb_noty.Text="下载完成，该设备总存储"+(total)+"条数据";
                     //查询记录
-                    if (total!= 0)
+                    if (total > 0)
                     {
 
                         #region 收到数据
@@ -87,23 +84,32 @@ namespace wirelesssacler
                         //  Indicator.AutoStart = false;
                         lb_noty.Text = "下载完成,该设备总存储" + (total % 1440).ToString() + "个历史记录数据";
                         RichTextBox.Text += err;
-                        DataTable dt = query.ReturnTable("select * from DevmA_Histroy where Dev_ID='" + this.number+ "'");
+                        DataTable dt = query.ReturnTable("select * from DevmA_Histroy where Dev_ID='" + this.number + "' ORDER BY Dev_Num");
                         if (dt.Rows.Count > 0)
                         {
+                            if (total - countF > 0)
+                            {
+                                countF = total - countF + 1;
+                            }
+                            else
+                            {
+                                countF = 1;
+                            }
+                            if (total - countT > 0)
+                            {
+                                countT = total - countT;
+                            }
+                            else
+                            {
+                                countT = 1;
+                            }
                             for (int i = 0; i < dt.Rows.Count; i++)
                             {
                                 if (total < 1440)
                                 {
-                                    if(total-MyCount>0)
-                                    {
-                                        MyCount = total-MyCount;
-                                    }
-                                    else
-                                    {
-                                        MyCount =1;
-                                    }
+                                    
                                     int t = Convert.ToInt32(dt.Rows[i]["Dev_Num"]);
-                                    for (int k =MyCount; k < total + 1; k++)
+                                    for (int k = countF; k < countT + 1; k++)
                                     {
                                         if (t == k)
                                         {
@@ -123,15 +129,7 @@ namespace wirelesssacler
                                 {
                                     int t = Convert.ToInt32(dt.Rows[i]["Dev_Num"]);
                                     t = t % 1440;
-                                    if (total - MyCount > 0)
-                                    {
-                                        MyCount = total-MyCount;
-                                    }
-                                    else
-                                    {
-                                        MyCount = 1;
-                                    }
-                                    for (int k = MyCount; k < total + 1; k++)
+                                    for (int k = countF; k < countT + 1; k++)
                                     {
                                         if (t == k)
                                         {
@@ -170,12 +168,6 @@ namespace wirelesssacler
                     RichTextBox.Text = err;
                 }
 
-
-            }
-            else
-            {
-                MessageBox.Show("查询的天数必须大于0");
-            }
             Indicator.AutoStart = false;
             btn_callData.Cursor = Cursors.Default;
         }
@@ -184,29 +176,23 @@ namespace wirelesssacler
         {
             this.DialogResult = DialogResult.Yes;
         }
-
-        private void LastDayCount_KeyPress(object sender, KeyPressEventArgs e)
+        private int GetCount(string datestr,int mode)
         {
-            if (e.KeyChar != '\b')//这是允许输入退格键  
+            string nowstr = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime timeFrom = Convert.ToDateTime(datestr);
+            DateTime timeEnd = Convert.ToDateTime(nowstr);
+            int DayDiff = Math.Abs(((TimeSpan)(timeEnd - timeFrom)).Days);
+            int temp = Int32.Parse(DateTime.Now.ToString("HH")) / 4+1;
+            DayDiff =DayDiff*DayCount+temp;
+            if (mode == 1)
             {
-                if ((e.KeyChar < '0') || (e.KeyChar > '9'))//这是允许输入0-9数字  
-                {
-                    e.Handled = true;
-                }
+                if (datestr == nowstr)
+                    DayDiff -= temp;
+                else
+                    DayDiff -= DayCount;
             }
+                
+            return DayDiff;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int t = Int32.Parse(LastDayCount.Text.ToString());
-            if (t > 0)
-                LastDayCount.Text = (t - 1).ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int t = Int32.Parse(LastDayCount.Text.ToString());
-            LastDayCount.Text = (t + 1).ToString();
-        } 
     }
 }

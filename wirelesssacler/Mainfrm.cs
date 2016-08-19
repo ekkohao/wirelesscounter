@@ -72,7 +72,7 @@ namespace wirelesssacler
                 // this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true); 
             }
             // MessageBox.Show(MyProConnect.Name);
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID");
             if (dt.Rows.Count > 0)
             {
                 SequenceWithStrToByte Sequence = new SequenceWithStrToByte();
@@ -246,7 +246,7 @@ namespace wirelesssacler
             //添加选项卡二的设备
             //添加选项卡三的设备
 
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID");
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -316,7 +316,7 @@ namespace wirelesssacler
             //添加选项卡一的设备
             //添加选项卡二的设备
 
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID");
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -562,7 +562,7 @@ namespace wirelesssacler
         private void outList_Click(object sender, EventArgs e)
         {
             SqlHelp outsql = new SqlHelp();
-            DataTable ot = outsql.ReturnTable("select * from `Dev_List`");
+            DataTable ot = outsql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID");
             string filename = "导出设备清单-" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xls";
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string path2 = "设备清单";
@@ -645,7 +645,7 @@ namespace wirelesssacler
             AddDevToList2();
             _PData.Clear();
             //更新设备列表
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID");
             if (dt.Rows.Count > 0)
             {
                 SequenceWithStrToByte Sequence = new SequenceWithStrToByte();
@@ -699,7 +699,7 @@ namespace wirelesssacler
 
         private void tsmItem_reflash_Click(object sender, EventArgs e)
         {
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID ASC");
             if (dt.Rows.Count > 0)
             {
                 AllListBox.Items[0].SubItems.Clear();
@@ -764,7 +764,7 @@ namespace wirelesssacler
         private void tsmItemSortbyid_Click(object sender, EventArgs e)
         {
 
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID");
             if (dt.Rows.Count > 0)
             {
 
@@ -791,7 +791,7 @@ namespace wirelesssacler
 
         private void tsmItemSortbyphase_Click(object sender, EventArgs e)
         {
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID ASC");
             if (dt.Rows.Count > 0)
             {
                 AllListBox.Items[0].SubItems.Clear();
@@ -816,7 +816,7 @@ namespace wirelesssacler
 
         private void tsmItemSortbyaddr_Click(object sender, EventArgs e)
         {
-            DataTable dt = mysql.ReturnTable("select * from `Dev_List`");
+            DataTable dt = mysql.ReturnTable("select * from `Dev_List` ORDER BY Dev_ID ASC");
             if (dt.Rows.Count > 0)
             {
 
@@ -865,7 +865,7 @@ namespace wirelesssacler
 
         private BackState SendLastDayHistroyData(string number, int day, out string err, out int num)
         {
-            return WireCom.SendOneHistroy(number, day, out err, out num);
+            return WireCom.SendOneHistroy(number, day,0, out err, out num);
         }
 
         private bool call_CallLight(string p, int total, int old, out string err)
@@ -1370,16 +1370,16 @@ namespace wirelesssacler
             last.Dispose();
         }
 
-        BackState last_callHistroyData(string number, int daynum, out string err, out int num)
+        BackState last_callHistroyData(string number, int daynum,int daynumend, out string err, out int num)
         {
-            return WireCom.SendOneHistroy(number, daynum, out err, out num);
+            return WireCom.SendOneHistroy(number, daynum, daynumend, out err, out num);
         }
 
 
 
-        BackState lg_callHistroyData(string number, int daynum, out string err, out int num)
+        BackState lg_callHistroyData(string number, int daynum,int daynumend, out string err, out int num)
         {
-            return WireCom.SendOneHistroy(number, daynum, out err, out num);
+            return WireCom.SendOneHistroy(number, daynum, daynumend, out err, out num);
         }
 
         private void Mainfrm_FormClosing(object sender, FormClosingEventArgs e)
@@ -1612,7 +1612,7 @@ namespace wirelesssacler
             AddDevToList();
 
 
-            DataTable ds = mysql.ReturnTable("select * from Dev_List");
+            DataTable ds = mysql.ReturnTable("select * from Dev_List ORDER BY Dev_ID");
             if (ds.Rows.Count > 0)
             {
                 for (int k = 0; k < ds.Rows.Count; k++)

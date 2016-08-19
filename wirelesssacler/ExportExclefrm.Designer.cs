@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportExclefrm));
-            this.ListBox_dev = new System.Windows.Forms.CheckedListBox();
             this.check_all = new CCWin.SkinControl.SkinCheckBox();
             this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -41,26 +40,13 @@
             this.CheckBox_real = new CCWin.SkinControl.SkinCheckBox();
             this.checkBox_hist = new CCWin.SkinControl.SkinCheckBox();
             this.CheckBox_light = new CCWin.SkinControl.SkinCheckBox();
+            this.DevTreeView = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ListBox_dev
-            // 
-            this.ListBox_dev.BackColor = System.Drawing.Color.White;
-            this.ListBox_dev.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListBox_dev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListBox_dev.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ListBox_dev.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.ListBox_dev.FormattingEnabled = true;
-            this.ListBox_dev.HorizontalScrollbar = true;
-            this.ListBox_dev.Location = new System.Drawing.Point(3, 3);
-            this.ListBox_dev.Name = "ListBox_dev";
-            this.ListBox_dev.Size = new System.Drawing.Size(324, 372);
-            this.ListBox_dev.TabIndex = 19;
             // 
             // check_all
             // 
@@ -102,8 +88,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel1.Controls.Add(this.check_all, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ListBox_dev, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.DevTreeView, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 34);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -249,6 +235,17 @@
             this.CheckBox_light.Text = "设备动作记录";
             this.CheckBox_light.UseVisualStyleBackColor = false;
             // 
+            // DevTreeView
+            // 
+            this.DevTreeView.CheckBoxes = true;
+            this.DevTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DevTreeView.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DevTreeView.Location = new System.Drawing.Point(3, 3);
+            this.DevTreeView.Name = "DevTreeView";
+            this.DevTreeView.Size = new System.Drawing.Size(324, 372);
+            this.DevTreeView.TabIndex = 23;
+            this.DevTreeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.DevTreeView_AfterCheck);
+            // 
             // ExportExclefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -281,7 +278,6 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox ListBox_dev;
         private CCWin.SkinControl.SkinCheckBox check_all;
         private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -293,5 +289,6 @@
         private CCWin.SkinControl.SkinCheckBox CheckBox_real;
         private CCWin.SkinControl.SkinCheckBox checkBox_hist;
         private CCWin.SkinControl.SkinCheckBox CheckBox_light;
+        private System.Windows.Forms.TreeView DevTreeView;
     }
 }

@@ -30,46 +30,71 @@ namespace wirelesssacler
         private LinkedList<string> mylist;
         private void ExportExclefrm_Load(object sender, EventArgs e)
         {
-            DataTable dt = sql.ReturnTable("select * from Dev_List");
-            if (dt.Rows.Count == 0)
-            {               
+            DataTable dtaddr = sql.ReturnTable("select DISTINCT Dev_Addr from Dev_List");
+            if (dtaddr.Rows.Count == 0)
+            {
                 MessageBox.Show("暂无设备，请导入设备清单！");
             }
             else
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {                  
-                        try
-                        {                           
-                            string name = dt.Rows[i]["Dev_ID"].ToString();
-                            string add = dt.Rows[i]["Dev_Addr"].ToString();
-                            string ph = dt.Rows[i]["Dev_Phase"].ToString();
-                            string names = "设备序列号[" + name + "] 杆塔地址[" + add + "] 监测相位[" + ph + "]";
-                            
-                            ListBox_dev.Items.Add(names);
-                        }
-                        catch
-                        {
-                            continue;
-                        }                  
+                for (int i = 0; i < dtaddr.Rows.Count; i++)
+                {
+                    add_dev_tree(dtaddr.Rows[i]["Dev_Addr"].ToString());
                 }
+                DevTreeView.ExpandAll();
+                //for (int i = 0; i < dt.Rows.Count; i++)
+                //{                  
+                //        try
+                //        {                           
+                //            string name = dt.Rows[i]["Dev_ID"].ToString();
+                //            string add = dt.Rows[i]["Dev_Addr"].ToString();
+                //            string ph = dt.Rows[i]["Dev_Phase"].ToString();
+                //            string names = "设备序列号[" + name + "] 杆塔地址[" + add + "] 监测相位[" + ph + "]";
+                //            ListBox_dev.Items.Add(names);
+                //        }
+                //        catch
+                //        {
+                //            continue;
+                //        }                  
+                //}
+            }
+        }
+
+        private void add_dev_tree(string addr)
+        {
+            DataTable dt = sql.ReturnTable("select * from Dev_List where Dev_Addr = '" + addr + "' ORDER BY Dev_ID");
+            TreeNode node = DevTreeView.Nodes.Add("组号：" + addr);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                node.Nodes.Add("设备序列号：[" + dt.Rows[i]["Dev_ID"].ToString() + "] 监测相位：[" + dt.Rows[i]["Dev_Phase"].ToString() + "]");
+
             }
         }
 
         private void check_all_CheckedChanged(object sender, EventArgs e)
         {
+
             if (check_all.Checked)
             {
-                for (int j = 0; j < ListBox_dev.Items.Count; j++)
-                { 
-                    ListBox_dev.SetItemChecked(j, true);
-                    
+                foreach (TreeNode t in DevTreeView.Nodes)
+                {
+                    t.Checked = true;
+                    foreach (TreeNode node in t.Nodes)
+                    {
+                        node.Checked = true;
+                    }
                 }
             }
             else
             {
-                for (int j = 0; j < ListBox_dev.Items.Count; j++)
-                { ListBox_dev.SetItemChecked(j, false); }
+                foreach (TreeNode t in DevTreeView.Nodes)
+                {
+                    t.Checked = false;
+                    foreach (TreeNode node in t.Nodes)
+                    {
+                        node.Checked = false;
+                    }
+                }
             }
         }
 
@@ -77,17 +102,18 @@ namespace wirelesssacler
         {
             if (btn_Excle.Text != "导出Excle") return;
             mylist = new LinkedList<string>();
-            for (int j = 0; j < ListBox_dev.Items.Count; j++)
+            foreach (TreeNode t in DevTreeView.Nodes)
             {
-                if (ListBox_dev.GetItemChecked(j))
+                foreach (TreeNode node in t.Nodes)
                 {
-                  
-                    string onum = ListBox_dev.Items[j].ToString();///);
-                    int i = onum.IndexOf("[") + 1;
-                    int k = onum.IndexOf("]");
-                    string nnum = onum.Substring(i, k - i);
-                    mylist.AddLast(nnum);
-
+                    if (node.Checked)
+                    {
+                        string onum = node.Text;
+                        int i = onum.IndexOf("[") + 1;
+                        int k = onum.IndexOf("]");
+                        string nnum = onum.Substring(i, k - i);
+                        mylist.AddLast(nnum);
+                    }
                 }
             }
             if(mylist==null || mylist.Count==0)
@@ -394,6 +420,31 @@ namespace wirelesssacler
             System.Diagnostics.Process.Start("explorer.exe", path);
         }
 
+        private void DevTreeView_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (e.Action != TreeViewAction.Unknown)
+            {
+                if (e.Node.Nodes.Count > 0)
+                {
+                    /* Calls the CheckAllChildNodes method, passing in the current 
+                    Checked value of the TreeNode whose checked state changed. */
+                    this.CheckAllChildNodes(e.Node, e.Node.Checked);
+                }
+            }
+        }
+
+        private void CheckAllChildNodes(TreeNode treeNode, bool nodeChecked)
+        {
+            foreach (TreeNode node in treeNode.Nodes)
+            {
+                node.Checked = nodeChecked;
+                if (node.Nodes.Count > 0)
+                {
+                    // If the current node has child nodes, call the CheckAllChildsNodes method recursively.
+                    this.CheckAllChildNodes(node, nodeChecked);
+                }
+            }
+        }
 
     }
 }

@@ -1,0 +1,972 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>wirelesssacler</name>
+    </assembly>
+    <members>
+        <member name="F:wirelesssacler.AddDevfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.AddDevfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.AddDevfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.InitAllDevTimefrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.InitAllDevTimefrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.InitAllDevTimefrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.InitAllDevInfofrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.InitAllDevInfofrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.InitAllDevInfofrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.CallCurrentFrom.getHour(System.DateTime,System.DateTime)">
+            <summary>
+            返回差的时间
+            </summary>
+            <param name="odt">旧数据</param>
+            <param name="ndt">新数据</param>
+            <returns></returns>
+        </member>
+        <member name="F:wirelesssacler.CallCurrentFrom.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.CallCurrentFrom.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.CallCurrentFrom.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.CallGroupfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.CallGroupfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.CallGroupfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.CallMutinData.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.CallMutinData.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.CallMutinData.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.ComSelectfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.ComSelectfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.ComSelectfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.ConClosefrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.ConClosefrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.ConClosefrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Connectfrm.GetComPorts">
+            <summary>
+            获取计算机USB端口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:wirelesssacler.Connectfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Connectfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.Connectfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.DataCenterfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.DataCenterfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.DataCenterfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:wirelesssacler.Device">
+            <summary>
+            数据结构
+            </summary>
+            <summary>
+            设备结构
+            </summary>
+        </member>
+        <member name="T:wirelesssacler.Dev_Real">
+            <summary>
+            设备实时数据记录结构
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Dev_Real.backtime">
+            <summary>
+            数据返回的时间
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Dev_Real.Sendtime">
+            <summary>
+            设备时间
+            </summary>
+        </member>
+        <member name="T:wirelesssacler.Dev_RecordAction">
+            <summary>
+            设备动作记录结构
+            </summary>
+        </member>
+        <member name="T:wirelesssacler.Dev_RecordHistroy">
+            <summary>
+            设备2小时历史记录结构
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Dev_RecordHistroy.Count">
+            <summary>
+            当前的记录次数
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Dev_RecordHistroy.totol">
+            <summary>
+            总次数
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Dev_RecordHistroy.cicle">
+            <summary>
+            循环数
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Dev_RecordHistroy.recordt">
+            <summary>
+            记录的时间
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Dev_RecordHistroy.callt">
+            <summary>
+            招测时间
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.BAction.actime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.BWrite.code">
+            <summary>
+            功能码
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.BWrite.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.BHiscot.cicile">
+            <summary>
+            循环次数
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.BHiscot.count">
+            <summary>
+            返回的记录值
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.DayForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.DayForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.DayForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.ExportDevExclefrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.ExportDevExclefrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.ExportDevExclefrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.InitAllDevfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.InitAllDevfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.InitAllDevfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.ExportExclefrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.ExportExclefrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.ExportExclefrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Form2.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Form2.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.Form2.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.ImportDevfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.ImportDevfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.ImportDevfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Initdevfrom.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Initdevfrom.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.Initdevfrom.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.LastCheckGroup.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.LastCheckGroup.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.LastCheckGroup.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:wirelesssacler.LastCheckGroup.CallHistroy">
+            <summary>
+            查询历史数据
+            </summary>
+            <param name="number"></param>
+            <param name="err"></param>
+            <param name="num"></param>
+            <param name="lastnum"></param>
+            <returns></returns>
+        </member>
+        <member name="F:wirelesssacler.LastOneHistroyForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.LastOneHistroyForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.LastOneHistroyForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:wirelesssacler.LastOneHistroyForm.CallHistroy">
+            <summary>
+            查询历史数据
+            </summary>
+            <param name="number"></param>
+            <param name="err"></param>
+            <param name="num"></param>
+            <param name="lastnum"></param>
+            <returns></returns>
+        </member>
+        <member name="F:wirelesssacler.LightCountfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.LightCountfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.LightCountfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.LightGroupfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.LightGroupfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.LightGroupfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.ListViewColumnSorter.SortColumn">
+            获取或设置按照哪一列排序.        
+        </member>
+        <member name="P:wirelesssacler.ListViewColumnSorter.Order">
+            获取或设置排序方式.    
+        </member>
+        <member name="M:wirelesssacler.Mainfrm.GetAppConfig(System.String)">
+            <summary>
+            返回＊.exe.config文件中appSettings配置节的value项
+            </summary>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wirelesssacler.Mainfrm.btn_help_Click(System.Object,System.EventArgs)">
+            每次使用是设备都插入零时列表中
+        </member>
+        <member name="F:wirelesssacler.Mainfrm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Mainfrm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:wirelesssacler.Mainfrm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.MangerDevfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.MangerDevfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.MangerDevfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.Messagefrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Messagefrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.Messagefrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="E:wirelesssacler.Messagefrm.Doquery">
+            <summary>
+            下载序列数据，true实时，false 历史
+            </summary>
+        </member>
+        <member name="E:wirelesssacler.Messagefrm.DoqueryAddr">
+            <summary>
+            下载序列数据，true实时，false 历史
+            </summary>
+        </member>
+        <member name="E:wirelesssacler.Messagefrm.Dolight">
+            <summary>
+            下载序列
+            </summary>
+        </member>
+        <member name="E:wirelesssacler.Messagefrm.Dolightaddr">
+            <summary>
+            下载组
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.NotyTimefrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.NotyTimefrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.NotyTimefrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Program.Main">
+            <summary>
+            应用程序的主入口点。
+            </summary>
+        </member>
+        <member name="T:wirelesssacler.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources._0">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources._0_1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.dev">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.mini">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.offline">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.online">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:wirelesssacler.Properties.Resources.X">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Protocolfrm.#ctor(System.Boolean,System.String)">
+            <summary>
+            串口十分打开，通信协议版本
+            </summary>
+            <param name="Comopen"></param>
+            <param name="protocolversion"></param>
+            <param name="?"></param>
+        </member>
+        <member name="F:wirelesssacler.Protocolfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.Protocolfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.Protocolfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.QueryGroupForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.QueryGroupForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.QueryGroupForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.QueryCurrentfrm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.QueryCurrentfrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.QueryCurrentfrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.QueryTimeForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.QueryTimeForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:wirelesssacler.QueryTimeForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:MySqlCon.SqlHelp.Insert(System.String)">
+            <summary>
+            z直接执行sql语句
+            </summary>
+            <param name="sql">sql语句</param>
+        </member>
+        <member name="M:MySqlCon.SqlHelp.Insert2(System.String)">
+            <summary>
+            插入数据，并返回
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MySqlCon.SqlHelp.Insert(System.String,System.String)">
+            <summary>
+            直接执行sql
+            </summary>
+            <param name="sql"></param>
+            <param name="path">数据库路径</param>
+        </member>
+        <member name="M:MySqlCon.SqlHelp.RunProc(System.String,System.String,System.Data.DbType,System.Object)">
+            <summary>
+            存储过程
+            </summary>
+            <param name="insert"></param>
+            <param name="id"></param>
+            <param name="type"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:MySqlCon.SqlHelp.ReturnDataset(System.String)">
+            <summary>
+            返回DataSet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MySqlCon.SqlHelp.ReturnTable(System.String)">
+            <summary>
+            返回datatable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Manger.sys.port.SysManges.GetHardware(Manger.sys.port.SysManges.HardwareEnum)">
+            <summary>
+            获取计算机设备信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Manger.sys.port.SysManges.MulGetHardwareInfo(Manger.sys.port.SysManges.HardwareEnum,System.String)">
+            <summary>
+            WMI取硬件信息
+            </summary>
+            <param name="hardType"></param>
+            <param name="propKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Manger.sys.port.SysManges.HardwareEnum">
+            <summary>
+            枚举win32 api
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.wireProtocol">
+            <summary>
+            定义用户协议
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.Sequence">
+            <summary>
+            设备序列转换对象
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.dt">
+            <summary>
+            临时存放时间
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.Ciclenumber">
+            <summary>
+            一次循环次数的记录
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.CurDevT">
+            <summary>
+            时间结构
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.interval_T">
+            <summary>
+            间隔毫秒级别
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.loopCount">
+            <summary>
+            失败循环次数
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.current_devnum">
+            <summary>
+            当前设备号
+            </summary>
+        </member>
+        <member name="F:wirelesssacler.UsewireCom.PortByte">
+            <summary>
+            缓冲区大小
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.#ctor(System.String,System.Int32,System.String,CommunicationProtocol.ProtoColConnect,System.Collections.Generic.LinkedList{wirelesssacler.Device})">
+            <summary>
+            构造函数,传入协议,和设备列表
+            </summary>
+            <param name="comPortName"></param>
+            <param name="baudRate"></param>
+            <param name="ProtocolName"></param>
+            <param name="proconet"></param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.SetReciveStruct">
+            <summary>
+            为接收的不同报文分配临时存储空间
+            </summary>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.DataRecivedWithmA(System.Object,System.IO.Ports.SerialDataReceivedEventArgs,System.Byte[])">
+            <summary>
+            全电流处理接收函数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <param name="Readbits">串口缓冲区数据</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.DataRecivedWithOutmA(System.Object,System.IO.Ports.SerialDataReceivedEventArgs,System.Byte[])">
+            <summary>
+            不带全电流处理函数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <param name="Readbits"></param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProTimeData(System.Byte[],System.Int32)">
+            <summary>
+            处理时间函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProDevData(System.Byte[],System.Int32)">
+            <summary>
+            处理实时数据函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProActData(System.Byte[],System.Int32)">
+            <summary>
+            处理动作记录函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProWriteData(System.Byte[],System.Int32)">
+            <summary>
+            写入时间到设备返回函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProOnlineData(System.Byte[],System.Int32)">
+            <summary>
+            处理在线函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProInitData(System.Byte[],System.Int32)">
+            <summary>
+            处理初始化函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProHisRecordData(System.Byte[],System.Int32)">
+            <summary>
+            处理记录个数函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProHisMsgData(System.Byte[],System.Int32)">
+            <summary>
+            处理历史记录函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProTimeData2(System.Byte[],System.Int32)">
+            <summary>
+            处理时间函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProDevData2(System.Byte[],System.Int32)">
+            <summary>
+            处理实时数据函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProActData2(System.Byte[],System.Int32)">
+            <summary>
+            处理动作记录函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProWriteData2(System.Byte[],System.Int32)">
+            <summary>
+            写入时间到设备返回函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProOnlineData2(System.Byte[],System.Int32)">
+            <summary>
+            处理在线函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.ProInitData2(System.Byte[],System.Int32)">
+            <summary>
+            处理初始化函数
+            </summary>
+            <param name="da">数据</param>
+            <param name="lenght">数据数组长度</param>
+        </member>
+        <member name="M:wirelesssacler.UsewireCom.SaveReal_Data(wirelesssacler.Dev_Real)">
+            数据存储
+            
+        </member>
+    </members>
+</doc>

@@ -819,7 +819,7 @@ namespace wirelesssacler
         /// <param name="lenght">数据数组长度</param>
         private void ProDevData(byte[] da, int lenght)
         {
-            Isreal = true;
+           
 
             _breal.id = da[1] * 256 * 256 * 256 + da[2] * 256 * 256 + da[3] * 256 + da[4];
             _breal.number = _breal.id.ToString();
@@ -843,6 +843,7 @@ namespace wirelesssacler
 
                 _myreal = _myreal.Next;
             }
+            Isreal = true;
             
         }
         /// <summary>
@@ -875,10 +876,10 @@ namespace wirelesssacler
                 if(Myact.Value.dev.number==_baction.number)
                 {
                     Myact.Value.num = _baction.count;
-                    Myact.Value.time = _baction.actime;
-                    Isaction = true;
+                    Myact.Value.time = _baction.actime;    
                     Dev_RecordAction dr = Myact.Value;
                     SaveLight_Data(dr);
+                    Isaction = true;
                     break;
                 }
                 Myact = Myact.Next;
@@ -936,11 +937,12 @@ namespace wirelesssacler
         /// <param name="lenght">数据数组长度</param>
         private void ProOnlineData(byte[] da, int lenght)
         {
-            Isline = true;
+            
             _bonline.id = da[1] * 256 * 256 * 256 + da[2] * 256 * 256 + da[3] * 256 + da[4];
             _bonline.number = _bonline.id.ToString();
             if (_bonline.number.Length % 2 != 0) _bonline.number = "0" + _bonline.number;
             _bonline.Isonline = true;
+            Isline = true;
 
         }
         /// <summary>
@@ -1013,9 +1015,10 @@ namespace wirelesssacler
                     _Hsg.Value.Count = _bhismsg.Count;
                     _Hsg.Value.mA = _bhismsg.mA;
                     _Hsg.Value.recordt = _bhismsg.year;
-                    Ishimsg = true;
+                    
                     Dev_RecordHistroy dr = _Hsg.Value;
                     SaveHis_Data(dr);
+                    Ishimsg = true;
                     break;
                 }
                 _Hsg = _Hsg.Next;
@@ -1079,7 +1082,7 @@ namespace wirelesssacler
         private void ProDevData2(byte[] da, int lenght)
         {
 
-            Isreal = true;
+            
             _breal.id = da[1] * 256 * 256 * 256 + da[2] * 256 * 256 + da[3] * 256 + da[4];
             _breal.number = _breal.id.ToString();
             if (_breal.number.Length % 2 != 0) _breal.number = "0" + _breal.number;
@@ -1102,6 +1105,7 @@ namespace wirelesssacler
 
                 _myreal = _myreal.Next;
             }
+            Isreal = true;
         }
         /// <summary>
         /// 处理动作记录函数
@@ -1126,9 +1130,10 @@ namespace wirelesssacler
                 {
                     Myact.Value.num = _baction.count;
                     Myact.Value.time = _baction.actime;
-                    Isaction = true;
+                   
                     Dev_RecordAction dr = Myact.Value;
                     SaveLight_Data(dr);
+                    Isaction = true;
                     break;
                 }
                 Myact = Myact.Next;
@@ -1931,7 +1936,7 @@ namespace wirelesssacler
             
         }
 
-        internal BackState SendOneHistroy(string number, int daynum, out string err, out int num)
+        internal BackState SendOneHistroy(string number, int daynum,int daynumend, out string err, out int num)
         {
             err = string.Empty;
             num = 0;
@@ -1991,6 +1996,18 @@ namespace wirelesssacler
                 return bs;
             }
             int b = _bhiscot.count;
+            bool[] issaved=new bool[b+1];
+            //标识是否存储在数据库
+            for (int i = 0; i < b+1; i++)
+                issaved[i] = false;
+            SqlHelp query = new SqlHelp();
+            DataTable dt = query.ReturnTable("select * from DevmA_Histroy where Dev_ID='" + number + "'");
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                    issaved[Int32.Parse(dt.Rows[i]["Dev_Num"].ToString())] = true;
+            }
+
             if (b > Ciclenumber) //大于1440(条)
             {
                 #region 大于1440条
@@ -2001,11 +2018,15 @@ namespace wirelesssacler
                 int startcount = 1;
                 if (num - daynum > 0)
                 {
-                    startcount = num - daynum;
+                    startcount = num - daynum + 1;
                 }
-                for (int i = startcount; i <= cout + Ciclenumber; i++)
+                int endcount = cout + Ciclenumber;
+                if (endcount - daynumend >= startcount)
+                    endcount -= daynumend;
+                for (int i = startcount; i <= endcount; i++)
                 {
-
+                    if (issaved[i])
+                        continue;
                     sendt = wireProtocol.HistroyMsg(add, i);
 
                     for (int j = 0; j < 2; j++) //没个记录发一次，超过一次记录，则提示有数据不完整
@@ -2047,13 +2068,15 @@ namespace wirelesssacler
 
                 byte[] sendt;
                 int startcount = 1;
-                if(num-daynum>0 )
+                if (num - daynum > 0)
                 {
-                    startcount = num - daynum;
+                    startcount = num - daynum + 1;
                 }
-
-                for (int i = startcount; i < cout + 1; i++)
+                int endcount = cout - daynumend;
+                for (int i = startcount; i <= endcount; i++)
                 {
+                    if (issaved[i])
+                        continue;
                     sendt = wireProtocol.HistroyMsg(add, i);
                     for (int j = 0; j < 2; j++)
                     {
